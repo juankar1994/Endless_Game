@@ -1,0 +1,328 @@
+/*Tag Elements*/
+body , html{
+	height: 100%;
+}
+
+header{
+	padding: 10px;
+	text-align: center;
+}
+
+header h1{
+	color: white;
+}
+
+nav{
+	text-align: center;
+	float: none;
+	margin: -20px auto;
+}
+
+nav ul li a{
+	width:inherit;
+	color: black;
+	padding: 10px 20px;
+	margin: 0;
+	border:1px solid;
+	border-bottom: none;
+}
+
+nav ul li a:hover{
+	text-decoration: none;
+}
+
+h2{
+	margin: 13px;
+	font: bold 1em 'Colab-Thin',Helvetica,Arial,Verdana,sans-serif;
+	float:left;
+}
+
+.footer-container footer{
+	padding: 0;
+	text-align: center;
+	color: white;
+}
+
+/*Id's*/
+/***************************************************************
+					NAVIGATION BUTTONS
+***************************************************************/
+#lieEdit a{
+	background: #d9534f;
+}
+
+#lieArcade a{
+	background: #5bc0de;	
+}
+
+#lieFire a{
+	background: #428bca;
+}
+
+#lieContact a{
+	background: #f0ad4e;
+}
+
+#contact-container{
+	z-index: 2;
+	position: fixed;
+	top: 138px;
+	left: 24%;	
+	width: 450px;
+	height: 250px;
+	background: #f0ad4e;
+	border: 1px solid;
+}	
+
+#contact-container h1{
+	font: bold 1.6em 'Colab-Thin',Helvetica,Arial,Verdana,sans-serif;
+	color: #FFFFFF;
+	letter-spacing: 5px;
+	padding: 20px 0 10px 25px; 
+}
+#contact-container ul {
+	padding: 10px 0 0 50px;
+
+}
+
+#contact-container ul li{
+	font: bold 1em 'Colab-Thin',Helvetica,Arial,Verdana,sans-serif;
+	letter-spacing: 1px;
+	padding: 0 0 10px 0;
+}
+
+#create-container{
+	width: 50%;
+}
+
+#canvas-container{
+	margin: 10px;
+	border: 1px solid black;
+	display:block;
+}
+
+/***************************************************************
+					ADD DESIGN
+***************************************************************/
+#imgAddDesign,#imgLoadDesign,#imgSaveDesign, #imgSelectDesign, #imgCancelOption, #imgSearchDesign{
+	cursor: pointer;
+	padding: 10px 20px 0px 20px;
+}
+
+#imgSelectDesign, #imgCancelOption{
+	padding: 12px 0 0px 55px;	
+}
+
+
+#tbxDesignName{
+	float: left;
+	display: block;
+}
+
+
+#nameDesign-container label{
+	float: left;
+}
+
+#nameDesign-container{
+	margin: 15px;
+}
+
+#showMessage{
+	font: 1em 'Colab-Thin',Helvetica,Arial,Verdana,sans-serif;
+	color: black;
+	height: 20px;
+}
+
+#infos{
+	width: 250px;
+	height: 150px;
+}
+
+#tmpDivBackgroundColor, #tmp2DivBackgroundColor{
+	position: absolute;
+	z-index: 100000;
+	top: 8px;
+	left: 130px;
+}
+#tmp2DivBackgroundColor{
+	top: 65px;
+}
+
+#infos span{
+	float:left;
+	width: 94px;
+	text-align: right;
+}
+
+#tbxRadius, #tbxStrokeWidth{
+	width: 30px;
+	height: 30px;
+	position: absolute;
+	top: 120px;
+	left: 135px;
+}
+
+#tbxRadius{
+	top: 170px;
+}
+
+#tab2 {
+	margin: 0 auto;
+	width: 50%;
+}
+
+#imgLine{
+	margin: 20px 0 0 20px;
+}
+
+#exportToExcel{
+	margin: 20px;
+}
+
+/*Classes*/
+.header-container,.footer-container{	
+	background: url(../img/header.png);
+	border: none;
+}
+
+.footer-container{
+	margin-top: 10px;
+	height: 37px;
+}
+
+/***************************************************************
+					MAIN CONTAINER
+***************************************************************/
+.main-container{
+	background: #d9534f;
+	height: 72%;
+	margin: 0 auto;
+	width: 95%;
+	
+	border: 1px solid;
+	
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	border-radius: 20px;
+	/*background:rgba(45,124,227,0.7);*/
+	-webkit-box-shadow: #B3B3B3 10px 10px 10px;
+	-moz-box-shadow: #B3B3B3 10px 10px 10px;
+	 box-shadow: #B3B3B3 10px 10px 10px;
+	 
+	clear: both;
+}
+/***************************************************************
+					EDIT CONTAINER
+***************************************************************/
+.edit-container{
+	background: white;
+	width:20%;
+	height: 92%;
+	float: left;
+	margin: 20px;
+	
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+}
+
+.edit-container span{
+	display: inline-block;
+	padding: 20px;
+	font: bold 1.4em 'Colab-Thin',Helvetica,Arial,Verdana,sans-serif;
+}
+
+.container{
+	clear: both;
+}
+
+.buttonNav{
+	cursor: pointer;
+}
+
+.color-box {
+	float:left;
+	width:30px;
+	height:30px;
+	margin:5px;
+	border: 1px solid white;
+}
+
+
+/*Taken from http://www.freshdesignweb.com/free-css-tables.html */
+/*
+	Pretty Table Styling
+	CSS Tricks also has a nice writeup: http://css-tricks.com/feature-table-design/
+	*/
+	
+	table {
+		overflow:hidden;
+		border:1px solid #d3d3d3;
+		background:#fefefe;
+		width:70%;
+		margin:5% auto 0;
+		-moz-border-radius:5px; /* FF1+ */
+		-webkit-border-radius:5px; /* Saf3-4 */
+		border-radius:5px;
+		-moz-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+		-webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+	}
+	
+	th, td {padding:10px 20px 10px; text-align:center; }
+	
+	th {padding-top:5px; text-shadow: 1px 1px 1px #fff; background:#e8eaeb;}
+	
+	td {border-top:1px solid #e0e0e0; border-right:1px solid #e0e0e0;}
+	
+	tr.odd-row td {background:#f6f6f6;}
+	
+	td.first, th.first {text-align:left}
+	
+	td.last {border-right:none;}
+	
+	/*
+	Background gradients are completely unnecessary but a neat effect.
+	*/
+	
+	td {
+		background: -moz-linear-gradient(100% 25% 90deg, #fefefe, #f9f9f9);
+		background: -webkit-gradient(linear, 0% 0%, 0% 25%, from(#f9f9f9), to(#fefefe));
+	}
+	
+	tr.odd-row td {
+		background: -moz-linear-gradient(100% 25% 90deg, #f6f6f6, #f1f1f1);
+		background: -webkit-gradient(linear, 0% 0%, 0% 25%, from(#f1f1f1), to(#f6f6f6));
+	}
+	
+	th {
+		background: -moz-linear-gradient(100% 20% 90deg, #e8eaeb, #ededed);
+		background: -webkit-gradient(linear, 0% 0%, 0% 20%, from(#ededed), to(#e8eaeb));
+	}
+	
+	/*
+	I know this is annoying, but we need additional styling so webkit will recognize rounded corners on background elements.
+	Nice write up of this issue: http://www.onenaught.com/posts/266/css-inner-elements-breaking-border-radius
+	
+	And, since we've applied the background colors to td/th element because of IE, Gecko browsers also need it.
+	*/
+	
+	tr:first-child th.first {
+		-moz-border-radius-topleft:5px;
+		-webkit-border-top-left-radius:5px; /* Saf3-4 */
+	}
+	
+	tr:first-child th.last {
+		-moz-border-radius-topright:5px;
+		-webkit-border-top-right-radius:5px; /* Saf3-4 */
+	}
+	
+	tr:last-child td.first {
+		-moz-border-radius-bottomleft:5px;
+		-webkit-border-bottom-left-radius:5px; /* Saf3-4 */
+	}
+	
+	tr:last-child td.last {
+		-moz-border-radius-bottomright:5px;
+		-webkit-border-bottom-right-radius:5px; /* Saf3-4 */
+	}
