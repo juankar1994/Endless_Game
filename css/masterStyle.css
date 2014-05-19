@@ -1,22 +1,41 @@
 /*Tag Elements*/
 body{
 	height: 100%;
-    background-image: url(../images/raceBackground.jpg);
+    background-image: url(../images/raceBackground.png);
 }
 
-header h1{
+header{
+    width: 800px;
+    height: 70px;
+    margin: 20px auto 0;
+    display: table; 
+    overflow: hidden;
+    background: url(../images/flames.png) black no-repeat;
+}
+
+header div{
+    display: table-cell;
+    vertical-align: middle;
+}
+
+header div h1{
     margin: 0 auto;
     text-align: center;
-    color: black;
+    color: white;
     font-size: 40px;
-    margin: 20px 0;
 }
-
 
 #mainContainer{
     border: 1px solid black;
     width: 800px;
     height: 550px;
     margin: 0 auto;
-    background-image: url(../images/track.png);
 }
+
+#gameContainer{
+    width: 800px;
+    height: 550px;
+    background: url(../images/track.png) white no-repeat;
+    position: relative;
+}
+
