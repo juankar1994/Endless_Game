@@ -85,6 +85,6 @@ var rand = function() {
   return seed;
 };
 
-for(i = 0; i < seed; i++) {
+for(i = 0; i < 100; i++) {
   console.log(rand().valueOf());
 }
