@@ -3,7 +3,7 @@
  * https://github.com/equiet/recognizer
  */
 
-var __recognizer612286727 = (function () {
+var __recognizer813976196 = (function () {
     'use strict';
 
     var global = this;
@@ -157,19 +157,19 @@ var __recognizer612286727 = (function () {
  * Instrumented code
  */
 
-var LibraryData = __recognizer612286727.logProbe([
+var LibraryData = __recognizer813976196.logProbe([
         20,
         25,
         20,
         36
-    ], __recognizer612286727.logProbe([
+    ], __recognizer813976196.logProbe([
         20,
         18,
         20,
         24
     ], window).LibraryData) || {};
 (function (pContext, $) {
-    __recognizer612286727.logEntry([
+    __recognizer813976196.logEntry([
         26,
         1,
         26,
@@ -177,23 +177,23 @@ var LibraryData = __recognizer612286727.logProbe([
     ], arguments);
     'use strict';
     pContext.createPoint = function (pPosX, pPosY) {
-        __recognizer612286727.logEntry([
+        __recognizer813976196.logEntry([
             29,
             27,
             29,
             35
         ], arguments);
-        return new (__recognizer612286727.logProbe([
+        return new (__recognizer813976196.logProbe([
             30,
             19,
             30,
             24
-        ], Point))(__recognizer612286727.logProbe([
+        ], Point))(__recognizer813976196.logProbe([
             30,
             25,
             30,
             30
-        ], pPosX), __recognizer612286727.logProbe([
+        ], pPosX), __recognizer813976196.logProbe([
             30,
             32,
             30,
@@ -201,12 +201,12 @@ var LibraryData = __recognizer612286727.logProbe([
         ], pPosY));
     };
     var Point = function () {
-            var obj = __recognizer612286727.logProbe([
+            var obj = __recognizer813976196.logProbe([
                     33,
                     16,
                     33,
                     21
-                ], Class), fn = __recognizer612286727.logProbe([
+                ], Class), fn = __recognizer813976196.logProbe([
                     33,
                     22,
                     33,
@@ -215,19 +215,19 @@ var LibraryData = __recognizer612286727.logProbe([
             return fn.apply(obj, arguments);
         }.bind(this)({
             init: function (pPositionX, pPositionY) {
-                __recognizer612286727.logEntry([
+                __recognizer813976196.logEntry([
                     34,
                     14,
                     34,
                     22
                 ], arguments);
-                this.positionY = __recognizer612286727.logProbe([
+                this.positionY = __recognizer813976196.logProbe([
                     35,
                     29,
                     35,
                     39
                 ], pPositionY);
-                this.positionX = __recognizer612286727.logProbe([
+                this.positionX = __recognizer813976196.logProbe([
                     36,
                     29,
                     36,
@@ -235,13 +235,13 @@ var LibraryData = __recognizer612286727.logProbe([
                 ], pPositionX);
             },
             setPositionY: function (pPositionY) {
-                __recognizer612286727.logEntry([
+                __recognizer813976196.logEntry([
                     39,
                     22,
                     39,
                     30
                 ], arguments);
-                this.positionY = __recognizer612286727.logProbe([
+                this.positionY = __recognizer813976196.logProbe([
                     40,
                     29,
                     40,
@@ -249,13 +249,13 @@ var LibraryData = __recognizer612286727.logProbe([
                 ], pPositionY);
             },
             setPositionX: function (pPositionX) {
-                __recognizer612286727.logEntry([
+                __recognizer813976196.logEntry([
                     43,
                     22,
                     43,
                     30
                 ], arguments);
-                this.positionX = __recognizer612286727.logProbe([
+                this.positionX = __recognizer813976196.logProbe([
                     44,
                     29,
                     44,
@@ -263,18 +263,18 @@ var LibraryData = __recognizer612286727.logProbe([
                 ], pPositionX);
             },
             getPositionY: function () {
-                __recognizer612286727.logEntry([
+                __recognizer813976196.logEntry([
                     47,
                     22,
                     47,
                     30
                 ], arguments);
-                return __recognizer612286727.logProbe([
+                return __recognizer813976196.logProbe([
                     48,
                     24,
                     48,
                     33
-                ], __recognizer612286727.logProbe([
+                ], __recognizer813976196.logProbe([
                     48,
                     19,
                     48,
@@ -282,18 +282,18 @@ var LibraryData = __recognizer612286727.logProbe([
                 ], this).positionY);
             },
             getPositionX: function () {
-                __recognizer612286727.logEntry([
+                __recognizer813976196.logEntry([
                     51,
                     22,
                     51,
                     30
                 ], arguments);
-                return __recognizer612286727.logProbe([
+                return __recognizer813976196.logProbe([
                     52,
                     24,
                     52,
                     33
-                ], __recognizer612286727.logProbe([
+                ], __recognizer813976196.logProbe([
                     52,
                     19,
                     52,
@@ -301,67 +301,67 @@ var LibraryData = __recognizer612286727.logProbe([
                 ], this).positionX);
             },
             convertToArray: function () {
-                __recognizer612286727.logEntry([
+                __recognizer813976196.logEntry([
                     55,
                     24,
                     55,
                     32
                 ], arguments);
-                var pointArray = new (__recognizer612286727.logProbe([
+                var pointArray = new (__recognizer813976196.logProbe([
                         56,
                         33,
                         56,
                         38
                     ], Array))();
                 (function () {
-                    var obj = __recognizer612286727.logProbe([
+                    var obj = __recognizer813976196.logProbe([
                             57,
                             12,
                             57,
                             22
-                        ], pointArray), fn = __recognizer612286727.logProbe([
+                        ], pointArray), fn = __recognizer813976196.logProbe([
                             57,
                             23,
                             57,
                             27
                         ], obj.push);
                     return fn.apply(obj, arguments);
-                }.bind(this)(__recognizer612286727.logProbe([
+                }.bind(this)(__recognizer813976196.logProbe([
                     57,
                     33,
                     57,
                     42
-                ], __recognizer612286727.logProbe([
+                ], __recognizer813976196.logProbe([
                     57,
                     28,
                     57,
                     32
                 ], this).positionX)));
                 (function () {
-                    var obj = __recognizer612286727.logProbe([
+                    var obj = __recognizer813976196.logProbe([
                             58,
                             12,
                             58,
                             22
-                        ], pointArray), fn = __recognizer612286727.logProbe([
+                        ], pointArray), fn = __recognizer813976196.logProbe([
                             58,
                             23,
                             58,
                             27
                         ], obj.push);
                     return fn.apply(obj, arguments);
-                }.bind(this)(__recognizer612286727.logProbe([
+                }.bind(this)(__recognizer813976196.logProbe([
                     58,
                     33,
                     58,
                     42
-                ], __recognizer612286727.logProbe([
+                ], __recognizer813976196.logProbe([
                     58,
                     28,
                     58,
                     32
                 ], this).positionY)));
-                return __recognizer612286727.logProbe([
+                return __recognizer813976196.logProbe([
                     59,
                     19,
                     59,
@@ -369,128 +369,128 @@ var LibraryData = __recognizer612286727.logProbe([
                 ], pointArray);
             }
         });
-}(__recognizer612286727.logProbe([
+}(__recognizer813976196.logProbe([
     64,
     2,
     64,
     13
-], LibraryData), __recognizer612286727.logProbe([
+], LibraryData), __recognizer813976196.logProbe([
     64,
     15,
     64,
     21
 ], jQuery)));
-var maxValue = new (__recognizer612286727.logProbe([
+var maxValue = new (__recognizer813976196.logProbe([
         70,
         19,
         70,
         28
     ], BigNumber))('1152921504606846976'), a = 11, c = 17;
-var seed = new (__recognizer612286727.logProbe([
+var seed = new (__recognizer813976196.logProbe([
         77,
         15,
         77,
         24
     ], BigNumber))('3');
 var rand = function () {
-    __recognizer612286727.logEntry([
+    __recognizer813976196.logEntry([
         79,
         11,
         79,
         19
     ], arguments);
-    var multiply = new (__recognizer612286727.logProbe([
+    var multiply = new (__recognizer813976196.logProbe([
             81,
             21,
             81,
             30
         ], BigNumber))(function () {
-            var obj = __recognizer612286727.logProbe([
+            var obj = __recognizer813976196.logProbe([
                     81,
                     31,
                     81,
                     35
-                ], seed), fn = __recognizer612286727.logProbe([
+                ], seed), fn = __recognizer813976196.logProbe([
                     81,
                     36,
                     81,
                     44
                 ], obj.multiply);
             return fn.apply(obj, arguments);
-        }.bind(this)(__recognizer612286727.logProbe([
+        }.bind(this)(__recognizer813976196.logProbe([
             81,
             45,
             81,
             46
         ], a)));
-    seed = new (__recognizer612286727.logProbe([
+    seed = new (__recognizer813976196.logProbe([
         82,
         13,
         82,
         22
     ], BigNumber))(function () {
-        var obj = __recognizer612286727.logProbe([
+        var obj = __recognizer813976196.logProbe([
                 82,
                 23,
                 82,
                 31
-            ], multiply), fn = __recognizer612286727.logProbe([
+            ], multiply), fn = __recognizer813976196.logProbe([
                 82,
                 32,
                 82,
                 35
             ], obj.add);
         return fn.apply(obj, arguments);
-    }.bind(this)(__recognizer612286727.logProbe([
+    }.bind(this)(__recognizer813976196.logProbe([
         82,
         36,
         82,
         37
     ], c)));
     seed = function () {
-        var obj = __recognizer612286727.logProbe([
+        var obj = __recognizer813976196.logProbe([
                 83,
                 9,
                 83,
                 13
-            ], seed), fn = __recognizer612286727.logProbe([
+            ], seed), fn = __recognizer813976196.logProbe([
                 83,
                 14,
                 83,
                 17
             ], obj.mod);
         return fn.apply(obj, arguments);
-    }.bind(this)(__recognizer612286727.logProbe([
+    }.bind(this)(__recognizer813976196.logProbe([
         83,
         18,
         83,
         26
     ], maxValue));
-    return __recognizer612286727.logProbe([
+    return __recognizer813976196.logProbe([
         85,
         9,
         85,
         13
     ], seed);
 };
-for (i = 0; __recognizer612286727.logProbe([
+for (i = 0; __recognizer813976196.logProbe([
         88,
         11,
         88,
         12
-    ], i) < 100; __recognizer612286727.logProbe([
+    ], i) < 100; __recognizer813976196.logProbe([
         88,
         20,
         88,
         21
     ], i)++) {
     (function () {
-        var obj = __recognizer612286727.logProbe([
+        var obj = __recognizer813976196.logProbe([
                 89,
                 2,
                 89,
                 9
-            ], console), fn = __recognizer612286727.logProbe([
+            ], console), fn = __recognizer813976196.logProbe([
                 89,
                 10,
                 89,
@@ -498,17 +498,17 @@ for (i = 0; __recognizer612286727.logProbe([
             ], obj.log);
         return fn.apply(obj, arguments);
     }.bind(this)(function () {
-        var obj = __recognizer612286727.logProbe([
+        var obj = __recognizer813976196.logProbe([
                 89,
                 14,
                 89,
                 20
-            ], __recognizer612286727.logProbe([
+            ], __recognizer813976196.logProbe([
                 89,
                 14,
                 89,
                 18
-            ], rand)()), fn = __recognizer612286727.logProbe([
+            ], rand)()), fn = __recognizer813976196.logProbe([
                 89,
                 21,
                 89,
