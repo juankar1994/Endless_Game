@@ -63,11 +63,19 @@
             return son;
         }
         
+        function getBestWeaponRange(pPopulation){
+            var bestWeaponRange = 0;
+            for(var chromosomeNumber = 0 ; chromosomeNumber < pPopulation.length ; chromosomeNumber ++){
+                bestWeaponRange += pPopulation[chromosomeNumber].getLaneNumber();
+            }
+            bestWeaponRange = Math.floor(bestWeaponRange/pPopulation.length);
+            return bestWeaponRange;
+        }
         
         function geneticAlgorithm(pPopulation,weapon){
             
             var selectedChromosome = new Array();
-            var bestWeaponRange = getBestWeaponRange();
+            var bestWeaponRange = getBestWeaponRange(pPopulation);
             var operationsBits = BusinessLogic.getBasicOperatorsBL();
             
             for(var chromosomeNumber = 0 ; chromosomeNumber < pPopulation.length ; chromosomeNumber ++){
@@ -122,7 +130,8 @@
 
         //Let's make it public
         return {
-            selectChromosome : selectChromosome
+            selectChromosome : selectChromosome,
+            getRandomInt : getRandomInt
         };  
     })();
 
