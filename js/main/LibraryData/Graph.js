@@ -44,11 +44,24 @@ var LibraryData = window.LibraryData || {};
                     return this.vertices[i];
             }
             return null;
-        },        
+        },   
+
+        visitVertex: function(pVertex){
+            for (var i = 0; i < this.vertices.length; i++){
+                if(this.vertices[i].getId() == pVertex.getId())
+                    vertices[i].setVisited(true);
+            }
+        },
+        
+        isVertexVisisted: function(pVertex){
+            for (var i = 0; i < this.vertices.length; i++){
+                if(this.vertices[i].getId() == pVertex.getId())
+                    return vertices[i].getVisited();
+            }
+        },
         
         print: function(){
-            for (var i = 0; i < this.vertices.length; i++)
-            {
+            for (var i = 0; i < this.vertices.length; i++){
                 console.log("Vertice "+ this.vertices[i].getId() + ":  ");
                 for (var j = 0; j < this.vertices[i].getEdges().length; j++) {
                     console.log(this.vertices[i].getEdges()[j].getId() +"  ");

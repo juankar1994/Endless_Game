@@ -26,7 +26,7 @@ var Presentation = window.Presentation || {};
 
     TrackUI = (function(){
 
-        var car;
+        var car, canvasStage, vehicleLayer, bulletLayer;
         
         init();
         
@@ -52,13 +52,14 @@ var Presentation = window.Presentation || {};
         //Funtion that draws the kinetic Stage, layers and anchors
         function drawCanvasStage(images){
             //We declare the stage to be working with 
-            var canvasStage = new Kinetic.Stage({
+            canvasStage = new Kinetic.Stage({
                 container: 'gameContainer',
                 width: 800,
                 height: 550
             });
 
-            var vehicleLayer = new Kinetic.Layer();
+            vehicleLayer = new Kinetic.Layer();
+            bulletLayer = new Kinetic.Layer();
             
             var pit = new Kinetic.Rect({
                 x: 90,
@@ -109,19 +110,58 @@ var Presentation = window.Presentation || {};
             vehicleLayer.add(pit2);   
             vehicleLayer.add(car);   
             canvasStage.add(vehicleLayer);   
+            canvasStage.add(bulletLayer);   
                         
-            arrowKeys();
+            arrowKeys(images);
         }    
         
-        function arrowKeys(){
+        function createBullet(pPosX, pPosY, images){
+            var period = 2000;
+            pPosY = 380 + pPosY;
+            
+            var bullet = new Kinetic.Rect({
+                x: pPosX + 10, 
+                y: pPosY,
+                fillPatternImage: images.bullet,
+                width: 32,
+                height: 32
+            });
+            
+            bulletLayer.add(bullet);
+            bulletLayer.draw();    
+            
+            var anim = new Kinetic.Animation(function(frame) {
+                if(pPosY > 0)
+                    bullet.setY(pPosY - (pPosY * frame.time * 4 / period));
+                else
+                    bullet.setY(pPosY + (pPosY * frame.time * 4 / period));
+                if(frame.time >= 2000){
+                    var children = bulletLayer.get('Rect');
+                    children[0].remove();                    
+                    bulletLayer.draw();
+                    anim.stop();
+                }
+            }, bulletLayer);
+
+            anim.start();
+        }
+        
+        function arrowKeys(images){
             $(document).keydown(function(e){
                 if (e.keyCode == 37) { 
-                    if(car.getX() - 100 >= 150)
+                    if(car.getX() - 100 >= 150) //Left Arrow
                         car.setX(car.getX() - 100);
                     return false;
-                }else if (e.keyCode == 39) { 
+                }else if (e.keyCode == 39) {    //RightArrow
                     if(car.getX() + 100 <= 550)
                         car.setX(car.getX() + 100);
+                    return false;
+                }else if (e.keyCode == 32) {     //Space bar
+                    var x = car.getX();
+                    var y = car.getY();
+                    createBullet(x, y, images);
+                    var bulletSound = new Audio("audio/shot.wav"); 
+                    bulletSound.play();
                     return false;
                 }
             });
@@ -132,7 +172,8 @@ var Presentation = window.Presentation || {};
             
             var sources = {
                 pit: 'images/pits.png',
-                car: 'images/car.png'
+                car: 'images/car.png',
+                bullet: 'images/bullet.png'
             };
             
             loadImages(sources, function(images) {
