@@ -20,13 +20,15 @@ var Presentation = window.Presentation || {};
 
 (function (pContext, $) {
 
-    var car;
-
     pContext.getTrackUI = function() {
         return TrackUI;
     };
-    
+
     TrackUI = (function(){
+
+        var car;
+        
+        init();
         
         function loadImages(sources, callback) {
             var images = {};
@@ -62,16 +64,16 @@ var Presentation = window.Presentation || {};
                 x: 90,
                 fillPatternImage: images.pit,
                 width: 34,
-                height: 5500000,
-                offset : {x : 0, y : 5500000 - 550}             
+                height: 1200,
+                offset : {x : 0, y : 650}             
             });
             
             var pit2 = new Kinetic.Rect({
                 x: 650,
                 fillPatternImage: images.pit,
                 width: 34,
-                height: 5500000,
-                offset : {x : 0, y : 5500000 - 550}
+                height: 1200,
+                offset : {x : 0, y : 650}
             });
             
             car = new Kinetic.Rect({
@@ -83,7 +85,7 @@ var Presentation = window.Presentation || {};
                 offset : {x : 0, y : -430}
             });
 
-            var amplitude = 300;
+            var amplitude = 270;
             var speedCar = 210;
             var period = 5000;
 
@@ -91,13 +93,13 @@ var Presentation = window.Presentation || {};
                 pit.setY(amplitude *frame.time * 2 / period);
                 pit2.setY(amplitude *frame.time * 2 / period);
                 if(frame.time >= 5000)
-                    anim.stop();
+                    frame.time = 0;
             }, vehicleLayer);
             
             var anim2 = new Kinetic.Animation(function(frame) {
                 car.setY(-speedCar * frame.time * 2 / period);
                 if(frame.time >= 5000)
-                    anim2.stop();
+                    frame.time = 0;
             }, vehicleLayer);
 
             anim.start();
@@ -123,20 +125,19 @@ var Presentation = window.Presentation || {};
                     return false;
                 }
             });
-        }
-        
-        var sources = {
-            pit: '../images/pits.png',
-            car: '../images/car.png'
-        };
-
-        loadImages(sources, function(images) {
-            drawCanvasStage(images);
-        });
+        }        
 
         function init(){
             //Let's draw the default stage
-            drawCanvasStage();        
+            
+            var sources = {
+                pit: 'images/pits.png',
+                car: 'images/car.png'
+            };
+            
+            loadImages(sources, function(images) {
+                drawCanvasStage(images);
+            });
         }
 
         return {

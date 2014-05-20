@@ -63,7 +63,7 @@ var LibraryData = window.LibraryData || {};
     
 }(LibraryData, jQuery));
 
-
+/*
 // A simple Linear Congruential Generator
  
 // Establish the parameters of the generator
@@ -87,4 +87,37 @@ var rand = function() {
 
 for(i = 0; i < 100; i++) {
   console.log(rand().valueOf());
-}
+}*/
+
+    var graph = LibraryData.createGraph();
+    graph.addVertex(0);
+    graph.addVertex(1);
+    graph.addVertex(2);
+    graph.addVertex(3);
+    graph.addVertex(4);
+    graph.addVertex(5);
+    graph.addVertex(6);
+    graph.addVertex(7);
+
+    graph.addEdge(graph.searchVertex(0), graph.searchVertex(2));
+    graph.addEdge(graph.searchVertex(2), graph.searchVertex(0));
+    graph.addEdge(graph.searchVertex(0), graph.searchVertex(7));
+    graph.addEdge(graph.searchVertex(7), graph.searchVertex(0));
+    graph.addEdge(graph.searchVertex(0), graph.searchVertex(5));
+    graph.addEdge(graph.searchVertex(5), graph.searchVertex(0));
+    graph.addEdge(graph.searchVertex(1), graph.searchVertex(7));
+    graph.addEdge(graph.searchVertex(7), graph.searchVertex(1));
+    graph.addEdge(graph.searchVertex(2), graph.searchVertex(6));
+    graph.addEdge(graph.searchVertex(6), graph.searchVertex(2));
+    graph.addEdge(graph.searchVertex(3), graph.searchVertex(4));
+    graph.addEdge(graph.searchVertex(4), graph.searchVertex(3));
+    graph.addEdge(graph.searchVertex(3), graph.searchVertex(5));
+    graph.addEdge(graph.searchVertex(5), graph.searchVertex(3));
+    graph.addEdge(graph.searchVertex(4), graph.searchVertex(7));
+    graph.addEdge(graph.searchVertex(7), graph.searchVertex(4));
+    graph.addEdge(graph.searchVertex(4), graph.searchVertex(6));
+    graph.addEdge(graph.searchVertex(6), graph.searchVertex(4));
+    graph.addEdge(graph.searchVertex(4), graph.searchVertex(5));
+    graph.addEdge(graph.searchVertex(5), graph.searchVertex(4));
+
+    graph.print();
