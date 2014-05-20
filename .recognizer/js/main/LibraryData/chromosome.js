@@ -3,7 +3,7 @@
  * https://github.com/equiet/recognizer
  */
 
-var __recognizer146059567 = (function () {
+var __recognizer694385708 = (function () {
     'use strict';
 
     var global = this;
@@ -157,221 +157,235 @@ var __recognizer146059567 = (function () {
  * Instrumented code
  */
 
-var BusinessLogic = __recognizer146059567.logProbe([
-        20,
-        27,
-        20,
-        40
-    ], __recognizer146059567.logProbe([
-        20,
-        20,
-        20,
-        26
-    ], window).BusinessLogic) || {};
 (function (pContext, $) {
-    __recognizer146059567.logEntry([
-        26,
+    __recognizer694385708.logEntry([
+        18,
         1,
-        26,
+        18,
         9
     ], arguments);
     'use strict';
-    pContext.getBasicOperatorsBL = function () {
-        __recognizer146059567.logEntry([
-            34,
-            35,
-            34,
-            43
+    pContext.createChromosome = function (pLaneNumber, pColor, pThickness, pShapeWeapon) {
+        __recognizer694385708.logEntry([
+            21,
+            32,
+            21,
+            40
         ], arguments);
-        return __recognizer146059567.logProbe([
-            35,
-            13,
-            35,
+        return new (__recognizer694385708.logProbe([
+            22,
+            19,
+            22,
             29
-        ], basicOperatorsBL);
+        ], Chromosome))(__recognizer694385708.logProbe([
+            22,
+            30,
+            22,
+            41
+        ], pLaneNumber), __recognizer694385708.logProbe([
+            22,
+            42,
+            22,
+            48
+        ], pColor), __recognizer694385708.logProbe([
+            22,
+            49,
+            22,
+            59
+        ], pThickness), __recognizer694385708.logProbe([
+            22,
+            60,
+            22,
+            72
+        ], pShapeWeapon));
     };
-    var basicOperatorsBL = function () {
-            __recognizer146059567.logEntry([
-                47,
-                28,
-                47,
-                36
-            ], arguments);
-            function shiftRightByte(pByte, pNumPositionsMove) {
-                __recognizer146059567.logEntry([
-                    52,
-                    17,
-                    52,
+    var Chromosome = function () {
+            var obj = __recognizer694385708.logProbe([
+                    25,
+                    21,
+                    25,
+                    26
+                ], Class), fn = __recognizer694385708.logProbe([
+                    25,
+                    27,
+                    25,
+                    33
+                ], obj.extend);
+            return fn.apply(obj, arguments);
+        }.bind(this)({
+            init: function (pLaneNumber, pColor, pThickness, pShapeWeapon) {
+                __recognizer694385708.logEntry([
+                    27,
+                    14,
+                    27,
+                    22
+                ], arguments);
+                this.laneNumber = __recognizer694385708.logProbe([
+                    28,
+                    30,
+                    28,
+                    41
+                ], pLaneNumber);
+                this.color = __recognizer694385708.logProbe([
+                    29,
+                    25,
+                    29,
+                    31
+                ], pColor);
+                this.thickness = __recognizer694385708.logProbe([
+                    30,
+                    29,
+                    30,
+                    39
+                ], pThickness);
+                this.shapeWeapon = __recognizer694385708.logProbe([
+                    31,
+                    31,
+                    31,
+                    43
+                ], pShapeWeapon);
+            },
+            setLaneNumber: function (pLaneNumber) {
+                __recognizer694385708.logEntry([
+                    34,
+                    23,
+                    34,
                     31
                 ], arguments);
-                var bitMoved;
-                bitMoved = 255 >> __recognizer146059567.logProbe([
-                    54,
-                    33,
-                    54,
-                    50
-                ], pNumPositionsMove) & __recognizer146059567.logProbe([
-                    54,
-                    54,
-                    54,
-                    59
-                ], pByte);
-                return __recognizer146059567.logProbe([
-                    55,
-                    19,
-                    55,
-                    27
-                ], bitMoved);
-            }
-            function shiftLeftByte(pByte, pNumPositionsMove) {
-                __recognizer146059567.logEntry([
-                    58,
-                    17,
-                    58,
-                    30
-                ], arguments);
-                var bitMoved;
-                bitMoved = 255 << __recognizer146059567.logProbe([
-                    60,
-                    31,
-                    60,
-                    48
-                ], pNumPositionsMove) & __recognizer146059567.logProbe([
-                    60,
-                    51,
-                    60,
-                    56
-                ], pByte);
-                return __recognizer146059567.logProbe([
-                    61,
-                    19,
-                    61,
-                    27
-                ], bitMoved);
-            }
-            function reproduceChromosome(pByte1, pByte2) {
-                __recognizer146059567.logEntry([
-                    64,
-                    17,
-                    64,
-                    36
-                ], arguments);
-                var son = __recognizer146059567.logProbe([
-                        65,
-                        22,
-                        65,
-                        28
-                    ], pByte1) & __recognizer146059567.logProbe([
-                        65,
-                        29,
-                        65,
-                        35
-                    ], pByte2);
-                return __recognizer146059567.logProbe([
-                    66,
-                    19,
-                    66,
-                    22
-                ], son);
-            }
-            function ckeckOnBit(pByte, pNumBit) {
-                __recognizer146059567.logEntry([
-                    69,
-                    17,
-                    69,
-                    27
-                ], arguments);
-                if ((__recognizer146059567.logProbe([
-                        70,
-                        16,
-                        70,
-                        21
-                    ], pByte) & 1 << __recognizer146059567.logProbe([
-                        70,
-                        27,
-                        70,
-                        34
-                    ], pNumBit)) != 0) {
-                    return true;
-                } else {
-                    return false;
-                }
-            }
-            function mutateBit(pByte, pNumBit) {
-                __recognizer146059567.logEntry([
-                    77,
-                    17,
-                    77,
+                this.laneNumber = __recognizer694385708.logProbe([
+                    35,
+                    30,
+                    35,
+                    41
+                ], pLaneNumber);
+            },
+            setColor: function (pColor) {
+                __recognizer694385708.logEntry([
+                    38,
+                    18,
+                    38,
                     26
                 ], arguments);
-                var bitMutate;
-                if (__recognizer146059567.logProbe([
-                        79,
-                        15,
-                        79,
-                        41
-                    ], __recognizer146059567.logProbe([
-                        79,
-                        15,
-                        79,
-                        25
-                    ], ckeckOnBit)(__recognizer146059567.logProbe([
-                        79,
-                        26,
-                        79,
-                        31
-                    ], pByte), __recognizer146059567.logProbe([
-                        79,
-                        33,
-                        79,
-                        40
-                    ], pNumBit))) == true) {
-                    bitMutate = __recognizer146059567.logProbe([
-                        80,
-                        29,
-                        80,
-                        34
-                    ], pByte) & ~(1 << __recognizer146059567.logProbe([
-                        80,
-                        42,
-                        80,
-                        49
-                    ], pNumBit));
-                } else {
-                    bitMutate = __recognizer146059567.logProbe([
-                        83,
-                        29,
-                        83,
-                        34
-                    ], pByte) | 1 << __recognizer146059567.logProbe([
-                        83,
-                        40,
-                        83,
-                        47
-                    ], pNumBit);
-                }
-                return __recognizer146059567.logProbe([
-                    85,
+                this.color = __recognizer694385708.logProbe([
+                    39,
+                    25,
+                    39,
+                    31
+                ], pColor);
+            },
+            setThickness: function (pThickness) {
+                __recognizer694385708.logEntry([
+                    42,
+                    22,
+                    42,
+                    30
+                ], arguments);
+                this.thickness = __recognizer694385708.logProbe([
+                    43,
+                    29,
+                    43,
+                    39
+                ], pThickness);
+            },
+            setShapeWeapon: function (pShapeWeapon) {
+                __recognizer694385708.logEntry([
+                    46,
+                    24,
+                    46,
+                    32
+                ], arguments);
+                this.shapeWeapon = __recognizer694385708.logProbe([
+                    47,
+                    31,
+                    47,
+                    43
+                ], pShapeWeapon);
+            },
+            getLaneNumber: function () {
+                __recognizer694385708.logEntry([
+                    50,
+                    24,
+                    50,
+                    32
+                ], arguments);
+                return __recognizer694385708.logProbe([
+                    51,
+                    24,
+                    51,
+                    34
+                ], __recognizer694385708.logProbe([
+                    51,
                     19,
-                    85,
-                    28
-                ], bitMutate);
+                    51,
+                    23
+                ], this).laneNumber);
+            },
+            getColor: function () {
+                __recognizer694385708.logEntry([
+                    54,
+                    19,
+                    54,
+                    27
+                ], arguments);
+                return __recognizer694385708.logProbe([
+                    55,
+                    24,
+                    55,
+                    29
+                ], __recognizer694385708.logProbe([
+                    55,
+                    19,
+                    55,
+                    23
+                ], this).color);
+            },
+            getThickness: function () {
+                __recognizer694385708.logEntry([
+                    58,
+                    23,
+                    58,
+                    31
+                ], arguments);
+                return __recognizer694385708.logProbe([
+                    59,
+                    24,
+                    59,
+                    33
+                ], __recognizer694385708.logProbe([
+                    59,
+                    19,
+                    59,
+                    23
+                ], this).thickness);
+            },
+            getShapeWeapon: function () {
+                __recognizer694385708.logEntry([
+                    62,
+                    25,
+                    62,
+                    33
+                ], arguments);
+                return __recognizer694385708.logProbe([
+                    63,
+                    24,
+                    63,
+                    35
+                ], __recognizer694385708.logProbe([
+                    63,
+                    19,
+                    63,
+                    23
+                ], this).shapeWeapon);
             }
-            return {
-                shiftLeftByte: shiftLeftByte,
-                shiftRightByte: shiftRightByte,
-                reproduceChromosome: reproduceChromosome,
-                mutateBit: mutateBit
-            };
-        }();
-}(__recognizer146059567.logProbe([
-    97,
+        });
+}(__recognizer694385708.logProbe([
+    68,
     2,
-    97,
-    15
-], BusinessLogic), __recognizer146059567.logProbe([
-    97,
-    17,
-    97,
-    23
+    68,
+    13
+], LibraryData), __recognizer694385708.logProbe([
+    68,
+    15,
+    68,
+    21
 ], jQuery)));
