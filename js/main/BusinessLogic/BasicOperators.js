@@ -87,6 +87,10 @@ var BusinessLogic = window.BusinessLogic || {};
 
         //Let's make it public
         return {
+            shiftLeftByte : shiftLeftByte,
+            shiftRightByte : shiftRightByte,
+            reproduceChromosome : reproduceChromosome,
+            mutateBit : mutateBit
         };  
     })();
 
