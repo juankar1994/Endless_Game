@@ -125,11 +125,7 @@ var Presentation = window.Presentation || {};
                     return false;
                 }
             });
-        }
-        
-        
-
-        
+        }        
 
         function init(){
             //Let's draw the default stage
