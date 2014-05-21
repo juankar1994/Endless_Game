@@ -3,7 +3,7 @@
  * https://github.com/equiet/recognizer
  */
 
-var __recognizer146059567 = (function () {
+var __recognizer618217746 = (function () {
     'use strict';
 
     var global = this;
@@ -157,19 +157,19 @@ var __recognizer146059567 = (function () {
  * Instrumented code
  */
 
-var BusinessLogic = __recognizer146059567.logProbe([
+var BusinessLogic = __recognizer618217746.logProbe([
         20,
         27,
         20,
         40
-    ], __recognizer146059567.logProbe([
+    ], __recognizer618217746.logProbe([
         20,
         20,
         20,
         26
     ], window).BusinessLogic) || {};
 (function (pContext, $) {
-    __recognizer146059567.logEntry([
+    __recognizer618217746.logEntry([
         26,
         1,
         26,
@@ -177,13 +177,13 @@ var BusinessLogic = __recognizer146059567.logProbe([
     ], arguments);
     'use strict';
     pContext.getBasicOperatorsBL = function () {
-        __recognizer146059567.logEntry([
+        __recognizer618217746.logEntry([
             34,
             35,
             34,
             43
         ], arguments);
-        return __recognizer146059567.logProbe([
+        return __recognizer618217746.logProbe([
             35,
             13,
             35,
@@ -191,32 +191,32 @@ var BusinessLogic = __recognizer146059567.logProbe([
         ], basicOperatorsBL);
     };
     var basicOperatorsBL = function () {
-            __recognizer146059567.logEntry([
+            __recognizer618217746.logEntry([
                 47,
                 28,
                 47,
                 36
             ], arguments);
             function shiftRightByte(pByte, pNumPositionsMove) {
-                __recognizer146059567.logEntry([
+                __recognizer618217746.logEntry([
                     52,
                     17,
                     52,
                     31
                 ], arguments);
                 var bitMoved;
-                bitMoved = 255 >> __recognizer146059567.logProbe([
+                bitMoved = 255 >> __recognizer618217746.logProbe([
                     54,
                     33,
                     54,
                     50
-                ], pNumPositionsMove) & __recognizer146059567.logProbe([
+                ], pNumPositionsMove) & __recognizer618217746.logProbe([
                     54,
                     54,
                     54,
                     59
                 ], pByte);
-                return __recognizer146059567.logProbe([
+                return __recognizer618217746.logProbe([
                     55,
                     19,
                     55,
@@ -224,25 +224,25 @@ var BusinessLogic = __recognizer146059567.logProbe([
                 ], bitMoved);
             }
             function shiftLeftByte(pByte, pNumPositionsMove) {
-                __recognizer146059567.logEntry([
+                __recognizer618217746.logEntry([
                     58,
                     17,
                     58,
                     30
                 ], arguments);
                 var bitMoved;
-                bitMoved = 255 << __recognizer146059567.logProbe([
+                bitMoved = 255 << __recognizer618217746.logProbe([
                     60,
                     31,
                     60,
                     48
-                ], pNumPositionsMove) & __recognizer146059567.logProbe([
+                ], pNumPositionsMove) & __recognizer618217746.logProbe([
                     60,
                     51,
                     60,
                     56
                 ], pByte);
-                return __recognizer146059567.logProbe([
+                return __recognizer618217746.logProbe([
                     61,
                     19,
                     61,
@@ -250,24 +250,24 @@ var BusinessLogic = __recognizer146059567.logProbe([
                 ], bitMoved);
             }
             function reproduceChromosome(pByte1, pByte2) {
-                __recognizer146059567.logEntry([
+                __recognizer618217746.logEntry([
                     64,
                     17,
                     64,
                     36
                 ], arguments);
-                var son = __recognizer146059567.logProbe([
+                var son = __recognizer618217746.logProbe([
                         65,
                         22,
                         65,
                         28
-                    ], pByte1) & __recognizer146059567.logProbe([
+                    ], pByte1) & __recognizer618217746.logProbe([
                         65,
                         29,
                         65,
                         35
                     ], pByte2);
-                return __recognizer146059567.logProbe([
+                return __recognizer618217746.logProbe([
                     66,
                     19,
                     66,
@@ -275,18 +275,18 @@ var BusinessLogic = __recognizer146059567.logProbe([
                 ], son);
             }
             function ckeckOnBit(pByte, pNumBit) {
-                __recognizer146059567.logEntry([
+                __recognizer618217746.logEntry([
                     69,
                     17,
                     69,
                     27
                 ], arguments);
-                if ((__recognizer146059567.logProbe([
+                if ((__recognizer618217746.logProbe([
                         70,
                         16,
                         70,
                         21
-                    ], pByte) & 1 << __recognizer146059567.logProbe([
+                    ], pByte) & 1 << __recognizer618217746.logProbe([
                         70,
                         27,
                         70,
@@ -298,59 +298,59 @@ var BusinessLogic = __recognizer146059567.logProbe([
                 }
             }
             function mutateBit(pByte, pNumBit) {
-                __recognizer146059567.logEntry([
+                __recognizer618217746.logEntry([
                     77,
                     17,
                     77,
                     26
                 ], arguments);
                 var bitMutate;
-                if (__recognizer146059567.logProbe([
+                if (__recognizer618217746.logProbe([
                         79,
                         15,
                         79,
                         41
-                    ], __recognizer146059567.logProbe([
+                    ], __recognizer618217746.logProbe([
                         79,
                         15,
                         79,
                         25
-                    ], ckeckOnBit)(__recognizer146059567.logProbe([
+                    ], ckeckOnBit)(__recognizer618217746.logProbe([
                         79,
                         26,
                         79,
                         31
-                    ], pByte), __recognizer146059567.logProbe([
+                    ], pByte), __recognizer618217746.logProbe([
                         79,
                         33,
                         79,
                         40
                     ], pNumBit))) == true) {
-                    bitMutate = __recognizer146059567.logProbe([
+                    bitMutate = __recognizer618217746.logProbe([
                         80,
                         29,
                         80,
                         34
-                    ], pByte) & ~(1 << __recognizer146059567.logProbe([
+                    ], pByte) & ~(1 << __recognizer618217746.logProbe([
                         80,
                         42,
                         80,
                         49
                     ], pNumBit));
                 } else {
-                    bitMutate = __recognizer146059567.logProbe([
+                    bitMutate = __recognizer618217746.logProbe([
                         83,
                         29,
                         83,
                         34
-                    ], pByte) | 1 << __recognizer146059567.logProbe([
+                    ], pByte) | 1 << __recognizer618217746.logProbe([
                         83,
                         40,
                         83,
                         47
                     ], pNumBit);
                 }
-                return __recognizer146059567.logProbe([
+                return __recognizer618217746.logProbe([
                     85,
                     19,
                     85,
@@ -364,12 +364,12 @@ var BusinessLogic = __recognizer146059567.logProbe([
                 mutateBit: mutateBit
             };
         }();
-}(__recognizer146059567.logProbe([
+}(__recognizer618217746.logProbe([
     97,
     2,
     97,
     15
-], BusinessLogic), __recognizer146059567.logProbe([
+], BusinessLogic), __recognizer618217746.logProbe([
     97,
     17,
     97,

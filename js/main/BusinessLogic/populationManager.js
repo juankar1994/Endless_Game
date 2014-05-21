@@ -41,11 +41,19 @@
 
     var populationManager = (function(){
         
+        
+        // Returns a random integer between min and max
+        // Using Math.round() will give you a non-uniform distribution!
+        function getRandomInt(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        
         function generateChromosomeWeapon(){
-            var thickness = BusinessLogic.getWeaponGeneticAlgorithm().getRandomInt(0,255);
-            var color = BusinessLogic.getWeaponGeneticAlgorithm().getRandomInt(0,255);
-            var shapeWeapon = BusinessLogic.getWeaponGeneticAlgorithm().getRandomInt(0,255);
-            var laneNumber = BusinessLogic.getWeaponGeneticAlgorithm().getRandomInt(0,255);
+            var thickness = getRandomInt(0,255);
+            var color = getRandomInt(0,255);
+            var shapeWeapon = getRandomInt(0,255);
+            var laneNumber = getRandomInt(0,255);
             return LibraryData.createChromosome(laneNumber,color,thickness,shapeWeapon);
         }
         
@@ -54,6 +62,19 @@
             for(var chromosomeNumber = 0 ; chromosomeNumber < 20 ; chromosomeNumber ++){
                 population.push(generateChromosomeWeapon());
             }
+            return population;
+        }
+        
+        function convertChromosomeToWeapon(pChromosome){
+            
+            
+        }
+        
+        function convertToIntNumPositive(num){
+            num = num - 0.5;
+            num = num.toFixed();
+            if(num<0)num=0;
+            return num;
         }
 
 

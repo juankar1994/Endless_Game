@@ -3,7 +3,7 @@
  * https://github.com/equiet/recognizer
  */
 
-var __recognizer603794974 = (function () {
+var __recognizer253987655 = (function () {
     'use strict';
 
     var global = this;
@@ -158,7 +158,7 @@ var __recognizer603794974 = (function () {
  */
 
 (function (pContext, $) {
-    __recognizer603794974.logEntry([
+    __recognizer253987655.logEntry([
         21,
         1,
         21,
@@ -166,13 +166,13 @@ var __recognizer603794974 = (function () {
     ], arguments);
     'use strict';
     pContext.getWeaponGeneticAlgorithm = function () {
-        __recognizer603794974.logEntry([
+        __recognizer253987655.logEntry([
             29,
             41,
             29,
             49
         ], arguments);
-        return __recognizer603794974.logProbe([
+        return __recognizer253987655.logProbe([
             30,
             15,
             30,
@@ -180,25 +180,25 @@ var __recognizer603794974 = (function () {
         ], weaponGeneticAlgorithm);
     };
     var weaponGeneticAlgorithm = function () {
-            __recognizer603794974.logEntry([
+            __recognizer253987655.logEntry([
                 42,
                 34,
                 42,
                 42
             ], arguments);
             function selectChromosome(pChromosomeRange, bestRange) {
-                __recognizer603794974.logEntry([
+                __recognizer253987655.logEntry([
                     45,
                     17,
                     45,
                     33
                 ], arguments);
-                if (__recognizer603794974.logProbe([
+                if (__recognizer253987655.logProbe([
                         46,
                         15,
                         46,
                         31
-                    ], pChromosomeRange) >= __recognizer603794974.logProbe([
+                    ], pChromosomeRange) >= __recognizer253987655.logProbe([
                         46,
                         35,
                         46,
@@ -210,19 +210,19 @@ var __recognizer603794974 = (function () {
                 }
             }
             function getRandomInt(min, max) {
-                __recognizer603794974.logEntry([
+                __recognizer253987655.logEntry([
                     55,
                     17,
                     55,
                     29
                 ], arguments);
                 return function () {
-                    var obj = __recognizer603794974.logProbe([
+                    var obj = __recognizer253987655.logProbe([
                             56,
                             19,
                             56,
                             23
-                        ], Math), fn = __recognizer603794974.logProbe([
+                        ], Math), fn = __recognizer253987655.logProbe([
                             56,
                             24,
                             56,
@@ -230,29 +230,29 @@ var __recognizer603794974 = (function () {
                         ], obj.floor);
                     return fn.apply(obj, arguments);
                 }.bind(this)(function () {
-                    var obj = __recognizer603794974.logProbe([
+                    var obj = __recognizer253987655.logProbe([
                             56,
                             30,
                             56,
                             34
-                        ], Math), fn = __recognizer603794974.logProbe([
+                        ], Math), fn = __recognizer253987655.logProbe([
                             56,
                             35,
                             56,
                             41
                         ], obj.random);
                     return fn.apply(obj, arguments);
-                }.bind(this)() * (__recognizer603794974.logProbe([
+                }.bind(this)() * (__recognizer253987655.logProbe([
                     56,
                     47,
                     56,
                     50
-                ], max) - __recognizer603794974.logProbe([
+                ], max) - __recognizer253987655.logProbe([
                     56,
                     53,
                     56,
                     56
-                ], min) + 1)) + __recognizer603794974.logProbe([
+                ], min) + 1)) + __recognizer253987655.logProbe([
                     56,
                     65,
                     56,
@@ -260,7 +260,7 @@ var __recognizer603794974 = (function () {
                 ], min);
             }
             function reproduceWeaponPart(byte1, byte2, pointCrossing) {
-                __recognizer603794974.logEntry([
+                __recognizer253987655.logEntry([
                     59,
                     17,
                     59,
@@ -268,31 +268,31 @@ var __recognizer603794974 = (function () {
                 ], arguments);
                 byte1 = function () {
                     var obj = function () {
-                            var obj = __recognizer603794974.logProbe([
+                            var obj = __recognizer253987655.logProbe([
                                     60,
                                     19,
                                     60,
                                     32
-                                ], BusinessLogic), fn = __recognizer603794974.logProbe([
+                                ], BusinessLogic), fn = __recognizer253987655.logProbe([
                                     60,
                                     33,
                                     60,
                                     52
                                 ], obj.getBasicOperatorsBL);
                             return fn.apply(obj, arguments);
-                        }.bind(this)(), fn = __recognizer603794974.logProbe([
+                        }.bind(this)(), fn = __recognizer253987655.logProbe([
                             60,
                             55,
                             60,
                             69
                         ], obj.shiftRightByte);
                     return fn.apply(obj, arguments);
-                }.bind(this)(__recognizer603794974.logProbe([
+                }.bind(this)(__recognizer253987655.logProbe([
                     60,
                     70,
                     60,
                     75
-                ], byte1), __recognizer603794974.logProbe([
+                ], byte1), __recognizer253987655.logProbe([
                     60,
                     76,
                     60,
@@ -300,31 +300,31 @@ var __recognizer603794974 = (function () {
                 ], pointCrossing));
                 byte2 = function () {
                     var obj = function () {
-                            var obj = __recognizer603794974.logProbe([
+                            var obj = __recognizer253987655.logProbe([
                                     61,
                                     19,
                                     61,
                                     32
-                                ], BusinessLogic), fn = __recognizer603794974.logProbe([
+                                ], BusinessLogic), fn = __recognizer253987655.logProbe([
                                     61,
                                     33,
                                     61,
                                     52
                                 ], obj.getBasicOperatorsBL);
                             return fn.apply(obj, arguments);
-                        }.bind(this)(), fn = __recognizer603794974.logProbe([
+                        }.bind(this)(), fn = __recognizer253987655.logProbe([
                             61,
                             55,
                             61,
                             68
                         ], obj.shiftLeftByte);
                     return fn.apply(obj, arguments);
-                }.bind(this)(__recognizer603794974.logProbe([
+                }.bind(this)(__recognizer253987655.logProbe([
                     61,
                     69,
                     61,
                     74
-                ], byte2), __recognizer603794974.logProbe([
+                ], byte2), __recognizer253987655.logProbe([
                     61,
                     75,
                     61,
@@ -332,672 +332,860 @@ var __recognizer603794974 = (function () {
                 ], pointCrossing));
                 var son = function () {
                         var obj = function () {
-                                var obj = __recognizer603794974.logProbe([
+                                var obj = __recognizer253987655.logProbe([
                                         62,
                                         22,
                                         62,
                                         35
-                                    ], BusinessLogic), fn = __recognizer603794974.logProbe([
+                                    ], BusinessLogic), fn = __recognizer253987655.logProbe([
                                         62,
                                         36,
                                         62,
                                         55
                                     ], obj.getBasicOperatorsBL);
                                 return fn.apply(obj, arguments);
-                            }.bind(this)(), fn = __recognizer603794974.logProbe([
+                            }.bind(this)(), fn = __recognizer253987655.logProbe([
                                 62,
                                 58,
                                 62,
                                 77
                             ], obj.reproduceChromosome);
                         return fn.apply(obj, arguments);
-                    }.bind(this)(__recognizer603794974.logProbe([
+                    }.bind(this)(__recognizer253987655.logProbe([
                         62,
                         78,
                         62,
                         83
-                    ], byte1), __recognizer603794974.logProbe([
+                    ], byte1), __recognizer253987655.logProbe([
                         62,
                         84,
                         62,
                         89
                     ], byte2));
-                return __recognizer603794974.logProbe([
+                return __recognizer253987655.logProbe([
                     63,
                     19,
                     63,
                     22
                 ], son);
             }
-            function geneticAlgorithm(pPopulation, weapon) {
-                __recognizer603794974.logEntry([
-                    67,
+            function getBestWeaponRange(pPopulation) {
+                __recognizer253987655.logEntry([
+                    66,
                     17,
-                    67,
+                    66,
+                    35
+                ], arguments);
+                var bestWeaponRange = 0;
+                for (var chromosomeNumber = 0; __recognizer253987655.logProbe([
+                        68,
+                        43,
+                        68,
+                        59
+                    ], chromosomeNumber) < __recognizer253987655.logProbe([
+                        68,
+                        74,
+                        68,
+                        80
+                    ], __recognizer253987655.logProbe([
+                        68,
+                        62,
+                        68,
+                        73
+                    ], pPopulation).length); __recognizer253987655.logProbe([
+                        68,
+                        83,
+                        68,
+                        99
+                    ], chromosomeNumber)++) {
+                    bestWeaponRange += function () {
+                        var obj = __recognizer253987655.logProbe([
+                                69,
+                                47,
+                                69,
+                                63
+                            ], __recognizer253987655.logProbe([
+                                69,
+                                35,
+                                69,
+                                46
+                            ], pPopulation)[chromosomeNumber]), fn = __recognizer253987655.logProbe([
+                                69,
+                                65,
+                                69,
+                                78
+                            ], obj.getLaneNumber);
+                        return fn.apply(obj, arguments);
+                    }.bind(this)();
+                }
+                bestWeaponRange = function () {
+                    var obj = __recognizer253987655.logProbe([
+                            71,
+                            30,
+                            71,
+                            34
+                        ], Math), fn = __recognizer253987655.logProbe([
+                            71,
+                            35,
+                            71,
+                            40
+                        ], obj.floor);
+                    return fn.apply(obj, arguments);
+                }.bind(this)(__recognizer253987655.logProbe([
+                    71,
+                    41,
+                    71,
+                    56
+                ], bestWeaponRange) / __recognizer253987655.logProbe([
+                    71,
+                    69,
+                    71,
+                    75
+                ], __recognizer253987655.logProbe([
+                    71,
+                    57,
+                    71,
+                    68
+                ], pPopulation).length));
+                return __recognizer253987655.logProbe([
+                    72,
+                    19,
+                    72,
+                    34
+                ], bestWeaponRange);
+            }
+            function geneticAlgorithm(pPopulation, weapon) {
+                __recognizer253987655.logEntry([
+                    76,
+                    17,
+                    76,
                     33
                 ], arguments);
-                var selectedChromosome = new (__recognizer603794974.logProbe([
-                        69,
+                var selectedChromosome = new (__recognizer253987655.logProbe([
+                        78,
                         41,
-                        69,
+                        78,
                         46
                     ], Array))();
-                var bestWeaponRange = __recognizer603794974.logProbe([
-                        70,
+                var bestWeaponRange = __recognizer253987655.logProbe([
+                        79,
                         34,
-                        70,
-                        54
-                    ], __recognizer603794974.logProbe([
-                        70,
+                        79,
+                        65
+                    ], __recognizer253987655.logProbe([
+                        79,
                         34,
-                        70,
+                        79,
                         52
-                    ], getBestWeaponRange)());
+                    ], getBestWeaponRange)(__recognizer253987655.logProbe([
+                        79,
+                        53,
+                        79,
+                        64
+                    ], pPopulation)));
                 var operationsBits = function () {
-                        var obj = __recognizer603794974.logProbe([
-                                71,
+                        var obj = __recognizer253987655.logProbe([
+                                80,
                                 33,
-                                71,
+                                80,
                                 46
-                            ], BusinessLogic), fn = __recognizer603794974.logProbe([
-                                71,
+                            ], BusinessLogic), fn = __recognizer253987655.logProbe([
+                                80,
                                 47,
-                                71,
+                                80,
                                 66
                             ], obj.getBasicOperatorsBL);
                         return fn.apply(obj, arguments);
                     }.bind(this)();
-                for (var chromosomeNumber = 0; __recognizer603794974.logProbe([
-                        73,
+                for (var chromosomeNumber = 0; __recognizer253987655.logProbe([
+                        82,
                         43,
-                        73,
+                        82,
                         59
-                    ], chromosomeNumber) < __recognizer603794974.logProbe([
-                        73,
+                    ], chromosomeNumber) < __recognizer253987655.logProbe([
+                        82,
                         74,
-                        73,
+                        82,
                         80
-                    ], __recognizer603794974.logProbe([
-                        73,
+                    ], __recognizer253987655.logProbe([
+                        82,
                         62,
-                        73,
+                        82,
                         73
-                    ], pPopulation).length); __recognizer603794974.logProbe([
-                        73,
+                    ], pPopulation).length); __recognizer253987655.logProbe([
+                        82,
                         83,
-                        73,
+                        82,
                         99
                     ], chromosomeNumber)++) {
-                    var chromosome = __recognizer603794974.logProbe([
-                            74,
+                    var chromosome = __recognizer253987655.logProbe([
+                            83,
                             45,
-                            74,
+                            83,
                             61
-                        ], __recognizer603794974.logProbe([
-                            74,
+                        ], __recognizer253987655.logProbe([
+                            83,
                             33,
-                            74,
+                            83,
                             44
                         ], pPopulation)[chromosomeNumber]);
-                    if (__recognizer603794974.logProbe([
-                            75,
+                    if (__recognizer253987655.logProbe([
+                            84,
                             19,
-                            75,
+                            84,
                             79
-                        ], __recognizer603794974.logProbe([
-                            75,
+                        ], __recognizer253987655.logProbe([
+                            84,
                             19,
-                            75,
+                            84,
                             35
                         ], selectChromosome)(function () {
-                            var obj = __recognizer603794974.logProbe([
-                                    75,
+                            var obj = __recognizer253987655.logProbe([
+                                    84,
                                     36,
-                                    75,
+                                    84,
                                     46
-                                ], chromosome), fn = __recognizer603794974.logProbe([
-                                    75,
+                                ], chromosome), fn = __recognizer253987655.logProbe([
+                                    84,
                                     47,
-                                    75,
+                                    84,
                                     60
                                 ], obj.getLaneNumber);
                             return fn.apply(obj, arguments);
-                        }.bind(this)(), __recognizer603794974.logProbe([
-                            75,
+                        }.bind(this)(), __recognizer253987655.logProbe([
+                            84,
                             63,
-                            75,
+                            84,
                             78
                         ], bestWeaponRange))) == true) {
                         (function () {
-                            var obj = __recognizer603794974.logProbe([
-                                    76,
+                            var obj = __recognizer253987655.logProbe([
+                                    85,
                                     20,
-                                    76,
+                                    85,
                                     38
-                                ], selectedChromosome), fn = __recognizer603794974.logProbe([
-                                    76,
+                                ], selectedChromosome), fn = __recognizer253987655.logProbe([
+                                    85,
                                     39,
-                                    76,
+                                    85,
                                     43
                                 ], obj.push);
                             return fn.apply(obj, arguments);
-                        }.bind(this)(__recognizer603794974.logProbe([
-                            76,
+                        }.bind(this)(__recognizer253987655.logProbe([
+                            85,
                             44,
-                            76,
+                            85,
                             54
                         ], chromosome)));
                     }
                 }
-                var selectionChromosome = __recognizer603794974.logProbe([
-                        80,
+                var selectionChromosome = __recognizer253987655.logProbe([
+                        89,
                         38,
-                        80,
+                        89,
                         81
-                    ], __recognizer603794974.logProbe([
-                        80,
+                    ], __recognizer253987655.logProbe([
+                        89,
                         38,
-                        80,
+                        89,
                         50
-                    ], getRandomInt)(0, __recognizer603794974.logProbe([
-                        80,
+                    ], getRandomInt)(0, __recognizer253987655.logProbe([
+                        89,
                         72,
-                        80,
+                        89,
                         78
-                    ], __recognizer603794974.logProbe([
-                        80,
+                    ], __recognizer253987655.logProbe([
+                        89,
                         53,
-                        80,
+                        89,
                         71
                     ], selectedChromosome).length) - 1));
-                var pointCrossing = __recognizer603794974.logProbe([
-                        82,
+                var pointCrossing = __recognizer253987655.logProbe([
+                        91,
                         32,
-                        82,
+                        91,
                         49
-                    ], __recognizer603794974.logProbe([
-                        82,
+                    ], __recognizer253987655.logProbe([
+                        91,
                         32,
-                        82,
+                        91,
                         44
                     ], getRandomInt)(2, 6));
-                var mutation = __recognizer603794974.logProbe([
-                        83,
+                var mutation = __recognizer253987655.logProbe([
+                        92,
                         27,
-                        83,
+                        92,
                         46
-                    ], __recognizer603794974.logProbe([
-                        83,
+                    ], __recognizer253987655.logProbe([
+                        92,
                         27,
-                        83,
+                        92,
                         39
                     ], getRandomInt)(0, 100));
                 var bitMutate;
-                var newThickness = __recognizer603794974.logProbe([
-                        86,
+                var newThickness = __recognizer253987655.logProbe([
+                        95,
                         31,
-                        86,
+                        95,
                         108
-                    ], __recognizer603794974.logProbe([
-                        86,
+                    ], __recognizer253987655.logProbe([
+                        95,
                         31,
-                        86,
+                        95,
                         50
                     ], reproduceWeaponPart)(function () {
-                        var obj = __recognizer603794974.logProbe([
-                                86,
+                        var obj = __recognizer253987655.logProbe([
+                                95,
                                 51,
-                                86,
+                                95,
                                 57
-                            ], weapon), fn = __recognizer603794974.logProbe([
-                                86,
+                            ], weapon), fn = __recognizer253987655.logProbe([
+                                95,
                                 58,
-                                86,
+                                95,
                                 70
                             ], obj.getThickness);
                         return fn.apply(obj, arguments);
                     }.bind(this)(), function () {
-                        var obj = __recognizer603794974.logProbe([
-                                86,
+                        var obj = __recognizer253987655.logProbe([
+                                95,
                                 73,
-                                86,
+                                95,
                                 92
-                            ], selectionChromosome), fn = __recognizer603794974.logProbe([
-                                86,
+                            ], selectionChromosome), fn = __recognizer253987655.logProbe([
+                                95,
                                 93,
-                                86,
+                                95,
                                 105
                             ], obj.getThickness);
                         return fn.apply(obj, arguments);
                     }.bind(this)()));
-                if (__recognizer603794974.logProbe([
-                        87,
+                if (__recognizer253987655.logProbe([
+                        96,
                         15,
-                        87,
+                        96,
                         23
                     ], mutation) > 90) {
-                    bitMutate = __recognizer603794974.logProbe([
-                        88,
+                    bitMutate = __recognizer253987655.logProbe([
+                        97,
                         28,
-                        88,
+                        97,
                         45
-                    ], __recognizer603794974.logProbe([
-                        88,
+                    ], __recognizer253987655.logProbe([
+                        97,
                         28,
-                        88,
+                        97,
                         40
                     ], getRandomInt)(0, 7));
                     newThickness = function () {
                         var obj = function () {
-                                var obj = __recognizer603794974.logProbe([
-                                        89,
+                                var obj = __recognizer253987655.logProbe([
+                                        98,
                                         31,
-                                        89,
+                                        98,
                                         44
-                                    ], BusinessLogic), fn = __recognizer603794974.logProbe([
-                                        89,
+                                    ], BusinessLogic), fn = __recognizer253987655.logProbe([
+                                        98,
                                         45,
-                                        89,
+                                        98,
                                         64
                                     ], obj.getBasicOperatorsBL);
                                 return fn.apply(obj, arguments);
-                            }.bind(this)(), fn = __recognizer603794974.logProbe([
-                                89,
+                            }.bind(this)(), fn = __recognizer253987655.logProbe([
+                                98,
                                 67,
-                                89,
+                                98,
                                 76
                             ], obj.mutateBit);
                         return fn.apply(obj, arguments);
-                    }.bind(this)(__recognizer603794974.logProbe([
-                        89,
+                    }.bind(this)(__recognizer253987655.logProbe([
+                        98,
                         77,
-                        89,
+                        98,
                         89
-                    ], newThickness), __recognizer603794974.logProbe([
-                        89,
+                    ], newThickness), __recognizer253987655.logProbe([
+                        98,
                         90,
-                        89,
+                        98,
                         99
                     ], bitMutate));
                 }
-                pointCrossing = __recognizer603794974.logProbe([
-                    92,
+                pointCrossing = __recognizer253987655.logProbe([
+                    101,
                     28,
-                    92,
+                    101,
                     45
-                ], __recognizer603794974.logProbe([
-                    92,
+                ], __recognizer253987655.logProbe([
+                    101,
                     28,
-                    92,
+                    101,
                     40
                 ], getRandomInt)(2, 6));
-                mutation = __recognizer603794974.logProbe([
-                    93,
+                mutation = __recognizer253987655.logProbe([
+                    102,
                     23,
-                    93,
+                    102,
                     42
-                ], __recognizer603794974.logProbe([
-                    93,
+                ], __recognizer253987655.logProbe([
+                    102,
                     23,
-                    93,
+                    102,
                     35
                 ], getRandomInt)(0, 100));
-                var newColorWeapon = __recognizer603794974.logProbe([
-                        94,
+                var newColorWeapon = __recognizer253987655.logProbe([
+                        103,
                         33,
-                        94,
+                        103,
                         102
-                    ], __recognizer603794974.logProbe([
-                        94,
+                    ], __recognizer253987655.logProbe([
+                        103,
                         33,
-                        94,
+                        103,
                         52
                     ], reproduceWeaponPart)(function () {
-                        var obj = __recognizer603794974.logProbe([
-                                94,
+                        var obj = __recognizer253987655.logProbe([
+                                103,
                                 53,
-                                94,
+                                103,
                                 59
-                            ], weapon), fn = __recognizer603794974.logProbe([
-                                94,
+                            ], weapon), fn = __recognizer253987655.logProbe([
+                                103,
                                 60,
-                                94,
+                                103,
                                 68
                             ], obj.getColor);
                         return fn.apply(obj, arguments);
                     }.bind(this)(), function () {
-                        var obj = __recognizer603794974.logProbe([
-                                94,
+                        var obj = __recognizer253987655.logProbe([
+                                103,
                                 71,
-                                94,
+                                103,
                                 90
-                            ], selectionChromosome), fn = __recognizer603794974.logProbe([
-                                94,
+                            ], selectionChromosome), fn = __recognizer253987655.logProbe([
+                                103,
                                 91,
-                                94,
+                                103,
                                 99
                             ], obj.getColor);
                         return fn.apply(obj, arguments);
                     }.bind(this)()));
-                if (__recognizer603794974.logProbe([
-                        95,
+                if (__recognizer253987655.logProbe([
+                        104,
                         15,
-                        95,
+                        104,
                         23
                     ], mutation) > 90) {
-                    bitMutate = __recognizer603794974.logProbe([
-                        96,
+                    bitMutate = __recognizer253987655.logProbe([
+                        105,
                         28,
-                        96,
+                        105,
                         45
-                    ], __recognizer603794974.logProbe([
-                        96,
+                    ], __recognizer253987655.logProbe([
+                        105,
                         28,
-                        96,
+                        105,
                         40
                     ], getRandomInt)(0, 7));
                     newColorWeapon = function () {
                         var obj = function () {
-                                var obj = __recognizer603794974.logProbe([
-                                        97,
+                                var obj = __recognizer253987655.logProbe([
+                                        106,
                                         33,
-                                        97,
+                                        106,
                                         46
-                                    ], BusinessLogic), fn = __recognizer603794974.logProbe([
-                                        97,
+                                    ], BusinessLogic), fn = __recognizer253987655.logProbe([
+                                        106,
                                         47,
-                                        97,
+                                        106,
                                         66
                                     ], obj.getBasicOperatorsBL);
                                 return fn.apply(obj, arguments);
-                            }.bind(this)(), fn = __recognizer603794974.logProbe([
-                                97,
+                            }.bind(this)(), fn = __recognizer253987655.logProbe([
+                                106,
                                 69,
-                                97,
+                                106,
                                 78
                             ], obj.mutateBit);
                         return fn.apply(obj, arguments);
-                    }.bind(this)(__recognizer603794974.logProbe([
-                        97,
+                    }.bind(this)(__recognizer253987655.logProbe([
+                        106,
                         79,
-                        97,
+                        106,
                         93
-                    ], newColorWeapon), __recognizer603794974.logProbe([
-                        97,
+                    ], newColorWeapon), __recognizer253987655.logProbe([
+                        106,
                         94,
-                        97,
+                        106,
                         103
                     ], bitMutate));
                 }
-                pointCrossing = __recognizer603794974.logProbe([
-                    100,
+                pointCrossing = __recognizer253987655.logProbe([
+                    109,
                     28,
-                    100,
+                    109,
                     45
-                ], __recognizer603794974.logProbe([
-                    100,
+                ], __recognizer253987655.logProbe([
+                    109,
                     28,
-                    100,
+                    109,
                     40
                 ], getRandomInt)(2, 6));
-                mutation = __recognizer603794974.logProbe([
-                    101,
+                mutation = __recognizer253987655.logProbe([
+                    110,
                     23,
-                    101,
+                    110,
                     42
-                ], __recognizer603794974.logProbe([
-                    101,
+                ], __recognizer253987655.logProbe([
+                    110,
                     23,
-                    101,
+                    110,
                     35
                 ], getRandomInt)(0, 100));
-                var newLaneNumber = __recognizer603794974.logProbe([
-                        102,
+                var newLaneNumber = __recognizer253987655.logProbe([
+                        111,
                         32,
-                        102,
+                        111,
                         111
-                    ], __recognizer603794974.logProbe([
-                        102,
+                    ], __recognizer253987655.logProbe([
+                        111,
                         32,
-                        102,
+                        111,
                         51
                     ], reproduceWeaponPart)(function () {
-                        var obj = __recognizer603794974.logProbe([
-                                102,
+                        var obj = __recognizer253987655.logProbe([
+                                111,
                                 52,
-                                102,
+                                111,
                                 58
-                            ], weapon), fn = __recognizer603794974.logProbe([
-                                102,
+                            ], weapon), fn = __recognizer253987655.logProbe([
+                                111,
                                 59,
-                                102,
+                                111,
                                 72
                             ], obj.getLaneNumber);
                         return fn.apply(obj, arguments);
                     }.bind(this)(), function () {
-                        var obj = __recognizer603794974.logProbe([
-                                102,
+                        var obj = __recognizer253987655.logProbe([
+                                111,
                                 75,
-                                102,
+                                111,
                                 94
-                            ], selectionChromosome), fn = __recognizer603794974.logProbe([
-                                102,
+                            ], selectionChromosome), fn = __recognizer253987655.logProbe([
+                                111,
                                 95,
-                                102,
+                                111,
                                 108
                             ], obj.getLaneNumber);
                         return fn.apply(obj, arguments);
                     }.bind(this)()));
-                if (__recognizer603794974.logProbe([
-                        103,
+                if (__recognizer253987655.logProbe([
+                        112,
                         15,
-                        103,
+                        112,
                         23
                     ], mutation) > 90) {
-                    bitMutate = __recognizer603794974.logProbe([
-                        104,
+                    bitMutate = __recognizer253987655.logProbe([
+                        113,
                         28,
-                        104,
+                        113,
                         45
-                    ], __recognizer603794974.logProbe([
-                        104,
+                    ], __recognizer253987655.logProbe([
+                        113,
                         28,
-                        104,
+                        113,
                         40
                     ], getRandomInt)(0, 7));
                     newLaneNumber = function () {
                         var obj = function () {
-                                var obj = __recognizer603794974.logProbe([
-                                        105,
+                                var obj = __recognizer253987655.logProbe([
+                                        114,
                                         32,
-                                        105,
+                                        114,
                                         45
-                                    ], BusinessLogic), fn = __recognizer603794974.logProbe([
-                                        105,
+                                    ], BusinessLogic), fn = __recognizer253987655.logProbe([
+                                        114,
                                         46,
-                                        105,
+                                        114,
                                         65
                                     ], obj.getBasicOperatorsBL);
                                 return fn.apply(obj, arguments);
-                            }.bind(this)(), fn = __recognizer603794974.logProbe([
-                                105,
+                            }.bind(this)(), fn = __recognizer253987655.logProbe([
+                                114,
                                 68,
-                                105,
+                                114,
                                 77
                             ], obj.mutateBit);
                         return fn.apply(obj, arguments);
-                    }.bind(this)(__recognizer603794974.logProbe([
-                        105,
+                    }.bind(this)(__recognizer253987655.logProbe([
+                        114,
                         78,
-                        105,
+                        114,
                         91
-                    ], newLaneNumber), __recognizer603794974.logProbe([
-                        105,
+                    ], newLaneNumber), __recognizer253987655.logProbe([
+                        114,
                         92,
-                        105,
+                        114,
                         101
                     ], bitMutate));
                 }
-                pointCrossing = __recognizer603794974.logProbe([
-                    108,
+                pointCrossing = __recognizer253987655.logProbe([
+                    117,
                     28,
-                    108,
+                    117,
                     45
-                ], __recognizer603794974.logProbe([
-                    108,
+                ], __recognizer253987655.logProbe([
+                    117,
                     28,
-                    108,
+                    117,
                     40
                 ], getRandomInt)(2, 6));
-                mutation = __recognizer603794974.logProbe([
-                    109,
+                mutation = __recognizer253987655.logProbe([
+                    118,
                     23,
-                    109,
+                    118,
                     42
-                ], __recognizer603794974.logProbe([
-                    109,
+                ], __recognizer253987655.logProbe([
+                    118,
                     23,
-                    109,
+                    118,
                     35
                 ], getRandomInt)(0, 100));
-                var newShapeWeapon = __recognizer603794974.logProbe([
-                        110,
+                var newShapeWeapon = __recognizer253987655.logProbe([
+                        119,
                         33,
-                        110,
+                        119,
                         114
-                    ], __recognizer603794974.logProbe([
-                        110,
+                    ], __recognizer253987655.logProbe([
+                        119,
                         33,
-                        110,
+                        119,
                         52
                     ], reproduceWeaponPart)(function () {
-                        var obj = __recognizer603794974.logProbe([
-                                110,
+                        var obj = __recognizer253987655.logProbe([
+                                119,
                                 53,
-                                110,
+                                119,
                                 59
-                            ], weapon), fn = __recognizer603794974.logProbe([
-                                110,
+                            ], weapon), fn = __recognizer253987655.logProbe([
+                                119,
                                 60,
-                                110,
+                                119,
                                 74
                             ], obj.getShapeWeapon);
                         return fn.apply(obj, arguments);
                     }.bind(this)(), function () {
-                        var obj = __recognizer603794974.logProbe([
-                                110,
+                        var obj = __recognizer253987655.logProbe([
+                                119,
                                 77,
-                                110,
+                                119,
                                 96
-                            ], selectionChromosome), fn = __recognizer603794974.logProbe([
-                                110,
+                            ], selectionChromosome), fn = __recognizer253987655.logProbe([
+                                119,
                                 97,
-                                110,
+                                119,
                                 111
                             ], obj.getShapeWeapon);
                         return fn.apply(obj, arguments);
                     }.bind(this)()));
-                if (__recognizer603794974.logProbe([
-                        111,
+                if (__recognizer253987655.logProbe([
+                        120,
                         15,
-                        111,
+                        120,
                         23
                     ], mutation) > 90) {
-                    bitMutate = __recognizer603794974.logProbe([
-                        112,
+                    bitMutate = __recognizer253987655.logProbe([
+                        121,
                         28,
-                        112,
+                        121,
                         45
-                    ], __recognizer603794974.logProbe([
-                        112,
+                    ], __recognizer253987655.logProbe([
+                        121,
                         28,
-                        112,
+                        121,
                         40
                     ], getRandomInt)(0, 7));
                     newShapeWeapon = function () {
                         var obj = function () {
-                                var obj = __recognizer603794974.logProbe([
-                                        113,
+                                var obj = __recognizer253987655.logProbe([
+                                        122,
                                         33,
-                                        113,
+                                        122,
                                         46
-                                    ], BusinessLogic), fn = __recognizer603794974.logProbe([
-                                        113,
+                                    ], BusinessLogic), fn = __recognizer253987655.logProbe([
+                                        122,
                                         47,
-                                        113,
+                                        122,
                                         66
                                     ], obj.getBasicOperatorsBL);
                                 return fn.apply(obj, arguments);
-                            }.bind(this)(), fn = __recognizer603794974.logProbe([
-                                113,
+                            }.bind(this)(), fn = __recognizer253987655.logProbe([
+                                122,
                                 69,
-                                113,
+                                122,
                                 78
                             ], obj.mutateBit);
                         return fn.apply(obj, arguments);
-                    }.bind(this)(__recognizer603794974.logProbe([
-                        113,
+                    }.bind(this)(__recognizer253987655.logProbe([
+                        122,
                         79,
-                        113,
+                        122,
                         93
-                    ], newShapeWeapon), __recognizer603794974.logProbe([
-                        113,
+                    ], newShapeWeapon), __recognizer253987655.logProbe([
+                        122,
                         94,
-                        113,
+                        122,
                         103
                     ], bitMutate));
                 }
                 var son = function () {
-                        var obj = __recognizer603794974.logProbe([
-                                116,
+                        var obj = __recognizer253987655.logProbe([
+                                125,
                                 22,
-                                116,
+                                125,
                                 33
-                            ], LibraryData), fn = __recognizer603794974.logProbe([
-                                116,
+                            ], LibraryData), fn = __recognizer253987655.logProbe([
+                                125,
                                 34,
-                                116,
+                                125,
                                 50
                             ], obj.createChromosome);
                         return fn.apply(obj, arguments);
-                    }.bind(this)(__recognizer603794974.logProbe([
-                        116,
+                    }.bind(this)(__recognizer253987655.logProbe([
+                        125,
                         51,
-                        116,
+                        125,
                         64
-                    ], newLaneNumber), __recognizer603794974.logProbe([
-                        116,
+                    ], newLaneNumber), __recognizer253987655.logProbe([
+                        125,
                         65,
-                        116,
+                        125,
                         79
-                    ], newColorWeapon), __recognizer603794974.logProbe([
-                        116,
+                    ], newColorWeapon), __recognizer253987655.logProbe([
+                        125,
                         80,
-                        116,
+                        125,
                         92
-                    ], newThickness), __recognizer603794974.logProbe([
-                        116,
+                    ], newThickness), __recognizer253987655.logProbe([
+                        125,
                         93,
-                        116,
+                        125,
                         107
                     ], newShapeWeapon));
-                return __recognizer603794974.logProbe([
-                    118,
+                return __recognizer253987655.logProbe([
+                    127,
                     19,
-                    118,
+                    127,
                     22
                 ], son);
             }
-            return { selectChromosome: selectChromosome };
+            var p = function () {
+                    var obj = function () {
+                            var obj = __recognizer253987655.logProbe([
+                                    131,
+                                    16,
+                                    131,
+                                    29
+                                ], BusinessLogic), fn = __recognizer253987655.logProbe([
+                                    131,
+                                    30,
+                                    131,
+                                    50
+                                ], obj.getPopulationManager);
+                            return fn.apply(obj, arguments);
+                        }.bind(this)(), fn = __recognizer253987655.logProbe([
+                            131,
+                            53,
+                            131,
+                            75
+                        ], obj.generateAllChromosomes);
+                    return fn.apply(obj, arguments);
+                }.bind(this)();
+            var c = function () {
+                    var obj = function () {
+                            var obj = __recognizer253987655.logProbe([
+                                    132,
+                                    16,
+                                    132,
+                                    29
+                                ], BusinessLogic), fn = __recognizer253987655.logProbe([
+                                    132,
+                                    30,
+                                    132,
+                                    50
+                                ], obj.getPopulationManager);
+                            return fn.apply(obj, arguments);
+                        }.bind(this)(), fn = __recognizer253987655.logProbe([
+                            132,
+                            53,
+                            132,
+                            77
+                        ], obj.generateChromosomeWeapon);
+                    return fn.apply(obj, arguments);
+                }.bind(this)();
+            var s = __recognizer253987655.logProbe([
+                    133,
+                    16,
+                    133,
+                    37
+                ], __recognizer253987655.logProbe([
+                    133,
+                    16,
+                    133,
+                    32
+                ], geneticAlgorithm)(__recognizer253987655.logProbe([
+                    133,
+                    33,
+                    133,
+                    34
+                ], p), __recognizer253987655.logProbe([
+                    133,
+                    35,
+                    133,
+                    36
+                ], c)));
+            var a = function () {
+                    var obj = __recognizer253987655.logProbe([
+                            134,
+                            16,
+                            134,
+                            17
+                        ], s), fn = __recognizer253987655.logProbe([
+                            134,
+                            18,
+                            134,
+                            24
+                        ], obj.toJson);
+                    return fn.apply(obj, arguments);
+                }.bind(this)();
+            __recognizer253987655.logProbe([
+                135,
+                8,
+                135,
+                16
+            ], __recognizer253987655.logProbe([
+                135,
+                8,
+                135,
+                13
+            ], alert)(__recognizer253987655.logProbe([
+                135,
+                14,
+                135,
+                15
+            ], a)));
+            return {
+                selectChromosome: selectChromosome,
+                getRandomInt: getRandomInt
+            };
         }();
-}(__recognizer603794974.logProbe([
-    129,
+}(__recognizer253987655.logProbe([
+    144,
     2,
-    129,
+    144,
     15
-], BusinessLogic), __recognizer603794974.logProbe([
-    129,
+], BusinessLogic), __recognizer253987655.logProbe([
+    144,
     16,
-    129,
+    144,
     22
 ], jQuery)));

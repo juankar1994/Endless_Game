@@ -3,7 +3,7 @@
  * https://github.com/equiet/recognizer
  */
 
-var __recognizer364106063 = (function () {
+var __recognizer53089225 = (function () {
     'use strict';
 
     var global = this;
@@ -158,234 +158,288 @@ var __recognizer364106063 = (function () {
  */
 
 (function (pContext, $) {
-    __recognizer364106063.logEntry([
-        18,
+    __recognizer53089225.logEntry([
+        21,
         1,
-        18,
+        21,
         9
     ], arguments);
     'use strict';
-    pContext.createChromosome = function (pLaneNumber, pColor, pThickness, pShapeWeapon) {
-        __recognizer364106063.logEntry([
-            21,
-            32,
-            21,
-            40
+    pContext.getPopulationManager = function () {
+        __recognizer53089225.logEntry([
+            29,
+            36,
+            29,
+            44
         ], arguments);
-        return new (__recognizer364106063.logProbe([
-            22,
-            19,
-            22,
-            29
-        ], Chromosome))(__recognizer364106063.logProbe([
-            22,
+        return __recognizer53089225.logProbe([
             30,
-            22,
-            41
-        ], pLaneNumber), __recognizer364106063.logProbe([
-            22,
-            42,
-            22,
-            48
-        ], pColor), __recognizer364106063.logProbe([
-            22,
-            49,
-            22,
-            59
-        ], pThickness), __recognizer364106063.logProbe([
-            22,
-            60,
-            22,
-            72
-        ], pShapeWeapon));
+            15,
+            30,
+            32
+        ], populationManager);
     };
-    var Chromosome = function () {
-            var obj = __recognizer364106063.logProbe([
-                    25,
-                    21,
-                    25,
-                    26
-                ], Class), fn = __recognizer364106063.logProbe([
-                    25,
-                    27,
-                    25,
-                    33
-                ], obj.extend);
-            return fn.apply(obj, arguments);
-        }.bind(this)({
-            init: function (pLaneNumber, pColor, pThickness, pShapeWeapon) {
-                __recognizer364106063.logEntry([
-                    27,
-                    14,
-                    27,
-                    22
-                ], arguments);
-                this.laneNumber = __recognizer364106063.logProbe([
-                    28,
-                    30,
-                    28,
-                    41
-                ], pLaneNumber);
-                this.color = __recognizer364106063.logProbe([
-                    29,
-                    25,
-                    29,
-                    31
-                ], pColor);
-                this.thickness = __recognizer364106063.logProbe([
-                    30,
-                    29,
-                    30,
-                    39
-                ], pThickness);
-                this.shapeWeapon = __recognizer364106063.logProbe([
-                    31,
-                    31,
-                    31,
-                    43
-                ], pShapeWeapon);
-            },
-            setLaneNumber: function (pLaneNumber) {
-                __recognizer364106063.logEntry([
-                    34,
-                    23,
-                    34,
-                    31
-                ], arguments);
-                this.laneNumber = __recognizer364106063.logProbe([
-                    35,
-                    30,
-                    35,
-                    41
-                ], pLaneNumber);
-            },
-            setColor: function (pColor) {
-                __recognizer364106063.logEntry([
-                    38,
-                    18,
-                    38,
-                    26
-                ], arguments);
-                this.color = __recognizer364106063.logProbe([
-                    39,
-                    25,
-                    39,
-                    31
-                ], pColor);
-            },
-            setThickness: function (pThickness) {
-                __recognizer364106063.logEntry([
-                    42,
-                    22,
-                    42,
-                    30
-                ], arguments);
-                this.thickness = __recognizer364106063.logProbe([
-                    43,
-                    29,
-                    43,
-                    39
-                ], pThickness);
-            },
-            setShapeWeapon: function (pShapeWeapon) {
-                __recognizer364106063.logEntry([
-                    46,
-                    24,
-                    46,
-                    32
-                ], arguments);
-                this.shapeWeapon = __recognizer364106063.logProbe([
+    var populationManager = function () {
+            __recognizer53089225.logEntry([
+                42,
+                29,
+                42,
+                37
+            ], arguments);
+            function getRandomInt(min, max) {
+                __recognizer53089225.logEntry([
                     47,
-                    31,
+                    17,
                     47,
-                    43
-                ], pShapeWeapon);
-            },
-            getLaneNumber: function () {
-                __recognizer364106063.logEntry([
-                    50,
-                    24,
-                    50,
-                    32
-                ], arguments);
-                return __recognizer364106063.logProbe([
-                    51,
-                    24,
-                    51,
-                    34
-                ], __recognizer364106063.logProbe([
-                    51,
-                    19,
-                    51,
-                    23
-                ], this).laneNumber);
-            },
-            getColor: function () {
-                __recognizer364106063.logEntry([
-                    54,
-                    19,
-                    54,
-                    27
-                ], arguments);
-                return __recognizer364106063.logProbe([
-                    55,
-                    24,
-                    55,
                     29
-                ], __recognizer364106063.logProbe([
-                    55,
-                    19,
-                    55,
-                    23
-                ], this).color);
-            },
-            getThickness: function () {
-                __recognizer364106063.logEntry([
-                    58,
-                    23,
-                    58,
-                    31
                 ], arguments);
-                return __recognizer364106063.logProbe([
-                    59,
-                    24,
-                    59,
-                    33
-                ], __recognizer364106063.logProbe([
-                    59,
-                    19,
-                    59,
-                    23
-                ], this).thickness);
-            },
-            getShapeWeapon: function () {
-                __recognizer364106063.logEntry([
-                    62,
-                    25,
-                    62,
-                    33
-                ], arguments);
-                return __recognizer364106063.logProbe([
-                    63,
-                    24,
-                    63,
-                    35
-                ], __recognizer364106063.logProbe([
-                    63,
-                    19,
-                    63,
-                    23
-                ], this).shapeWeapon);
+                return function () {
+                    var obj = __recognizer53089225.logProbe([
+                            48,
+                            19,
+                            48,
+                            23
+                        ], Math), fn = __recognizer53089225.logProbe([
+                            48,
+                            24,
+                            48,
+                            29
+                        ], obj.floor);
+                    return fn.apply(obj, arguments);
+                }.bind(this)(function () {
+                    var obj = __recognizer53089225.logProbe([
+                            48,
+                            30,
+                            48,
+                            34
+                        ], Math), fn = __recognizer53089225.logProbe([
+                            48,
+                            35,
+                            48,
+                            41
+                        ], obj.random);
+                    return fn.apply(obj, arguments);
+                }.bind(this)() * (__recognizer53089225.logProbe([
+                    48,
+                    47,
+                    48,
+                    50
+                ], max) - __recognizer53089225.logProbe([
+                    48,
+                    53,
+                    48,
+                    56
+                ], min) + 1)) + __recognizer53089225.logProbe([
+                    48,
+                    65,
+                    48,
+                    68
+                ], min);
             }
-        });
-}(__recognizer364106063.logProbe([
-    68,
+            function generateChromosomeWeapon() {
+                __recognizer53089225.logEntry([
+                    52,
+                    17,
+                    52,
+                    41
+                ], arguments);
+                var thickness = __recognizer53089225.logProbe([
+                        53,
+                        28,
+                        53,
+                        47
+                    ], __recognizer53089225.logProbe([
+                        53,
+                        28,
+                        53,
+                        40
+                    ], getRandomInt)(0, 255));
+                var color = __recognizer53089225.logProbe([
+                        54,
+                        24,
+                        54,
+                        43
+                    ], __recognizer53089225.logProbe([
+                        54,
+                        24,
+                        54,
+                        36
+                    ], getRandomInt)(0, 255));
+                var shapeWeapon = __recognizer53089225.logProbe([
+                        55,
+                        30,
+                        55,
+                        49
+                    ], __recognizer53089225.logProbe([
+                        55,
+                        30,
+                        55,
+                        42
+                    ], getRandomInt)(0, 255));
+                var laneNumber = __recognizer53089225.logProbe([
+                        56,
+                        29,
+                        56,
+                        48
+                    ], __recognizer53089225.logProbe([
+                        56,
+                        29,
+                        56,
+                        41
+                    ], getRandomInt)(0, 255));
+                return function () {
+                    var obj = __recognizer53089225.logProbe([
+                            57,
+                            19,
+                            57,
+                            30
+                        ], LibraryData), fn = __recognizer53089225.logProbe([
+                            57,
+                            31,
+                            57,
+                            47
+                        ], obj.createChromosome);
+                    return fn.apply(obj, arguments);
+                }.bind(this)(__recognizer53089225.logProbe([
+                    57,
+                    48,
+                    57,
+                    58
+                ], laneNumber), __recognizer53089225.logProbe([
+                    57,
+                    59,
+                    57,
+                    64
+                ], color), __recognizer53089225.logProbe([
+                    57,
+                    65,
+                    57,
+                    74
+                ], thickness), __recognizer53089225.logProbe([
+                    57,
+                    75,
+                    57,
+                    86
+                ], shapeWeapon));
+            }
+            function generateAllChromosomes() {
+                __recognizer53089225.logEntry([
+                    60,
+                    17,
+                    60,
+                    39
+                ], arguments);
+                var population = new (__recognizer53089225.logProbe([
+                        61,
+                        34,
+                        61,
+                        39
+                    ], Array))();
+                for (var chromosomeNumber = 0; __recognizer53089225.logProbe([
+                        62,
+                        43,
+                        62,
+                        59
+                    ], chromosomeNumber) < 20; __recognizer53089225.logProbe([
+                        62,
+                        67,
+                        62,
+                        83
+                    ], chromosomeNumber)++) {
+                    (function () {
+                        var obj = __recognizer53089225.logProbe([
+                                63,
+                                16,
+                                63,
+                                26
+                            ], population), fn = __recognizer53089225.logProbe([
+                                63,
+                                27,
+                                63,
+                                31
+                            ], obj.push);
+                        return fn.apply(obj, arguments);
+                    }.bind(this)(__recognizer53089225.logProbe([
+                        63,
+                        32,
+                        63,
+                        58
+                    ], __recognizer53089225.logProbe([
+                        63,
+                        32,
+                        63,
+                        56
+                    ], generateChromosomeWeapon)())));
+                }
+                return __recognizer53089225.logProbe([
+                    65,
+                    19,
+                    65,
+                    29
+                ], population);
+            }
+            function convertChromosomeToWeapon(pChromosome) {
+                __recognizer53089225.logEntry([
+                    68,
+                    17,
+                    68,
+                    42
+                ], arguments);
+            }
+            function convertToIntNumPositive(num) {
+                __recognizer53089225.logEntry([
+                    73,
+                    17,
+                    73,
+                    40
+                ], arguments);
+                num = __recognizer53089225.logProbe([
+                    74,
+                    18,
+                    74,
+                    21
+                ], num) - 0.5;
+                num = function () {
+                    var obj = __recognizer53089225.logProbe([
+                            75,
+                            18,
+                            75,
+                            21
+                        ], num), fn = __recognizer53089225.logProbe([
+                            75,
+                            22,
+                            75,
+                            29
+                        ], obj.toFixed);
+                    return fn.apply(obj, arguments);
+                }.bind(this)();
+                if (__recognizer53089225.logProbe([
+                        76,
+                        15,
+                        76,
+                        18
+                    ], num) < 0)
+                    num = 0;
+                return __recognizer53089225.logProbe([
+                    77,
+                    19,
+                    77,
+                    22
+                ], num);
+            }
+            return {
+                generateChromosomeWeapon: generateChromosomeWeapon,
+                generateAllChromosomes: generateAllChromosomes
+            };
+        }();
+}(__recognizer53089225.logProbe([
+    89,
     2,
-    68,
-    13
-], LibraryData), __recognizer364106063.logProbe([
-    68,
-    15,
-    68,
-    21
+    89,
+    15
+], BusinessLogic), __recognizer53089225.logProbe([
+    89,
+    16,
+    89,
+    22
 ], jQuery)));
