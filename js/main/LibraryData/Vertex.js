@@ -67,7 +67,7 @@
         
         searchEdge: function(pVertex){
             for(var i = 0; i < this.edges.length; i++){
-                if(pVertex.getId() === this.edges[i].getId())
+                if(pVertex.getIntersection().getIntersectionId() === this.edges[i].getIntersection().getIntersectionId())
                     return i;
             }
             return -1;  //There is no edge
@@ -75,7 +75,7 @@
         
         addEdge: function(pVertex){
             if(this.searchEdge(pVertex) === -1)
-                this.edges.push(LibraryData.createVertex(pVertex.getId()));
+                this.edges.push(pVertex);
         }
         
     });

@@ -33,6 +33,15 @@ var LibraryData = window.LibraryData || {};
             this.vertices.push(LibraryData.createVertex(pId, pIntersectionId, pBifurcation));
         },
         
+        addVertexAccordingToPath: function(pValue, pBifurcation){
+            for (var i = 0; i < this.vertices.length; i++){
+                if(this.vertices[i].getIntersection().getIntersectionId() == pValue)
+                    return {idIntersection: this.vertices[i].getEdges()[pBifurcation].getIntersection().getIntersectionId(), 
+                            bifurcation: this.vertices[i].getEdges()[pBifurcation].getIntersection().getBifurcation()};
+            }
+            return null;
+        },
+        
         addEdge: function(pSource, pDestiny){
             if(pSource != null && pDestiny != null)
                 pSource.addEdge(pDestiny);
@@ -40,7 +49,7 @@ var LibraryData = window.LibraryData || {};
         
         searchVertex: function(pValue){
             for (var i = 0; i < this.vertices.length; i++){
-                if(this.vertices[i].getId() == pValue)
+                if(this.vertices[i].getIntersection().getIntersectionId() == pValue)
                     return this.vertices[i];
             }
             return null;
@@ -48,23 +57,26 @@ var LibraryData = window.LibraryData || {};
 
         visitVertex: function(pVertex){
             for (var i = 0; i < this.vertices.length; i++){
-                if(this.vertices[i].getId() == pVertex.getId())
+                if(this.vertices[i].getIntersection().getIntersectionId() == pVertex.getIntersection().getIntersectionId())
                     vertices[i].setVisited(true);
             }
         },
         
         isVertexVisisted: function(pVertex){
             for (var i = 0; i < this.vertices.length; i++){
-                if(this.vertices[i].getId() == pVertex.getId())
+                if(this.vertices[i].getIntersection().getIntersectionId() == pVertex.getIntersection().getIntersectionId())
                     return vertices[i].getVisited();
             }
         },
         
         print: function(){
             for (var i = 0; i < this.vertices.length; i++){
-                console.log("Vertice "+ this.vertices[i].getId() + ":  ");
+                console.log("Vertice "+ this.vertices[i].getIntersection().getIntersectionId() + ":  ");
+                console.log("   Cont: " + this.vertices[i].getId());
+                console.log("   Bifurcacion(s): " + this.vertices[i].getIntersection().getBifurcation());
+                console.log("   Connection(s): ");
                 for (var j = 0; j < this.vertices[i].getEdges().length; j++) {
-                    console.log(this.vertices[i].getEdges()[j].getId() +"  ");
+                    console.log("         " + this.vertices[i].getEdges()[j].getIntersection().getIntersectionId() +"  ");
                 }
                 console.log("\n");
             }
