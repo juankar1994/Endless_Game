@@ -29,8 +29,8 @@ var LibraryData = window.LibraryData || {};
             this.vertices = new Array();
         },
         
-        addVertex: function(pId){
-            this.vertices.push(LibraryData.createVertex(pId));
+        addVertex: function(pId, pIntersectionId, pBifurcation){
+            this.vertices.push(LibraryData.createVertex(pId, pIntersectionId, pBifurcation));
         },
         
         addEdge: function(pSource, pDestiny){
@@ -72,5 +72,3 @@ var LibraryData = window.LibraryData || {};
     });
 
 }(LibraryData, jQuery));
-
-

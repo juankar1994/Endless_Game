@@ -3,7 +3,7 @@
  * https://github.com/equiet/recognizer
  */
 
-var __recognizer694385708 = (function () {
+var __recognizer365769563 = (function () {
     'use strict';
 
     var global = this;
@@ -158,7 +158,7 @@ var __recognizer694385708 = (function () {
  */
 
 (function (pContext, $) {
-    __recognizer694385708.logEntry([
+    __recognizer365769563.logEntry([
         18,
         1,
         18,
@@ -166,33 +166,33 @@ var __recognizer694385708 = (function () {
     ], arguments);
     'use strict';
     pContext.createChromosome = function (pLaneNumber, pColor, pThickness, pShapeWeapon) {
-        __recognizer694385708.logEntry([
+        __recognizer365769563.logEntry([
             21,
             32,
             21,
             40
         ], arguments);
-        return new (__recognizer694385708.logProbe([
+        return new (__recognizer365769563.logProbe([
             22,
             19,
             22,
             29
-        ], Chromosome))(__recognizer694385708.logProbe([
+        ], Chromosome))(__recognizer365769563.logProbe([
             22,
             30,
             22,
             41
-        ], pLaneNumber), __recognizer694385708.logProbe([
+        ], pLaneNumber), __recognizer365769563.logProbe([
             22,
             42,
             22,
             48
-        ], pColor), __recognizer694385708.logProbe([
+        ], pColor), __recognizer365769563.logProbe([
             22,
             49,
             22,
             59
-        ], pThickness), __recognizer694385708.logProbe([
+        ], pThickness), __recognizer365769563.logProbe([
             22,
             60,
             22,
@@ -200,12 +200,12 @@ var __recognizer694385708 = (function () {
         ], pShapeWeapon));
     };
     var Chromosome = function () {
-            var obj = __recognizer694385708.logProbe([
+            var obj = __recognizer365769563.logProbe([
                     25,
                     21,
                     25,
                     26
-                ], Class), fn = __recognizer694385708.logProbe([
+                ], Class), fn = __recognizer365769563.logProbe([
                     25,
                     27,
                     25,
@@ -214,31 +214,31 @@ var __recognizer694385708 = (function () {
             return fn.apply(obj, arguments);
         }.bind(this)({
             init: function (pLaneNumber, pColor, pThickness, pShapeWeapon) {
-                __recognizer694385708.logEntry([
+                __recognizer365769563.logEntry([
                     27,
                     14,
                     27,
                     22
                 ], arguments);
-                this.laneNumber = __recognizer694385708.logProbe([
+                this.laneNumber = __recognizer365769563.logProbe([
                     28,
                     30,
                     28,
                     41
                 ], pLaneNumber);
-                this.color = __recognizer694385708.logProbe([
+                this.color = __recognizer365769563.logProbe([
                     29,
                     25,
                     29,
                     31
                 ], pColor);
-                this.thickness = __recognizer694385708.logProbe([
+                this.thickness = __recognizer365769563.logProbe([
                     30,
                     29,
                     30,
                     39
                 ], pThickness);
-                this.shapeWeapon = __recognizer694385708.logProbe([
+                this.shapeWeapon = __recognizer365769563.logProbe([
                     31,
                     31,
                     31,
@@ -246,13 +246,13 @@ var __recognizer694385708 = (function () {
                 ], pShapeWeapon);
             },
             setLaneNumber: function (pLaneNumber) {
-                __recognizer694385708.logEntry([
+                __recognizer365769563.logEntry([
                     34,
                     23,
                     34,
                     31
                 ], arguments);
-                this.laneNumber = __recognizer694385708.logProbe([
+                this.laneNumber = __recognizer365769563.logProbe([
                     35,
                     30,
                     35,
@@ -260,13 +260,13 @@ var __recognizer694385708 = (function () {
                 ], pLaneNumber);
             },
             setColor: function (pColor) {
-                __recognizer694385708.logEntry([
+                __recognizer365769563.logEntry([
                     38,
                     18,
                     38,
                     26
                 ], arguments);
-                this.color = __recognizer694385708.logProbe([
+                this.color = __recognizer365769563.logProbe([
                     39,
                     25,
                     39,
@@ -274,13 +274,13 @@ var __recognizer694385708 = (function () {
                 ], pColor);
             },
             setThickness: function (pThickness) {
-                __recognizer694385708.logEntry([
+                __recognizer365769563.logEntry([
                     42,
                     22,
                     42,
                     30
                 ], arguments);
-                this.thickness = __recognizer694385708.logProbe([
+                this.thickness = __recognizer365769563.logProbe([
                     43,
                     29,
                     43,
@@ -288,13 +288,13 @@ var __recognizer694385708 = (function () {
                 ], pThickness);
             },
             setShapeWeapon: function (pShapeWeapon) {
-                __recognizer694385708.logEntry([
+                __recognizer365769563.logEntry([
                     46,
                     24,
                     46,
                     32
                 ], arguments);
-                this.shapeWeapon = __recognizer694385708.logProbe([
+                this.shapeWeapon = __recognizer365769563.logProbe([
                     47,
                     31,
                     47,
@@ -302,18 +302,18 @@ var __recognizer694385708 = (function () {
                 ], pShapeWeapon);
             },
             getLaneNumber: function () {
-                __recognizer694385708.logEntry([
+                __recognizer365769563.logEntry([
                     50,
                     24,
                     50,
                     32
                 ], arguments);
-                return __recognizer694385708.logProbe([
+                return __recognizer365769563.logProbe([
                     51,
                     24,
                     51,
                     34
-                ], __recognizer694385708.logProbe([
+                ], __recognizer365769563.logProbe([
                     51,
                     19,
                     51,
@@ -321,18 +321,18 @@ var __recognizer694385708 = (function () {
                 ], this).laneNumber);
             },
             getColor: function () {
-                __recognizer694385708.logEntry([
+                __recognizer365769563.logEntry([
                     54,
                     19,
                     54,
                     27
                 ], arguments);
-                return __recognizer694385708.logProbe([
+                return __recognizer365769563.logProbe([
                     55,
                     24,
                     55,
                     29
-                ], __recognizer694385708.logProbe([
+                ], __recognizer365769563.logProbe([
                     55,
                     19,
                     55,
@@ -340,18 +340,18 @@ var __recognizer694385708 = (function () {
                 ], this).color);
             },
             getThickness: function () {
-                __recognizer694385708.logEntry([
+                __recognizer365769563.logEntry([
                     58,
                     23,
                     58,
                     31
                 ], arguments);
-                return __recognizer694385708.logProbe([
+                return __recognizer365769563.logProbe([
                     59,
                     24,
                     59,
                     33
-                ], __recognizer694385708.logProbe([
+                ], __recognizer365769563.logProbe([
                     59,
                     19,
                     59,
@@ -359,18 +359,18 @@ var __recognizer694385708 = (function () {
                 ], this).thickness);
             },
             getShapeWeapon: function () {
-                __recognizer694385708.logEntry([
+                __recognizer365769563.logEntry([
                     62,
                     25,
                     62,
                     33
                 ], arguments);
-                return __recognizer694385708.logProbe([
+                return __recognizer365769563.logProbe([
                     63,
                     24,
                     63,
                     35
-                ], __recognizer694385708.logProbe([
+                ], __recognizer365769563.logProbe([
                     63,
                     19,
                     63,
@@ -378,12 +378,12 @@ var __recognizer694385708 = (function () {
                 ], this).shapeWeapon);
             }
         });
-}(__recognizer694385708.logProbe([
+}(__recognizer365769563.logProbe([
     68,
     2,
     68,
     13
-], LibraryData), __recognizer694385708.logProbe([
+], LibraryData), __recognizer365769563.logProbe([
     68,
     15,
     68,

@@ -19,15 +19,16 @@
 
 (function (pContext, $) {
 
-    pContext.createVertex = function(pId){
-        return new Vertex(pId);
+    pContext.createVertex = function(pId, pIntersectionId, pBifurcation){
+        return new Vertex(pId, pIntersectionId, pBifurcation);
     };
 
     var Vertex = Class.extend({
-        init: function(pId){
+        init: function(pId, pIntersectionId, pBifurcation){
             this.id = pId;
             this.visited = false;
             this.edges = new Array();
+            this.intersection = LibraryData.createIntersection(pIntersectionId, pBifurcation);
         },
         
         //Set's 
@@ -42,6 +43,10 @@
         setEdges: function(pEdges){
             this.edges = pEdges;
         },
+
+        setIntersection: function(pIntersection){
+            this.intersection = pIntersection;
+        },
         
         //Get's
         getId: function(){
@@ -54,6 +59,10 @@
 
         getEdges: function(){
             return this.edges;
+        },
+
+        getIntersection: function(){
+            return this.intersection;
         },
         
         searchEdge: function(pVertex){

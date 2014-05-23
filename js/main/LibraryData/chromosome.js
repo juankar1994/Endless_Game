@@ -9,7 +9,7 @@
 /*
   * Author:      juancar199400@gmail.com
   * Date:        17/04/2014
-  * Description: Borders
+  * Description: Chromosomes
 
 /*
  * 

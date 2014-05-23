@@ -3,7 +3,7 @@
  * https://github.com/equiet/recognizer
  */
 
-var __recognizer611512228 = (function () {
+var __recognizer361829982 = (function () {
     'use strict';
 
     var global = this;
@@ -157,32 +157,32 @@ var __recognizer611512228 = (function () {
  * Instrumented code
  */
 
-var Presentation = __recognizer611512228.logProbe([
+var Presentation = __recognizer361829982.logProbe([
         19,
         26,
         19,
         38
-    ], __recognizer611512228.logProbe([
+    ], __recognizer361829982.logProbe([
         19,
         19,
         19,
         25
     ], window).Presentation) || {};
 (function (pContext, $) {
-    __recognizer611512228.logEntry([
+    __recognizer361829982.logEntry([
         21,
         1,
         21,
         9
     ], arguments);
     pContext.getTrackUI = function () {
-        __recognizer611512228.logEntry([
+        __recognizer361829982.logEntry([
             23,
             26,
             23,
             34
         ], arguments);
-        return __recognizer611512228.logProbe([
+        return __recognizer361829982.logProbe([
             24,
             15,
             24,
@@ -190,26 +190,26 @@ var Presentation = __recognizer611512228.logProbe([
         ], TrackUI);
     };
     TrackUI = function () {
-        __recognizer611512228.logEntry([
+        __recognizer361829982.logEntry([
             27,
             15,
             27,
             23
         ], arguments);
-        var car;
-        __recognizer611512228.logProbe([
+        var car, canvasStage, vehicleLayer, bulletLayer;
+        __recognizer361829982.logProbe([
             31,
             8,
             31,
             14
-        ], __recognizer611512228.logProbe([
+        ], __recognizer361829982.logProbe([
             31,
             8,
             31,
             12
         ], init)());
         function loadImages(sources, callback) {
-            __recognizer611512228.logEntry([
+            __recognizer361829982.logEntry([
                 33,
                 17,
                 33,
@@ -218,60 +218,60 @@ var Presentation = __recognizer611512228.logProbe([
             var images = {};
             var loadedImages = 0;
             var numImages = 0;
-            for (var src in __recognizer611512228.logProbe([
+            for (var src in __recognizer361829982.logProbe([
                     38,
                     27,
                     38,
                     34
                 ], sources)) {
-                __recognizer611512228.logProbe([
+                __recognizer361829982.logProbe([
                     39,
                     16,
                     39,
                     25
                 ], numImages)++;
             }
-            for (var src in __recognizer611512228.logProbe([
+            for (var src in __recognizer361829982.logProbe([
                     41,
                     27,
                     41,
                     34
                 ], sources)) {
-                images[src] = new (__recognizer611512228.logProbe([
+                images[src] = new (__recognizer361829982.logProbe([
                     42,
                     34,
                     42,
                     39
                 ], Image))();
                 images[src].onload = function () {
-                    __recognizer611512228.logEntry([
+                    __recognizer361829982.logEntry([
                         43,
                         37,
                         43,
                         45
                     ], arguments);
-                    if (++__recognizer611512228.logProbe([
+                    if (++__recognizer361829982.logProbe([
                             44,
                             25,
                             44,
                             37
-                        ], loadedImages) >= __recognizer611512228.logProbe([
+                        ], loadedImages) >= __recognizer361829982.logProbe([
                             44,
                             41,
                             44,
                             50
                         ], numImages)) {
-                        __recognizer611512228.logProbe([
+                        __recognizer361829982.logProbe([
                             45,
                             24,
                             45,
                             40
-                        ], __recognizer611512228.logProbe([
+                        ], __recognizer361829982.logProbe([
                             45,
                             24,
                             45,
                             32
-                        ], callback)(__recognizer611512228.logProbe([
+                        ], callback)(__recognizer361829982.logProbe([
                             45,
                             33,
                             45,
@@ -279,12 +279,12 @@ var Presentation = __recognizer611512228.logProbe([
                         ], images)));
                     }
                 };
-                images[src].src = __recognizer611512228.logProbe([
+                images[src].src = __recognizer361829982.logProbe([
                     48,
                     42,
                     48,
                     45
-                ], __recognizer611512228.logProbe([
+                ], __recognizer361829982.logProbe([
                     48,
                     34,
                     48,
@@ -293,59 +293,70 @@ var Presentation = __recognizer611512228.logProbe([
             }
         }
         function drawCanvasStage(images) {
-            __recognizer611512228.logEntry([
+            __recognizer361829982.logEntry([
                 53,
                 17,
                 53,
                 32
             ], arguments);
-            var canvasStage = new (__recognizer611512228.logProbe([
-                    55,
-                    42,
-                    55,
-                    47
-                ], __recognizer611512228.logProbe([
-                    55,
+            canvasStage = new (__recognizer361829982.logProbe([
+                55,
+                38,
+                55,
+                43
+            ], __recognizer361829982.logProbe([
+                55,
+                30,
+                55,
+                37
+            ], Kinetic).Stage))({
+                container: 'gameContainer',
+                width: 800,
+                height: 550
+            });
+            vehicleLayer = new (__recognizer361829982.logProbe([
+                61,
+                39,
+                61,
+                44
+            ], __recognizer361829982.logProbe([
+                61,
+                31,
+                61,
+                38
+            ], Kinetic).Layer))();
+            bulletLayer = new (__recognizer361829982.logProbe([
+                62,
+                38,
+                62,
+                43
+            ], __recognizer361829982.logProbe([
+                62,
+                30,
+                62,
+                37
+            ], Kinetic).Layer))();
+            var pit = new (__recognizer361829982.logProbe([
+                    64,
                     34,
-                    55,
-                    41
-                ], Kinetic).Stage))({
-                    container: 'gameContainer',
-                    width: 800,
-                    height: 550
-                });
-            var vehicleLayer = new (__recognizer611512228.logProbe([
-                    61,
-                    43,
-                    61,
-                    48
-                ], __recognizer611512228.logProbe([
-                    61,
-                    35,
-                    61,
-                    42
-                ], Kinetic).Layer))();
-            var pit = new (__recognizer611512228.logProbe([
-                    63,
-                    34,
-                    63,
+                    64,
                     38
-                ], __recognizer611512228.logProbe([
-                    63,
+                ], __recognizer361829982.logProbe([
+                    64,
                     26,
-                    63,
+                    64,
                     33
                 ], Kinetic).Rect))({
                     x: 90,
-                    fillPatternImage: __recognizer611512228.logProbe([
-                        65,
+                    fillPatternImage: __recognizer361829982.logProbe([
+                        66,
                         41,
-                        65,
+                        66,
                         44
-                    ], __recognizer611512228.logProbe([
-                        65,
+                    ], __recognizer361829982.logProbe([
+                        66,
                         34,
-                        65,
+                        66,
                         40
                     ], images).pit),
                     width: 34,
@@ -355,27 +366,27 @@ var Presentation = __recognizer611512228.logProbe([
                         y: 650
                     }
                 });
-            var pit2 = new (__recognizer611512228.logProbe([
-                    71,
+            var pit2 = new (__recognizer361829982.logProbe([
+                    72,
                     35,
-                    71,
+                    72,
                     39
-                ], __recognizer611512228.logProbe([
-                    71,
+                ], __recognizer361829982.logProbe([
+                    72,
                     27,
-                    71,
+                    72,
                     34
                 ], Kinetic).Rect))({
                     x: 650,
-                    fillPatternImage: __recognizer611512228.logProbe([
-                        73,
+                    fillPatternImage: __recognizer361829982.logProbe([
+                        74,
                         41,
-                        73,
+                        74,
                         44
-                    ], __recognizer611512228.logProbe([
-                        73,
+                    ], __recognizer361829982.logProbe([
+                        74,
                         34,
-                        73,
+                        74,
                         40
                     ], images).pit),
                     width: 34,
@@ -385,28 +396,28 @@ var Presentation = __recognizer611512228.logProbe([
                         y: 650
                     }
                 });
-            car = new (__recognizer611512228.logProbe([
-                79,
+            car = new (__recognizer361829982.logProbe([
+                80,
                 30,
-                79,
+                80,
                 34
-            ], __recognizer611512228.logProbe([
-                79,
+            ], __recognizer361829982.logProbe([
+                80,
                 22,
-                79,
+                80,
                 29
             ], Kinetic).Rect))({
                 x: 150,
                 y: 430,
-                fillPatternImage: __recognizer611512228.logProbe([
-                    82,
+                fillPatternImage: __recognizer361829982.logProbe([
+                    83,
                     41,
-                    82,
+                    83,
                     44
-                ], __recognizer611512228.logProbe([
-                    82,
+                ], __recognizer361829982.logProbe([
+                    83,
                     34,
-                    82,
+                    83,
                     40
                 ], images).car),
                 width: 54,
@@ -419,501 +430,887 @@ var Presentation = __recognizer611512228.logProbe([
             var amplitude = 270;
             var speedCar = 210;
             var period = 5000;
-            var anim = new (__recognizer611512228.logProbe([
-                    92,
+            var anim = new (__recognizer361829982.logProbe([
+                    93,
                     35,
-                    92,
+                    93,
                     44
-                ], __recognizer611512228.logProbe([
-                    92,
+                ], __recognizer361829982.logProbe([
+                    93,
                     27,
-                    92,
+                    93,
                     34
                 ], Kinetic).Animation))(function (frame) {
-                    __recognizer611512228.logEntry([
-                        92,
+                    __recognizer361829982.logEntry([
+                        93,
                         45,
-                        92,
+                        93,
                         53
                     ], arguments);
                     (function () {
-                        var obj = __recognizer611512228.logProbe([
-                                93,
+                        var obj = __recognizer361829982.logProbe([
+                                94,
                                 16,
-                                93,
+                                94,
                                 19
-                            ], pit), fn = __recognizer611512228.logProbe([
-                                93,
+                            ], pit), fn = __recognizer361829982.logProbe([
+                                94,
                                 20,
-                                93,
+                                94,
                                 24
                             ], obj.setY);
                         return fn.apply(obj, arguments);
-                    }.bind(this)(__recognizer611512228.logProbe([
-                        93,
+                    }.bind(this)(__recognizer361829982.logProbe([
+                        94,
                         25,
-                        93,
+                        94,
                         34
-                    ], amplitude) * __recognizer611512228.logProbe([
-                        93,
+                    ], amplitude) * __recognizer361829982.logProbe([
+                        94,
                         42,
-                        93,
+                        94,
                         46
-                    ], __recognizer611512228.logProbe([
-                        93,
+                    ], __recognizer361829982.logProbe([
+                        94,
                         36,
-                        93,
+                        94,
                         41
-                    ], frame).time) * 2 / __recognizer611512228.logProbe([
-                        93,
+                    ], frame).time) * 2 / __recognizer361829982.logProbe([
+                        94,
                         53,
-                        93,
+                        94,
                         59
                     ], period)));
                     (function () {
-                        var obj = __recognizer611512228.logProbe([
-                                94,
+                        var obj = __recognizer361829982.logProbe([
+                                95,
                                 16,
-                                94,
+                                95,
                                 20
-                            ], pit2), fn = __recognizer611512228.logProbe([
-                                94,
+                            ], pit2), fn = __recognizer361829982.logProbe([
+                                95,
                                 21,
-                                94,
+                                95,
                                 25
                             ], obj.setY);
                         return fn.apply(obj, arguments);
-                    }.bind(this)(__recognizer611512228.logProbe([
-                        94,
+                    }.bind(this)(__recognizer361829982.logProbe([
+                        95,
                         26,
-                        94,
+                        95,
                         35
-                    ], amplitude) * __recognizer611512228.logProbe([
-                        94,
+                    ], amplitude) * __recognizer361829982.logProbe([
+                        95,
                         43,
-                        94,
+                        95,
                         47
-                    ], __recognizer611512228.logProbe([
-                        94,
+                    ], __recognizer361829982.logProbe([
+                        95,
                         37,
-                        94,
+                        95,
                         42
-                    ], frame).time) * 2 / __recognizer611512228.logProbe([
-                        94,
+                    ], frame).time) * 2 / __recognizer361829982.logProbe([
+                        95,
                         54,
-                        94,
+                        95,
                         60
                     ], period)));
-                    if (__recognizer611512228.logProbe([
-                            95,
+                    if (__recognizer361829982.logProbe([
+                            96,
                             25,
-                            95,
+                            96,
                             29
-                        ], __recognizer611512228.logProbe([
-                            95,
+                        ], __recognizer361829982.logProbe([
+                            96,
                             19,
-                            95,
+                            96,
                             24
                         ], frame).time) >= 5000)
                         frame.time = 0;
-                }, __recognizer611512228.logProbe([
-                    97,
+                }, __recognizer361829982.logProbe([
+                    98,
                     15,
-                    97,
+                    98,
                     27
                 ], vehicleLayer));
-            var anim2 = new (__recognizer611512228.logProbe([
-                    99,
+            var anim2 = new (__recognizer361829982.logProbe([
+                    100,
                     36,
-                    99,
+                    100,
                     45
-                ], __recognizer611512228.logProbe([
-                    99,
+                ], __recognizer361829982.logProbe([
+                    100,
                     28,
-                    99,
+                    100,
                     35
                 ], Kinetic).Animation))(function (frame) {
-                    __recognizer611512228.logEntry([
-                        99,
+                    __recognizer361829982.logEntry([
+                        100,
                         46,
-                        99,
+                        100,
                         54
                     ], arguments);
                     (function () {
-                        var obj = __recognizer611512228.logProbe([
-                                100,
+                        var obj = __recognizer361829982.logProbe([
+                                101,
                                 16,
-                                100,
+                                101,
                                 19
-                            ], car), fn = __recognizer611512228.logProbe([
-                                100,
+                            ], car), fn = __recognizer361829982.logProbe([
+                                101,
                                 20,
-                                100,
+                                101,
                                 24
                             ], obj.setY);
                         return fn.apply(obj, arguments);
-                    }.bind(this)(-__recognizer611512228.logProbe([
-                        100,
+                    }.bind(this)(-__recognizer361829982.logProbe([
+                        101,
                         26,
-                        100,
+                        101,
                         34
-                    ], speedCar) * __recognizer611512228.logProbe([
-                        100,
+                    ], speedCar) * __recognizer361829982.logProbe([
+                        101,
                         43,
-                        100,
+                        101,
                         47
-                    ], __recognizer611512228.logProbe([
-                        100,
+                    ], __recognizer361829982.logProbe([
+                        101,
                         37,
-                        100,
+                        101,
                         42
-                    ], frame).time) * 2 / __recognizer611512228.logProbe([
-                        100,
+                    ], frame).time) * 2 / __recognizer361829982.logProbe([
+                        101,
                         54,
-                        100,
+                        101,
                         60
                     ], period)));
-                    if (__recognizer611512228.logProbe([
-                            101,
+                    if (__recognizer361829982.logProbe([
+                            102,
                             25,
-                            101,
+                            102,
                             29
-                        ], __recognizer611512228.logProbe([
-                            101,
+                        ], __recognizer361829982.logProbe([
+                            102,
                             19,
-                            101,
+                            102,
                             24
                         ], frame).time) >= 5000)
                         frame.time = 0;
-                }, __recognizer611512228.logProbe([
-                    103,
+                }, __recognizer361829982.logProbe([
+                    104,
                     15,
-                    103,
+                    104,
                     27
                 ], vehicleLayer));
             (function () {
-                var obj = __recognizer611512228.logProbe([
-                        105,
+                var obj = __recognizer361829982.logProbe([
+                        106,
                         12,
-                        105,
+                        106,
                         16
-                    ], anim), fn = __recognizer611512228.logProbe([
-                        105,
+                    ], anim), fn = __recognizer361829982.logProbe([
+                        106,
                         17,
-                        105,
+                        106,
                         22
                     ], obj.start);
                 return fn.apply(obj, arguments);
             }.bind(this)());
             (function () {
-                var obj = __recognizer611512228.logProbe([
-                        106,
+                var obj = __recognizer361829982.logProbe([
+                        107,
                         12,
-                        106,
+                        107,
                         17
-                    ], anim2), fn = __recognizer611512228.logProbe([
-                        106,
+                    ], anim2), fn = __recognizer361829982.logProbe([
+                        107,
                         18,
-                        106,
+                        107,
                         23
                     ], obj.start);
                 return fn.apply(obj, arguments);
             }.bind(this)());
             (function () {
-                var obj = __recognizer611512228.logProbe([
-                        108,
+                var obj = __recognizer361829982.logProbe([
+                        109,
                         12,
-                        108,
+                        109,
                         24
-                    ], vehicleLayer), fn = __recognizer611512228.logProbe([
-                        108,
+                    ], vehicleLayer), fn = __recognizer361829982.logProbe([
+                        109,
                         25,
-                        108,
+                        109,
                         28
                     ], obj.add);
                 return fn.apply(obj, arguments);
-            }.bind(this)(__recognizer611512228.logProbe([
-                108,
+            }.bind(this)(__recognizer361829982.logProbe([
+                109,
                 29,
-                108,
+                109,
                 32
             ], pit)));
             (function () {
-                var obj = __recognizer611512228.logProbe([
-                        109,
+                var obj = __recognizer361829982.logProbe([
+                        110,
                         12,
-                        109,
+                        110,
                         24
-                    ], vehicleLayer), fn = __recognizer611512228.logProbe([
-                        109,
+                    ], vehicleLayer), fn = __recognizer361829982.logProbe([
+                        110,
                         25,
-                        109,
+                        110,
                         28
                     ], obj.add);
                 return fn.apply(obj, arguments);
-            }.bind(this)(__recognizer611512228.logProbe([
-                109,
+            }.bind(this)(__recognizer361829982.logProbe([
+                110,
                 29,
-                109,
+                110,
                 33
             ], pit2)));
             (function () {
-                var obj = __recognizer611512228.logProbe([
-                        110,
+                var obj = __recognizer361829982.logProbe([
+                        111,
                         12,
-                        110,
+                        111,
                         24
-                    ], vehicleLayer), fn = __recognizer611512228.logProbe([
-                        110,
+                    ], vehicleLayer), fn = __recognizer361829982.logProbe([
+                        111,
                         25,
-                        110,
+                        111,
                         28
                     ], obj.add);
                 return fn.apply(obj, arguments);
-            }.bind(this)(__recognizer611512228.logProbe([
-                110,
+            }.bind(this)(__recognizer361829982.logProbe([
+                111,
                 29,
-                110,
+                111,
                 32
             ], car)));
             (function () {
-                var obj = __recognizer611512228.logProbe([
-                        111,
+                var obj = __recognizer361829982.logProbe([
+                        112,
                         12,
-                        111,
+                        112,
                         23
-                    ], canvasStage), fn = __recognizer611512228.logProbe([
-                        111,
+                    ], canvasStage), fn = __recognizer361829982.logProbe([
+                        112,
                         24,
-                        111,
+                        112,
                         27
                     ], obj.add);
                 return fn.apply(obj, arguments);
-            }.bind(this)(__recognizer611512228.logProbe([
-                111,
+            }.bind(this)(__recognizer361829982.logProbe([
+                112,
                 28,
-                111,
+                112,
                 40
             ], vehicleLayer)));
-            __recognizer611512228.logProbe([
+            (function () {
+                var obj = __recognizer361829982.logProbe([
+                        113,
+                        12,
+                        113,
+                        23
+                    ], canvasStage), fn = __recognizer361829982.logProbe([
+                        113,
+                        24,
+                        113,
+                        27
+                    ], obj.add);
+                return fn.apply(obj, arguments);
+            }.bind(this)(__recognizer361829982.logProbe([
                 113,
+                28,
+                113,
+                39
+            ], bulletLayer)));
+            __recognizer361829982.logProbe([
+                115,
                 12,
-                113,
-                23
-            ], __recognizer611512228.logProbe([
-                113,
+                115,
+                29
+            ], __recognizer361829982.logProbe([
+                115,
                 12,
-                113,
+                115,
                 21
-            ], arrowKeys)());
+            ], arrowKeys)(__recognizer361829982.logProbe([
+                115,
+                22,
+                115,
+                28
+            ], images)));
         }
-        function arrowKeys() {
-            __recognizer611512228.logEntry([
-                116,
+        function createBullet(pPosX, pPosY, images) {
+            __recognizer361829982.logEntry([
+                118,
                 17,
-                116,
+                118,
+                29
+            ], arguments);
+            var period = 2000;
+            pPosY = 380 + __recognizer361829982.logProbe([
+                120,
+                26,
+                120,
+                31
+            ], pPosY);
+            var bullet = new (__recognizer361829982.logProbe([
+                    122,
+                    37,
+                    122,
+                    41
+                ], __recognizer361829982.logProbe([
+                    122,
+                    29,
+                    122,
+                    36
+                ], Kinetic).Rect))({
+                    x: __recognizer361829982.logProbe([
+                        123,
+                        19,
+                        123,
+                        24
+                    ], pPosX) + 10,
+                    y: pPosY,
+                    fillPatternImage: __recognizer361829982.logProbe([
+                        125,
+                        41,
+                        125,
+                        47
+                    ], __recognizer361829982.logProbe([
+                        125,
+                        34,
+                        125,
+                        40
+                    ], images).bullet),
+                    width: 32,
+                    height: 32
+                });
+            (function () {
+                var obj = __recognizer361829982.logProbe([
+                        130,
+                        12,
+                        130,
+                        23
+                    ], bulletLayer), fn = __recognizer361829982.logProbe([
+                        130,
+                        24,
+                        130,
+                        27
+                    ], obj.add);
+                return fn.apply(obj, arguments);
+            }.bind(this)(__recognizer361829982.logProbe([
+                130,
+                28,
+                130,
+                34
+            ], bullet)));
+            (function () {
+                var obj = __recognizer361829982.logProbe([
+                        131,
+                        12,
+                        131,
+                        23
+                    ], bulletLayer), fn = __recognizer361829982.logProbe([
+                        131,
+                        24,
+                        131,
+                        28
+                    ], obj.draw);
+                return fn.apply(obj, arguments);
+            }.bind(this)());
+            var anim = new (__recognizer361829982.logProbe([
+                    133,
+                    35,
+                    133,
+                    44
+                ], __recognizer361829982.logProbe([
+                    133,
+                    27,
+                    133,
+                    34
+                ], Kinetic).Animation))(function (frame) {
+                    __recognizer361829982.logEntry([
+                        133,
+                        45,
+                        133,
+                        53
+                    ], arguments);
+                    if (__recognizer361829982.logProbe([
+                            134,
+                            19,
+                            134,
+                            24
+                        ], pPosY) > 0)
+                        (function () {
+                            var obj = __recognizer361829982.logProbe([
+                                    135,
+                                    20,
+                                    135,
+                                    26
+                                ], bullet), fn = __recognizer361829982.logProbe([
+                                    135,
+                                    27,
+                                    135,
+                                    31
+                                ], obj.setY);
+                            return fn.apply(obj, arguments);
+                        }.bind(this)(__recognizer361829982.logProbe([
+                            135,
+                            32,
+                            135,
+                            37
+                        ], pPosY) - __recognizer361829982.logProbe([
+                            135,
+                            41,
+                            135,
+                            46
+                        ], pPosY) * __recognizer361829982.logProbe([
+                            135,
+                            55,
+                            135,
+                            59
+                        ], __recognizer361829982.logProbe([
+                            135,
+                            49,
+                            135,
+                            54
+                        ], frame).time) * 4 / __recognizer361829982.logProbe([
+                            135,
+                            66,
+                            135,
+                            72
+                        ], period)));
+                    else
+                        (function () {
+                            var obj = __recognizer361829982.logProbe([
+                                    137,
+                                    20,
+                                    137,
+                                    26
+                                ], bullet), fn = __recognizer361829982.logProbe([
+                                    137,
+                                    27,
+                                    137,
+                                    31
+                                ], obj.setY);
+                            return fn.apply(obj, arguments);
+                        }.bind(this)(__recognizer361829982.logProbe([
+                            137,
+                            32,
+                            137,
+                            37
+                        ], pPosY) + __recognizer361829982.logProbe([
+                            137,
+                            41,
+                            137,
+                            46
+                        ], pPosY) * __recognizer361829982.logProbe([
+                            137,
+                            55,
+                            137,
+                            59
+                        ], __recognizer361829982.logProbe([
+                            137,
+                            49,
+                            137,
+                            54
+                        ], frame).time) * 4 / __recognizer361829982.logProbe([
+                            137,
+                            66,
+                            137,
+                            72
+                        ], period)));
+                    if (__recognizer361829982.logProbe([
+                            138,
+                            25,
+                            138,
+                            29
+                        ], __recognizer361829982.logProbe([
+                            138,
+                            19,
+                            138,
+                            24
+                        ], frame).time) >= 2000) {
+                        var children = function () {
+                                var obj = __recognizer361829982.logProbe([
+                                        139,
+                                        35,
+                                        139,
+                                        46
+                                    ], bulletLayer), fn = __recognizer361829982.logProbe([
+                                        139,
+                                        47,
+                                        139,
+                                        50
+                                    ], obj.get);
+                                return fn.apply(obj, arguments);
+                            }.bind(this)('Rect');
+                        (function () {
+                            var obj = __recognizer361829982.logProbe([
+                                    140,
+                                    29,
+                                    140,
+                                    30
+                                ], __recognizer361829982.logProbe([
+                                    140,
+                                    20,
+                                    140,
+                                    28
+                                ], children)[0]), fn = __recognizer361829982.logProbe([
+                                    140,
+                                    32,
+                                    140,
+                                    38
+                                ], obj.remove);
+                            return fn.apply(obj, arguments);
+                        }.bind(this)());
+                        (function () {
+                            var obj = __recognizer361829982.logProbe([
+                                    141,
+                                    20,
+                                    141,
+                                    31
+                                ], bulletLayer), fn = __recognizer361829982.logProbe([
+                                    141,
+                                    32,
+                                    141,
+                                    36
+                                ], obj.draw);
+                            return fn.apply(obj, arguments);
+                        }.bind(this)());
+                        (function () {
+                            var obj = __recognizer361829982.logProbe([
+                                    142,
+                                    20,
+                                    142,
+                                    24
+                                ], anim), fn = __recognizer361829982.logProbe([
+                                    142,
+                                    25,
+                                    142,
+                                    29
+                                ], obj.stop);
+                            return fn.apply(obj, arguments);
+                        }.bind(this)());
+                    }
+                }, __recognizer361829982.logProbe([
+                    144,
+                    15,
+                    144,
+                    26
+                ], bulletLayer));
+            (function () {
+                var obj = __recognizer361829982.logProbe([
+                        146,
+                        12,
+                        146,
+                        16
+                    ], anim), fn = __recognizer361829982.logProbe([
+                        146,
+                        17,
+                        146,
+                        22
+                    ], obj.start);
+                return fn.apply(obj, arguments);
+            }.bind(this)());
+        }
+        function arrowKeys(images) {
+            __recognizer361829982.logEntry([
+                149,
+                17,
+                149,
                 26
             ], arguments);
             (function () {
-                var obj = __recognizer611512228.logProbe([
-                        117,
+                var obj = __recognizer361829982.logProbe([
+                        150,
                         12,
-                        117,
+                        150,
                         23
-                    ], __recognizer611512228.logProbe([
-                        117,
+                    ], __recognizer361829982.logProbe([
+                        150,
                         12,
-                        117,
+                        150,
                         13
-                    ], $)(__recognizer611512228.logProbe([
-                        117,
+                    ], $)(__recognizer361829982.logProbe([
+                        150,
                         14,
-                        117,
+                        150,
                         22
-                    ], document))), fn = __recognizer611512228.logProbe([
-                        117,
+                    ], document))), fn = __recognizer361829982.logProbe([
+                        150,
                         24,
-                        117,
+                        150,
                         31
                     ], obj.keydown);
                 return fn.apply(obj, arguments);
             }.bind(this)(function (e) {
-                __recognizer611512228.logEntry([
-                    117,
+                __recognizer361829982.logEntry([
+                    150,
                     32,
-                    117,
+                    150,
                     40
                 ], arguments);
-                if (__recognizer611512228.logProbe([
-                        118,
+                if (__recognizer361829982.logProbe([
+                        151,
                         22,
-                        118,
+                        151,
                         29
-                    ], __recognizer611512228.logProbe([
-                        118,
+                    ], __recognizer361829982.logProbe([
+                        151,
                         20,
-                        118,
+                        151,
                         21
                     ], e).keyCode) == 37) {
                     if (function () {
-                            var obj = __recognizer611512228.logProbe([
-                                    119,
+                            var obj = __recognizer361829982.logProbe([
+                                    152,
                                     23,
-                                    119,
+                                    152,
                                     26
-                                ], car), fn = __recognizer611512228.logProbe([
-                                    119,
+                                ], car), fn = __recognizer361829982.logProbe([
+                                    152,
                                     27,
-                                    119,
+                                    152,
                                     31
                                 ], obj.getX);
                             return fn.apply(obj, arguments);
                         }.bind(this)() - 100 >= 150)
                         (function () {
-                            var obj = __recognizer611512228.logProbe([
-                                    120,
+                            var obj = __recognizer361829982.logProbe([
+                                    153,
                                     24,
-                                    120,
+                                    153,
                                     27
-                                ], car), fn = __recognizer611512228.logProbe([
-                                    120,
+                                ], car), fn = __recognizer361829982.logProbe([
+                                    153,
                                     28,
-                                    120,
+                                    153,
                                     32
                                 ], obj.setX);
                             return fn.apply(obj, arguments);
                         }.bind(this)(function () {
-                            var obj = __recognizer611512228.logProbe([
-                                    120,
+                            var obj = __recognizer361829982.logProbe([
+                                    153,
                                     33,
-                                    120,
+                                    153,
                                     36
-                                ], car), fn = __recognizer611512228.logProbe([
-                                    120,
+                                ], car), fn = __recognizer361829982.logProbe([
+                                    153,
                                     37,
-                                    120,
+                                    153,
                                     41
                                 ], obj.getX);
                             return fn.apply(obj, arguments);
                         }.bind(this)() - 100));
                     return false;
-                } else if (__recognizer611512228.logProbe([
-                        122,
+                } else if (__recognizer361829982.logProbe([
+                        155,
                         28,
-                        122,
+                        155,
                         35
-                    ], __recognizer611512228.logProbe([
-                        122,
+                    ], __recognizer361829982.logProbe([
+                        155,
                         26,
-                        122,
+                        155,
                         27
                     ], e).keyCode) == 39) {
                     if (function () {
-                            var obj = __recognizer611512228.logProbe([
-                                    123,
+                            var obj = __recognizer361829982.logProbe([
+                                    156,
                                     23,
-                                    123,
+                                    156,
                                     26
-                                ], car), fn = __recognizer611512228.logProbe([
-                                    123,
+                                ], car), fn = __recognizer361829982.logProbe([
+                                    156,
                                     27,
-                                    123,
+                                    156,
                                     31
                                 ], obj.getX);
                             return fn.apply(obj, arguments);
                         }.bind(this)() + 100 <= 550)
                         (function () {
-                            var obj = __recognizer611512228.logProbe([
-                                    124,
+                            var obj = __recognizer361829982.logProbe([
+                                    157,
                                     24,
-                                    124,
+                                    157,
                                     27
-                                ], car), fn = __recognizer611512228.logProbe([
-                                    124,
+                                ], car), fn = __recognizer361829982.logProbe([
+                                    157,
                                     28,
-                                    124,
+                                    157,
                                     32
                                 ], obj.setX);
                             return fn.apply(obj, arguments);
                         }.bind(this)(function () {
-                            var obj = __recognizer611512228.logProbe([
-                                    124,
+                            var obj = __recognizer361829982.logProbe([
+                                    157,
                                     33,
-                                    124,
+                                    157,
                                     36
-                                ], car), fn = __recognizer611512228.logProbe([
-                                    124,
+                                ], car), fn = __recognizer361829982.logProbe([
+                                    157,
                                     37,
-                                    124,
+                                    157,
                                     41
                                 ], obj.getX);
                             return fn.apply(obj, arguments);
                         }.bind(this)() + 100));
                     return false;
+                } else if (__recognizer361829982.logProbe([
+                        159,
+                        28,
+                        159,
+                        35
+                    ], __recognizer361829982.logProbe([
+                        159,
+                        26,
+                        159,
+                        27
+                    ], e).keyCode) == 32) {
+                    var x = function () {
+                            var obj = __recognizer361829982.logProbe([
+                                    160,
+                                    28,
+                                    160,
+                                    31
+                                ], car), fn = __recognizer361829982.logProbe([
+                                    160,
+                                    32,
+                                    160,
+                                    36
+                                ], obj.getX);
+                            return fn.apply(obj, arguments);
+                        }.bind(this)();
+                    var y = function () {
+                            var obj = __recognizer361829982.logProbe([
+                                    161,
+                                    28,
+                                    161,
+                                    31
+                                ], car), fn = __recognizer361829982.logProbe([
+                                    161,
+                                    32,
+                                    161,
+                                    36
+                                ], obj.getY);
+                            return fn.apply(obj, arguments);
+                        }.bind(this)();
+                    __recognizer361829982.logProbe([
+                        162,
+                        20,
+                        162,
+                        46
+                    ], __recognizer361829982.logProbe([
+                        162,
+                        20,
+                        162,
+                        32
+                    ], createBullet)(__recognizer361829982.logProbe([
+                        162,
+                        33,
+                        162,
+                        34
+                    ], x), __recognizer361829982.logProbe([
+                        162,
+                        36,
+                        162,
+                        37
+                    ], y), __recognizer361829982.logProbe([
+                        162,
+                        39,
+                        162,
+                        45
+                    ], images)));
+                    var bulletSound = new (__recognizer361829982.logProbe([
+                            163,
+                            42,
+                            163,
+                            47
+                        ], Audio))('audio/shot.wav');
+                    (function () {
+                        var obj = __recognizer361829982.logProbe([
+                                164,
+                                20,
+                                164,
+                                31
+                            ], bulletSound), fn = __recognizer361829982.logProbe([
+                                164,
+                                32,
+                                164,
+                                36
+                            ], obj.play);
+                        return fn.apply(obj, arguments);
+                    }.bind(this)());
+                    return false;
                 }
             }));
         }
         function init() {
-            __recognizer611512228.logEntry([
-                134,
+            __recognizer361829982.logEntry([
+                170,
                 17,
-                134,
+                170,
                 21
             ], arguments);
             var sources = {
                     pit: 'images/pits.png',
-                    car: 'images/car.png'
+                    car: 'images/car.png',
+                    bullet: 'images/bullet.png'
                 };
-            __recognizer611512228.logProbe([
-                142,
+            __recognizer361829982.logProbe([
+                179,
                 12,
-                144,
+                181,
                 14
-            ], __recognizer611512228.logProbe([
-                142,
+            ], __recognizer361829982.logProbe([
+                179,
                 12,
-                142,
+                179,
                 22
-            ], loadImages)(__recognizer611512228.logProbe([
-                142,
+            ], loadImages)(__recognizer361829982.logProbe([
+                179,
                 23,
-                142,
+                179,
                 30
             ], sources), function (images) {
-                __recognizer611512228.logEntry([
-                    142,
+                __recognizer361829982.logEntry([
+                    179,
                     32,
-                    142,
+                    179,
                     40
                 ], arguments);
-                __recognizer611512228.logProbe([
-                    143,
+                __recognizer361829982.logProbe([
+                    180,
                     16,
-                    143,
+                    180,
                     39
-                ], __recognizer611512228.logProbe([
-                    143,
+                ], __recognizer361829982.logProbe([
+                    180,
                     16,
-                    143,
+                    180,
                     31
-                ], drawCanvasStage)(__recognizer611512228.logProbe([
-                    143,
+                ], drawCanvasStage)(__recognizer361829982.logProbe([
+                    180,
                     32,
-                    143,
+                    180,
                     38
                 ], images)));
             }));
         }
         return { init: init };
     }();
-}(__recognizer611512228.logProbe([
-    152,
+}(__recognizer361829982.logProbe([
+    189,
     2,
-    152,
+    189,
     14
-], Presentation), __recognizer611512228.logProbe([
-    152,
+], Presentation), __recognizer361829982.logProbe([
+    189,
     16,
-    152,
+    189,
     22
 ], jQuery)));

@@ -45,10 +45,7 @@ var BusinessLogic = window.BusinessLogic || {};
 
     //This is a logic that only connects with Parse and get the data.
     var basicOperatorsBL = (function(){
-
-        //Bridge functions, intermediation between layers
-        //Download the names, send reference to dataAcess.js
-        
+    
         function shiftRightByte(pByte,pNumPositionsMove){
             var bitMoved;
             bitMoved = ((0xff >> pNumPositionsMove) & pByte); 

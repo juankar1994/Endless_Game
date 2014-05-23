@@ -3,7 +3,7 @@
  * https://github.com/equiet/recognizer
  */
 
-var __recognizer356614964 = (function () {
+var __recognizer700875069 = (function () {
     'use strict';
 
     var global = this;
@@ -157,847 +157,597 @@ var __recognizer356614964 = (function () {
  * Instrumented code
  */
 
+var LibraryData = __recognizer700875069.logProbe([
+        19,
+        25,
+        19,
+        36
+    ], __recognizer700875069.logProbe([
+        19,
+        18,
+        19,
+        24
+    ], window).LibraryData) || {};
 (function (pContext, $) {
-    __recognizer356614964.logEntry([
+    __recognizer700875069.logEntry([
         21,
         1,
         21,
         9
     ], arguments);
-    'use strict';
-    pContext.getWeaponGeneticAlgorithm = function () {
-        __recognizer356614964.logEntry([
-            29,
-            41,
-            29,
-            49
+    pContext.createGraph = function () {
+        __recognizer700875069.logEntry([
+            23,
+            27,
+            23,
+            35
         ], arguments);
-        return __recognizer356614964.logProbe([
-            30,
-            15,
-            30,
-            37
-        ], weaponGeneticAlgorithm);
+        return new (__recognizer700875069.logProbe([
+            24,
+            19,
+            24,
+            24
+        ], Graph))();
     };
-    var weaponGeneticAlgorithm = function () {
-            __recognizer356614964.logEntry([
-                42,
-                34,
-                42,
-                42
-            ], arguments);
-            function selectChromosome(pChromosomeRange, bestRange) {
-                __recognizer356614964.logEntry([
-                    45,
-                    17,
-                    45,
-                    33
+    var Graph = function () {
+            var obj = __recognizer700875069.logProbe([
+                    27,
+                    16,
+                    27,
+                    21
+                ], Class), fn = __recognizer700875069.logProbe([
+                    27,
+                    22,
+                    27,
+                    28
+                ], obj.extend);
+            return fn.apply(obj, arguments);
+        }.bind(this)({
+            init: function () {
+                __recognizer700875069.logEntry([
+                    28,
+                    14,
+                    28,
+                    22
                 ], arguments);
-                if (__recognizer356614964.logProbe([
-                        46,
-                        15,
-                        46,
-                        31
-                    ], pChromosomeRange) >= __recognizer356614964.logProbe([
-                        46,
-                        35,
-                        46,
-                        44
-                    ], bestRange)) {
-                    return true;
-                } else {
-                    return false;
-                }
-            }
-            function getRandomInt(min, max) {
-                __recognizer356614964.logEntry([
-                    55,
-                    17,
-                    55,
-                    29
+                this.vertices = new (__recognizer700875069.logProbe([
+                    29,
+                    32,
+                    29,
+                    37
+                ], Array))();
+            },
+            addVertex: function (pId) {
+                __recognizer700875069.logEntry([
+                    32,
+                    19,
+                    32,
+                    27
                 ], arguments);
-                return function () {
-                    var obj = __recognizer356614964.logProbe([
-                            56,
-                            19,
-                            56,
-                            23
-                        ], Math), fn = __recognizer356614964.logProbe([
-                            56,
-                            24,
-                            56,
-                            29
-                        ], obj.floor);
+                (function () {
+                    var obj = __recognizer700875069.logProbe([
+                            33,
+                            17,
+                            33,
+                            25
+                        ], __recognizer700875069.logProbe([
+                            33,
+                            12,
+                            33,
+                            16
+                        ], this).vertices), fn = __recognizer700875069.logProbe([
+                            33,
+                            26,
+                            33,
+                            30
+                        ], obj.push);
                     return fn.apply(obj, arguments);
                 }.bind(this)(function () {
-                    var obj = __recognizer356614964.logProbe([
-                            56,
-                            30,
-                            56,
-                            34
-                        ], Math), fn = __recognizer356614964.logProbe([
-                            56,
-                            35,
-                            56,
-                            41
-                        ], obj.random);
-                    return fn.apply(obj, arguments);
-                }.bind(this)() * (__recognizer356614964.logProbe([
-                    56,
-                    47,
-                    56,
-                    50
-                ], max) - __recognizer356614964.logProbe([
-                    56,
-                    53,
-                    56,
-                    56
-                ], min) + 1)) + __recognizer356614964.logProbe([
-                    56,
-                    65,
-                    56,
-                    68
-                ], min);
-            }
-            function reproduceWeaponPart(byte1, byte2, pointCrossing) {
-                __recognizer356614964.logEntry([
-                    59,
-                    17,
-                    59,
-                    36
-                ], arguments);
-                byte1 = function () {
-                    var obj = function () {
-                            var obj = __recognizer356614964.logProbe([
-                                    60,
-                                    19,
-                                    60,
-                                    32
-                                ], BusinessLogic), fn = __recognizer356614964.logProbe([
-                                    60,
-                                    33,
-                                    60,
-                                    52
-                                ], obj.getBasicOperatorsBL);
-                            return fn.apply(obj, arguments);
-                        }.bind(this)(), fn = __recognizer356614964.logProbe([
-                            60,
-                            55,
-                            60,
-                            69
-                        ], obj.shiftRightByte);
-                    return fn.apply(obj, arguments);
-                }.bind(this)(__recognizer356614964.logProbe([
-                    60,
-                    70,
-                    60,
-                    75
-                ], byte1), __recognizer356614964.logProbe([
-                    60,
-                    76,
-                    60,
-                    89
-                ], pointCrossing));
-                byte2 = function () {
-                    var obj = function () {
-                            var obj = __recognizer356614964.logProbe([
-                                    61,
-                                    19,
-                                    61,
-                                    32
-                                ], BusinessLogic), fn = __recognizer356614964.logProbe([
-                                    61,
-                                    33,
-                                    61,
-                                    52
-                                ], obj.getBasicOperatorsBL);
-                            return fn.apply(obj, arguments);
-                        }.bind(this)(), fn = __recognizer356614964.logProbe([
-                            61,
-                            55,
-                            61,
-                            68
-                        ], obj.shiftLeftByte);
-                    return fn.apply(obj, arguments);
-                }.bind(this)(__recognizer356614964.logProbe([
-                    61,
-                    69,
-                    61,
-                    74
-                ], byte2), __recognizer356614964.logProbe([
-                    61,
-                    75,
-                    61,
-                    88
-                ], pointCrossing));
-                var son = function () {
-                        var obj = function () {
-                                var obj = __recognizer356614964.logProbe([
-                                        62,
-                                        22,
-                                        62,
-                                        35
-                                    ], BusinessLogic), fn = __recognizer356614964.logProbe([
-                                        62,
-                                        36,
-                                        62,
-                                        55
-                                    ], obj.getBasicOperatorsBL);
-                                return fn.apply(obj, arguments);
-                            }.bind(this)(), fn = __recognizer356614964.logProbe([
-                                62,
-                                58,
-                                62,
-                                77
-                            ], obj.reproduceChromosome);
-                        return fn.apply(obj, arguments);
-                    }.bind(this)(__recognizer356614964.logProbe([
-                        62,
-                        78,
-                        62,
-                        83
-                    ], byte1), __recognizer356614964.logProbe([
-                        62,
-                        84,
-                        62,
-                        89
-                    ], byte2));
-                return __recognizer356614964.logProbe([
-                    63,
-                    19,
-                    63,
-                    22
-                ], son);
-            }
-            function geneticAlgorithm(pPopulation, weapon) {
-                __recognizer356614964.logEntry([
-                    67,
-                    17,
-                    67,
-                    33
-                ], arguments);
-                var selectedChromosome = new (__recognizer356614964.logProbe([
-                        69,
-                        41,
-                        69,
-                        46
-                    ], Array))();
-                var bestWeaponRange = __recognizer356614964.logProbe([
-                        70,
-                        34,
-                        70,
-                        54
-                    ], __recognizer356614964.logProbe([
-                        70,
-                        34,
-                        70,
-                        52
-                    ], getBestWeaponRange)());
-                var operationsBits = function () {
-                        var obj = __recognizer356614964.logProbe([
-                                71,
-                                33,
-                                71,
-                                46
-                            ], BusinessLogic), fn = __recognizer356614964.logProbe([
-                                71,
-                                47,
-                                71,
-                                66
-                            ], obj.getBasicOperatorsBL);
-                        return fn.apply(obj, arguments);
-                    }.bind(this)();
-                for (var chromosomeNumber = 0; __recognizer356614964.logProbe([
-                        73,
-                        43,
-                        73,
-                        59
-                    ], chromosomeNumber) < __recognizer356614964.logProbe([
-                        73,
-                        74,
-                        73,
-                        80
-                    ], __recognizer356614964.logProbe([
-                        73,
-                        62,
-                        73,
-                        73
-                    ], pPopulation).length); __recognizer356614964.logProbe([
-                        73,
-                        83,
-                        73,
-                        99
-                    ], chromosomeNumber)++) {
-                    var chromosome = __recognizer356614964.logProbe([
-                            74,
-                            45,
-                            74,
-                            61
-                        ], __recognizer356614964.logProbe([
-                            74,
+                    var obj = __recognizer700875069.logProbe([
                             33,
-                            74,
-                            44
-                        ], pPopulation)[chromosomeNumber]);
-                    if (__recognizer356614964.logProbe([
-                            75,
-                            19,
-                            75,
-                            79
-                        ], __recognizer356614964.logProbe([
-                            75,
-                            19,
-                            75,
-                            35
-                        ], selectChromosome)(function () {
-                            var obj = __recognizer356614964.logProbe([
-                                    75,
+                            31,
+                            33,
+                            42
+                        ], LibraryData), fn = __recognizer700875069.logProbe([
+                            33,
+                            43,
+                            33,
+                            55
+                        ], obj.createVertex);
+                    return fn.apply(obj, arguments);
+                }.bind(this)(__recognizer700875069.logProbe([
+                    33,
+                    56,
+                    33,
+                    59
+                ], pId))));
+            },
+            addEdge: function (pSource, pDestiny) {
+                __recognizer700875069.logEntry([
+                    36,
+                    17,
+                    36,
+                    25
+                ], arguments);
+                if (__recognizer700875069.logProbe([
+                        37,
+                        15,
+                        37,
+                        22
+                    ], pSource) != null && __recognizer700875069.logProbe([
+                        37,
+                        34,
+                        37,
+                        42
+                    ], pDestiny) != null)
+                    (function () {
+                        var obj = __recognizer700875069.logProbe([
+                                38,
+                                16,
+                                38,
+                                23
+                            ], pSource), fn = __recognizer700875069.logProbe([
+                                38,
+                                24,
+                                38,
+                                31
+                            ], obj.addEdge);
+                        return fn.apply(obj, arguments);
+                    }.bind(this)(__recognizer700875069.logProbe([
+                        38,
+                        32,
+                        38,
+                        40
+                    ], pDestiny)));
+            },
+            searchVertex: function (pValue) {
+                __recognizer700875069.logEntry([
+                    41,
+                    22,
+                    41,
+                    30
+                ], arguments);
+                for (var i = 0; __recognizer700875069.logProbe([
+                        42,
+                        28,
+                        42,
+                        29
+                    ], i) < __recognizer700875069.logProbe([
+                        42,
+                        46,
+                        42,
+                        52
+                    ], __recognizer700875069.logProbe([
+                        42,
+                        37,
+                        42,
+                        45
+                    ], __recognizer700875069.logProbe([
+                        42,
+                        32,
+                        42,
+                        36
+                    ], this).vertices).length); __recognizer700875069.logProbe([
+                        42,
+                        54,
+                        42,
+                        55
+                    ], i)++) {
+                    if (function () {
+                            var obj = __recognizer700875069.logProbe([
+                                    43,
+                                    33,
+                                    43,
+                                    34
+                                ], __recognizer700875069.logProbe([
+                                    43,
+                                    24,
+                                    43,
+                                    32
+                                ], __recognizer700875069.logProbe([
+                                    43,
+                                    19,
+                                    43,
+                                    23
+                                ], this).vertices)[i]), fn = __recognizer700875069.logProbe([
+                                    43,
                                     36,
-                                    75,
-                                    46
-                                ], chromosome), fn = __recognizer356614964.logProbe([
-                                    75,
-                                    47,
-                                    75,
-                                    60
-                                ], obj.getLaneNumber);
+                                    43,
+                                    41
+                                ], obj.getId);
                             return fn.apply(obj, arguments);
-                        }.bind(this)(), __recognizer356614964.logProbe([
-                            75,
-                            63,
-                            75,
-                            78
-                        ], bestWeaponRange))) == true) {
-                        (function () {
-                            var obj = __recognizer356614964.logProbe([
-                                    76,
-                                    20,
-                                    76,
-                                    38
-                                ], selectedChromosome), fn = __recognizer356614964.logProbe([
-                                    76,
-                                    39,
-                                    76,
-                                    43
-                                ], obj.push);
-                            return fn.apply(obj, arguments);
-                        }.bind(this)(__recognizer356614964.logProbe([
-                            76,
+                        }.bind(this)() == __recognizer700875069.logProbe([
+                            43,
+                            47,
+                            43,
+                            53
+                        ], pValue))
+                        return __recognizer700875069.logProbe([
                             44,
-                            76,
-                            54
-                        ], chromosome)));
+                            41,
+                            44,
+                            42
+                        ], __recognizer700875069.logProbe([
+                            44,
+                            32,
+                            44,
+                            40
+                        ], __recognizer700875069.logProbe([
+                            44,
+                            27,
+                            44,
+                            31
+                        ], this).vertices)[i]);
+                }
+                return null;
+            },
+            visitVertex: function (pVertex) {
+                __recognizer700875069.logEntry([
+                    49,
+                    21,
+                    49,
+                    29
+                ], arguments);
+                for (var i = 0; __recognizer700875069.logProbe([
+                        50,
+                        28,
+                        50,
+                        29
+                    ], i) < __recognizer700875069.logProbe([
+                        50,
+                        46,
+                        50,
+                        52
+                    ], __recognizer700875069.logProbe([
+                        50,
+                        37,
+                        50,
+                        45
+                    ], __recognizer700875069.logProbe([
+                        50,
+                        32,
+                        50,
+                        36
+                    ], this).vertices).length); __recognizer700875069.logProbe([
+                        50,
+                        54,
+                        50,
+                        55
+                    ], i)++) {
+                    if (function () {
+                            var obj = __recognizer700875069.logProbe([
+                                    51,
+                                    33,
+                                    51,
+                                    34
+                                ], __recognizer700875069.logProbe([
+                                    51,
+                                    24,
+                                    51,
+                                    32
+                                ], __recognizer700875069.logProbe([
+                                    51,
+                                    19,
+                                    51,
+                                    23
+                                ], this).vertices)[i]), fn = __recognizer700875069.logProbe([
+                                    51,
+                                    36,
+                                    51,
+                                    41
+                                ], obj.getId);
+                            return fn.apply(obj, arguments);
+                        }.bind(this)() == function () {
+                            var obj = __recognizer700875069.logProbe([
+                                    51,
+                                    47,
+                                    51,
+                                    54
+                                ], pVertex), fn = __recognizer700875069.logProbe([
+                                    51,
+                                    55,
+                                    51,
+                                    60
+                                ], obj.getId);
+                            return fn.apply(obj, arguments);
+                        }.bind(this)())
+                        (function () {
+                            var obj = __recognizer700875069.logProbe([
+                                    52,
+                                    29,
+                                    52,
+                                    30
+                                ], __recognizer700875069.logProbe([
+                                    52,
+                                    20,
+                                    52,
+                                    28
+                                ], vertices)[i]), fn = __recognizer700875069.logProbe([
+                                    52,
+                                    32,
+                                    52,
+                                    42
+                                ], obj.setVisited);
+                            return fn.apply(obj, arguments);
+                        }.bind(this)(true));
+                }
+            },
+            isVertexVisisted: function (pVertex) {
+                __recognizer700875069.logEntry([
+                    56,
+                    26,
+                    56,
+                    34
+                ], arguments);
+                for (var i = 0; __recognizer700875069.logProbe([
+                        57,
+                        28,
+                        57,
+                        29
+                    ], i) < __recognizer700875069.logProbe([
+                        57,
+                        46,
+                        57,
+                        52
+                    ], __recognizer700875069.logProbe([
+                        57,
+                        37,
+                        57,
+                        45
+                    ], __recognizer700875069.logProbe([
+                        57,
+                        32,
+                        57,
+                        36
+                    ], this).vertices).length); __recognizer700875069.logProbe([
+                        57,
+                        54,
+                        57,
+                        55
+                    ], i)++) {
+                    if (function () {
+                            var obj = __recognizer700875069.logProbe([
+                                    58,
+                                    33,
+                                    58,
+                                    34
+                                ], __recognizer700875069.logProbe([
+                                    58,
+                                    24,
+                                    58,
+                                    32
+                                ], __recognizer700875069.logProbe([
+                                    58,
+                                    19,
+                                    58,
+                                    23
+                                ], this).vertices)[i]), fn = __recognizer700875069.logProbe([
+                                    58,
+                                    36,
+                                    58,
+                                    41
+                                ], obj.getId);
+                            return fn.apply(obj, arguments);
+                        }.bind(this)() == function () {
+                            var obj = __recognizer700875069.logProbe([
+                                    58,
+                                    47,
+                                    58,
+                                    54
+                                ], pVertex), fn = __recognizer700875069.logProbe([
+                                    58,
+                                    55,
+                                    58,
+                                    60
+                                ], obj.getId);
+                            return fn.apply(obj, arguments);
+                        }.bind(this)())
+                        return function () {
+                            var obj = __recognizer700875069.logProbe([
+                                    59,
+                                    36,
+                                    59,
+                                    37
+                                ], __recognizer700875069.logProbe([
+                                    59,
+                                    27,
+                                    59,
+                                    35
+                                ], vertices)[i]), fn = __recognizer700875069.logProbe([
+                                    59,
+                                    39,
+                                    59,
+                                    49
+                                ], obj.getVisited);
+                            return fn.apply(obj, arguments);
+                        }.bind(this)();
+                }
+            },
+            print: function () {
+                __recognizer700875069.logEntry([
+                    63,
+                    15,
+                    63,
+                    23
+                ], arguments);
+                for (var i = 0; __recognizer700875069.logProbe([
+                        64,
+                        28,
+                        64,
+                        29
+                    ], i) < __recognizer700875069.logProbe([
+                        64,
+                        46,
+                        64,
+                        52
+                    ], __recognizer700875069.logProbe([
+                        64,
+                        37,
+                        64,
+                        45
+                    ], __recognizer700875069.logProbe([
+                        64,
+                        32,
+                        64,
+                        36
+                    ], this).vertices).length); __recognizer700875069.logProbe([
+                        64,
+                        54,
+                        64,
+                        55
+                    ], i)++) {
+                    (function () {
+                        var obj = __recognizer700875069.logProbe([
+                                65,
+                                16,
+                                65,
+                                23
+                            ], console), fn = __recognizer700875069.logProbe([
+                                65,
+                                24,
+                                65,
+                                27
+                            ], obj.log);
+                        return fn.apply(obj, arguments);
+                    }.bind(this)('Vertice ' + function () {
+                        var obj = __recognizer700875069.logProbe([
+                                65,
+                                54,
+                                65,
+                                55
+                            ], __recognizer700875069.logProbe([
+                                65,
+                                45,
+                                65,
+                                53
+                            ], __recognizer700875069.logProbe([
+                                65,
+                                40,
+                                65,
+                                44
+                            ], this).vertices)[i]), fn = __recognizer700875069.logProbe([
+                                65,
+                                57,
+                                65,
+                                62
+                            ], obj.getId);
+                        return fn.apply(obj, arguments);
+                    }.bind(this)() + ':  '));
+                    for (var j = 0; __recognizer700875069.logProbe([
+                            66,
+                            32,
+                            66,
+                            33
+                        ], j) < __recognizer700875069.logProbe([
+                            66,
+                            64,
+                            66,
+                            70
+                        ], function () {
+                            var obj = __recognizer700875069.logProbe([
+                                    66,
+                                    50,
+                                    66,
+                                    51
+                                ], __recognizer700875069.logProbe([
+                                    66,
+                                    41,
+                                    66,
+                                    49
+                                ], __recognizer700875069.logProbe([
+                                    66,
+                                    36,
+                                    66,
+                                    40
+                                ], this).vertices)[i]), fn = __recognizer700875069.logProbe([
+                                    66,
+                                    53,
+                                    66,
+                                    61
+                                ], obj.getEdges);
+                            return fn.apply(obj, arguments);
+                        }.bind(this)().length); __recognizer700875069.logProbe([
+                            66,
+                            72,
+                            66,
+                            73
+                        ], j)++) {
+                        (function () {
+                            var obj = __recognizer700875069.logProbe([
+                                    67,
+                                    20,
+                                    67,
+                                    27
+                                ], console), fn = __recognizer700875069.logProbe([
+                                    67,
+                                    28,
+                                    67,
+                                    31
+                                ], obj.log);
+                            return fn.apply(obj, arguments);
+                        }.bind(this)(function () {
+                            var obj = __recognizer700875069.logProbe([
+                                    67,
+                                    60,
+                                    67,
+                                    61
+                                ], function () {
+                                    var obj = __recognizer700875069.logProbe([
+                                            67,
+                                            46,
+                                            67,
+                                            47
+                                        ], __recognizer700875069.logProbe([
+                                            67,
+                                            37,
+                                            67,
+                                            45
+                                        ], __recognizer700875069.logProbe([
+                                            67,
+                                            32,
+                                            67,
+                                            36
+                                        ], this).vertices)[i]), fn = __recognizer700875069.logProbe([
+                                            67,
+                                            49,
+                                            67,
+                                            57
+                                        ], obj.getEdges);
+                                    return fn.apply(obj, arguments);
+                                }.bind(this)()[j]), fn = __recognizer700875069.logProbe([
+                                    67,
+                                    63,
+                                    67,
+                                    68
+                                ], obj.getId);
+                            return fn.apply(obj, arguments);
+                        }.bind(this)() + '  '));
                     }
-                }
-                var selectionChromosome = __recognizer356614964.logProbe([
-                        80,
-                        38,
-                        80,
-                        81
-                    ], __recognizer356614964.logProbe([
-                        80,
-                        38,
-                        80,
-                        50
-                    ], getRandomInt)(0, __recognizer356614964.logProbe([
-                        80,
-                        72,
-                        80,
-                        78
-                    ], __recognizer356614964.logProbe([
-                        80,
-                        53,
-                        80,
-                        71
-                    ], selectedChromosome).length) - 1));
-                var pointCrossing = __recognizer356614964.logProbe([
-                        82,
-                        32,
-                        82,
-                        49
-                    ], __recognizer356614964.logProbe([
-                        82,
-                        32,
-                        82,
-                        44
-                    ], getRandomInt)(2, 6));
-                var mutation = __recognizer356614964.logProbe([
-                        83,
-                        27,
-                        83,
-                        46
-                    ], __recognizer356614964.logProbe([
-                        83,
-                        27,
-                        83,
-                        39
-                    ], getRandomInt)(0, 100));
-                var bitMutate;
-                var newThickness = __recognizer356614964.logProbe([
-                        86,
-                        31,
-                        86,
-                        108
-                    ], __recognizer356614964.logProbe([
-                        86,
-                        31,
-                        86,
-                        50
-                    ], reproduceWeaponPart)(function () {
-                        var obj = __recognizer356614964.logProbe([
-                                86,
-                                51,
-                                86,
-                                57
-                            ], weapon), fn = __recognizer356614964.logProbe([
-                                86,
-                                58,
-                                86,
-                                70
-                            ], obj.getThickness);
-                        return fn.apply(obj, arguments);
-                    }.bind(this)(), function () {
-                        var obj = __recognizer356614964.logProbe([
-                                86,
-                                73,
-                                86,
-                                92
-                            ], selectionChromosome), fn = __recognizer356614964.logProbe([
-                                86,
-                                93,
-                                86,
-                                105
-                            ], obj.getThickness);
-                        return fn.apply(obj, arguments);
-                    }.bind(this)()));
-                if (__recognizer356614964.logProbe([
-                        87,
-                        15,
-                        87,
-                        23
-                    ], mutation) > 90) {
-                    bitMutate = __recognizer356614964.logProbe([
-                        88,
-                        28,
-                        88,
-                        45
-                    ], __recognizer356614964.logProbe([
-                        88,
-                        28,
-                        88,
-                        40
-                    ], getRandomInt)(0, 7));
-                    newThickness = function () {
-                        var obj = function () {
-                                var obj = __recognizer356614964.logProbe([
-                                        89,
-                                        31,
-                                        89,
-                                        44
-                                    ], BusinessLogic), fn = __recognizer356614964.logProbe([
-                                        89,
-                                        45,
-                                        89,
-                                        64
-                                    ], obj.getBasicOperatorsBL);
-                                return fn.apply(obj, arguments);
-                            }.bind(this)(), fn = __recognizer356614964.logProbe([
-                                89,
-                                67,
-                                89,
-                                76
-                            ], obj.mutateBit);
-                        return fn.apply(obj, arguments);
-                    }.bind(this)(__recognizer356614964.logProbe([
-                        89,
-                        77,
-                        89,
-                        89
-                    ], newThickness), __recognizer356614964.logProbe([
-                        89,
-                        90,
-                        89,
-                        99
-                    ], bitMutate));
-                }
-                pointCrossing = __recognizer356614964.logProbe([
-                    92,
-                    28,
-                    92,
-                    45
-                ], __recognizer356614964.logProbe([
-                    92,
-                    28,
-                    92,
-                    40
-                ], getRandomInt)(2, 6));
-                mutation = __recognizer356614964.logProbe([
-                    93,
-                    23,
-                    93,
-                    42
-                ], __recognizer356614964.logProbe([
-                    93,
-                    23,
-                    93,
-                    35
-                ], getRandomInt)(0, 100));
-                var newColorWeapon = __recognizer356614964.logProbe([
-                        94,
-                        33,
-                        94,
-                        102
-                    ], __recognizer356614964.logProbe([
-                        94,
-                        33,
-                        94,
-                        52
-                    ], reproduceWeaponPart)(function () {
-                        var obj = __recognizer356614964.logProbe([
-                                94,
-                                53,
-                                94,
-                                59
-                            ], weapon), fn = __recognizer356614964.logProbe([
-                                94,
-                                60,
-                                94,
-                                68
-                            ], obj.getColor);
-                        return fn.apply(obj, arguments);
-                    }.bind(this)(), function () {
-                        var obj = __recognizer356614964.logProbe([
-                                94,
-                                71,
-                                94,
-                                90
-                            ], selectionChromosome), fn = __recognizer356614964.logProbe([
-                                94,
-                                91,
-                                94,
-                                99
-                            ], obj.getColor);
-                        return fn.apply(obj, arguments);
-                    }.bind(this)()));
-                if (__recognizer356614964.logProbe([
-                        95,
-                        15,
-                        95,
-                        23
-                    ], mutation) > 90) {
-                    bitMutate = __recognizer356614964.logProbe([
-                        96,
-                        28,
-                        96,
-                        45
-                    ], __recognizer356614964.logProbe([
-                        96,
-                        28,
-                        96,
-                        40
-                    ], getRandomInt)(0, 7));
-                    newColorWeapon = function () {
-                        var obj = function () {
-                                var obj = __recognizer356614964.logProbe([
-                                        97,
-                                        33,
-                                        97,
-                                        46
-                                    ], BusinessLogic), fn = __recognizer356614964.logProbe([
-                                        97,
-                                        47,
-                                        97,
-                                        66
-                                    ], obj.getBasicOperatorsBL);
-                                return fn.apply(obj, arguments);
-                            }.bind(this)(), fn = __recognizer356614964.logProbe([
-                                97,
+                    (function () {
+                        var obj = __recognizer700875069.logProbe([
                                 69,
-                                97,
-                                78
-                            ], obj.mutateBit);
-                        return fn.apply(obj, arguments);
-                    }.bind(this)(__recognizer356614964.logProbe([
-                        97,
-                        79,
-                        97,
-                        93
-                    ], newColorWeapon), __recognizer356614964.logProbe([
-                        97,
-                        94,
-                        97,
-                        103
-                    ], bitMutate));
-                }
-                pointCrossing = __recognizer356614964.logProbe([
-                    100,
-                    28,
-                    100,
-                    45
-                ], __recognizer356614964.logProbe([
-                    100,
-                    28,
-                    100,
-                    40
-                ], getRandomInt)(2, 6));
-                mutation = __recognizer356614964.logProbe([
-                    101,
-                    23,
-                    101,
-                    42
-                ], __recognizer356614964.logProbe([
-                    101,
-                    23,
-                    101,
-                    35
-                ], getRandomInt)(0, 100));
-                var newLaneNumber = __recognizer356614964.logProbe([
-                        102,
-                        32,
-                        102,
-                        111
-                    ], __recognizer356614964.logProbe([
-                        102,
-                        32,
-                        102,
-                        51
-                    ], reproduceWeaponPart)(function () {
-                        var obj = __recognizer356614964.logProbe([
-                                102,
-                                52,
-                                102,
-                                58
-                            ], weapon), fn = __recognizer356614964.logProbe([
-                                102,
-                                59,
-                                102,
-                                72
-                            ], obj.getLaneNumber);
-                        return fn.apply(obj, arguments);
-                    }.bind(this)(), function () {
-                        var obj = __recognizer356614964.logProbe([
-                                102,
-                                75,
-                                102,
-                                94
-                            ], selectionChromosome), fn = __recognizer356614964.logProbe([
-                                102,
-                                95,
-                                102,
-                                108
-                            ], obj.getLaneNumber);
-                        return fn.apply(obj, arguments);
-                    }.bind(this)()));
-                if (__recognizer356614964.logProbe([
-                        103,
-                        15,
-                        103,
-                        23
-                    ], mutation) > 90) {
-                    bitMutate = __recognizer356614964.logProbe([
-                        104,
-                        28,
-                        104,
-                        45
-                    ], __recognizer356614964.logProbe([
-                        104,
-                        28,
-                        104,
-                        40
-                    ], getRandomInt)(0, 7));
-                    newLaneNumber = function () {
-                        var obj = function () {
-                                var obj = __recognizer356614964.logProbe([
-                                        105,
-                                        32,
-                                        105,
-                                        45
-                                    ], BusinessLogic), fn = __recognizer356614964.logProbe([
-                                        105,
-                                        46,
-                                        105,
-                                        65
-                                    ], obj.getBasicOperatorsBL);
-                                return fn.apply(obj, arguments);
-                            }.bind(this)(), fn = __recognizer356614964.logProbe([
-                                105,
-                                68,
-                                105,
-                                77
-                            ], obj.mutateBit);
-                        return fn.apply(obj, arguments);
-                    }.bind(this)(__recognizer356614964.logProbe([
-                        105,
-                        78,
-                        105,
-                        91
-                    ], newLaneNumber), __recognizer356614964.logProbe([
-                        105,
-                        92,
-                        105,
-                        101
-                    ], bitMutate));
-                }
-                pointCrossing = __recognizer356614964.logProbe([
-                    108,
-                    28,
-                    108,
-                    45
-                ], __recognizer356614964.logProbe([
-                    108,
-                    28,
-                    108,
-                    40
-                ], getRandomInt)(2, 6));
-                mutation = __recognizer356614964.logProbe([
-                    109,
-                    23,
-                    109,
-                    42
-                ], __recognizer356614964.logProbe([
-                    109,
-                    23,
-                    109,
-                    35
-                ], getRandomInt)(0, 100));
-                var newShapeWeapon = __recognizer356614964.logProbe([
-                        110,
-                        33,
-                        110,
-                        114
-                    ], __recognizer356614964.logProbe([
-                        110,
-                        33,
-                        110,
-                        52
-                    ], reproduceWeaponPart)(function () {
-                        var obj = __recognizer356614964.logProbe([
-                                110,
-                                53,
-                                110,
-                                59
-                            ], weapon), fn = __recognizer356614964.logProbe([
-                                110,
-                                60,
-                                110,
-                                74
-                            ], obj.getShapeWeapon);
-                        return fn.apply(obj, arguments);
-                    }.bind(this)(), function () {
-                        var obj = __recognizer356614964.logProbe([
-                                110,
-                                77,
-                                110,
-                                96
-                            ], selectionChromosome), fn = __recognizer356614964.logProbe([
-                                110,
-                                97,
-                                110,
-                                111
-                            ], obj.getShapeWeapon);
-                        return fn.apply(obj, arguments);
-                    }.bind(this)()));
-                if (__recognizer356614964.logProbe([
-                        111,
-                        15,
-                        111,
-                        23
-                    ], mutation) > 90) {
-                    bitMutate = __recognizer356614964.logProbe([
-                        112,
-                        28,
-                        112,
-                        45
-                    ], __recognizer356614964.logProbe([
-                        112,
-                        28,
-                        112,
-                        40
-                    ], getRandomInt)(0, 7));
-                    newShapeWeapon = function () {
-                        var obj = function () {
-                                var obj = __recognizer356614964.logProbe([
-                                        113,
-                                        33,
-                                        113,
-                                        46
-                                    ], BusinessLogic), fn = __recognizer356614964.logProbe([
-                                        113,
-                                        47,
-                                        113,
-                                        66
-                                    ], obj.getBasicOperatorsBL);
-                                return fn.apply(obj, arguments);
-                            }.bind(this)(), fn = __recognizer356614964.logProbe([
-                                113,
+                                16,
                                 69,
-                                113,
-                                78
-                            ], obj.mutateBit);
+                                23
+                            ], console), fn = __recognizer700875069.logProbe([
+                                69,
+                                24,
+                                69,
+                                27
+                            ], obj.log);
                         return fn.apply(obj, arguments);
-                    }.bind(this)(__recognizer356614964.logProbe([
-                        113,
-                        79,
-                        113,
-                        93
-                    ], newShapeWeapon), __recognizer356614964.logProbe([
-                        113,
-                        94,
-                        113,
-                        103
-                    ], bitMutate));
+                    }.bind(this)('\n'));
                 }
-                var son = function () {
-                        var obj = __recognizer356614964.logProbe([
-                                116,
-                                22,
-                                116,
-                                33
-                            ], LibraryData), fn = __recognizer356614964.logProbe([
-                                116,
-                                34,
-                                116,
-                                50
-                            ], obj.createChromosome);
-                        return fn.apply(obj, arguments);
-                    }.bind(this)(__recognizer356614964.logProbe([
-                        116,
-                        51,
-                        116,
-                        64
-                    ], newLaneNumber), __recognizer356614964.logProbe([
-                        116,
-                        65,
-                        116,
-                        79
-                    ], newColorWeapon), __recognizer356614964.logProbe([
-                        116,
-                        80,
-                        116,
-                        92
-                    ], newThickness), __recognizer356614964.logProbe([
-                        116,
-                        93,
-                        116,
-                        107
-                    ], newShapeWeapon));
-                return __recognizer356614964.logProbe([
-                    118,
-                    19,
-                    118,
-                    22
-                ], son);
             }
-            return { selectChromosome: selectChromosome };
-        }();
-}(__recognizer356614964.logProbe([
-    129,
+        });
+}(__recognizer700875069.logProbe([
+    74,
     2,
-    129,
-    15
-], BusinessLogic), __recognizer356614964.logProbe([
-    129,
-    16,
-    129,
-    22
+    74,
+    13
+], LibraryData), __recognizer700875069.logProbe([
+    74,
+    15,
+    74,
+    21
 ], jQuery)));
