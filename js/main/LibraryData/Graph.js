@@ -18,10 +18,17 @@
  */
 var LibraryData = window.LibraryData || {};
 
-(function (pContext, $) {
+(function (pContext, $) { 
+    // Instance stores a reference to the Singleton
+    var instance;
 
     pContext.createGraph = function(){
-        return new Graph();
+        // Get the Singleton instance if one exists
+        // or create one if it doesn't
+        if ( !instance ) {
+            instance = new Graph();
+        }
+        return instance;
     };
 
     var Graph = Class.extend({

@@ -21,7 +21,8 @@
     
     var RandomSeed = (function(){
         // the initial variables
-        var m = new BigNumber("1152921504606846976");
+        var m = new BigNumber("1152921504606846976");   // 2 ^ 60
+        var m = new BigNumber("1125899906842624");      // 2 ^ 50
         //"Magic numbers"
         var a = 9301;
         var c = 49297;
@@ -30,17 +31,41 @@
         var actualSeed = 0;
         var graph = LibraryData.createGraph();
         
+        //Singleton Pattern Applied
+        //var graph2 = LibraryData.createGraph();
+        //alert(graph === graph2);  //Returns True
+        
         function getNewRandomSeed(){
             //Lehmer's algorithm
             seed = (seed * a + c) % m.valueOf();
             return seed;
-        }     
-        getAncestorSeed();
+        }
+        
         function getAncestorSeed(){
-            //Inverse Lehmer's algorithm
-            seed = (977612300 - c)  * a;
+            //Inverse Euclides' algorithm
+            var inverse = new BigNumber(xgcd(a, m.valueOf())[0]);
+            var previousCalculation  = new BigNumber("129379838756192");
+            var previousSeed = new BigNumber(inverse.multiply((previousCalculation.subtract(c))).mod(m));    
+            alert(previousSeed.valueOf());
+            
+            //var previousSeed = new BigNumber(m.add(tmpSeed));
             //we want seed = 105103
-            alert("INVERSE SEED: " + seed);
+            //alert("INVERSE SEED: " + previousSeed.valueOf());
+        }
+        
+        //Extended Euclid's Algorithm
+        function xgcd(a, b){ 
+            a = new BigNumber(a);
+            b = new BigNumber(b);
+            if (b.valueOf() == 0)
+                return [1, 0, a.valueOf()];
+            else{
+                var temp = xgcd(b.valueOf(), a.mod(b));
+                var x = temp[0];
+                var y = temp[1];
+                var d = temp[2];
+                return [y, x-y*Math.floor(a.divide(b)), d];
+            }
         }
         
         function initialIntersection(){
@@ -79,9 +104,10 @@
         
         //Initial seed of the graph
         initialIntersection();
-        processSeed(1); //Second Intersection
+        getAncestorSeed();
+        processSeed(0); //Second Intersection
         processSeed(0); //First Intersection
-        processSeed(2); //First Intersection
+        processSeed(0); //First Intersection
         /*processSeed(0); //First Intersection*/
         graph.print();
 
