@@ -174,6 +174,7 @@
         
         }
         
+        /*
         alert("Ejemplo de Algoritmo genetico: ");
         alert("El arma en este punto solo esta creada a base de bits, una funcion de "+
                "la clase weapon tomara esta informacion del chromosome y lo covertira en arma. Todavia no esta implementado." );
@@ -193,7 +194,8 @@
         alert("Arma creada: \n LaneNumber : " + generateWeapon.getLaneNumber() + 
               "\n Color : " + generateWeapon.getColor() + "\n Thickness : " + generateWeapon.getThickness() + 
               "\n Shape : " + generateWeapon.getShapeWeapon());
-
+        */
+        
         //Let's make it public
         return {
             selectChromosome : selectChromosome,
