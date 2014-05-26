@@ -26,7 +26,8 @@ var Presentation = window.Presentation || {};
 
     TrackUI = (function(){
 
-        var car, canvasStage, vehicleLayer, boxLayer, weaponLayer, enemyLayer, labelLayer, lifeCounter = 2;
+        var car, canvasStage, vehicleLayer, boxLayer, weaponLayer, enemyLayer, labelLayer, bulletLayer,
+            lifeCounter = 2, gameOver = false;
 
         var weaponObj = {
             laneNumber : 3,
@@ -78,6 +79,7 @@ var Presentation = window.Presentation || {};
             weaponLayer = new Kinetic.Layer();
             enemyLayer = new Kinetic.Layer();
             labelLayer = new Kinetic.Layer();
+            bulletLayer = new Kinetic.Layer();
             
             var pit = new Kinetic.Rect({
                 x: 90,
@@ -123,9 +125,9 @@ var Presentation = window.Presentation || {};
                     enemyLayer.removeChildren();
                     enemyLayer.draw();
                     setTimeout(function(){
-                        createEnemy(5);
+                        createEnemy(5, images);
                         createBox(350, 200,images);
-                    }, 500);
+                    }, 300);
                 }
                 
                 var boxChildren = boxLayer.getChildren();
@@ -148,26 +150,8 @@ var Presentation = window.Presentation || {};
                 for(var i = 0; i < enemyChildren.length; i++){
                     if(car.getX() + 25 == enemyChildren[i].getX()
                        && 400 + car.getY() <= enemyChildren[i].getY()){
-                        if(lifeCounter == 0){
-                            car.remove();
-                            vehicleLayer.draw();   
-                        }else{
-                            lifeCounter--;
-                            enemyChildren[i].remove();
+                        if(checkLifes(anim2, enemyChildren, i)){
                             enemyLayer.draw();
-                            var labelChildren = labelLayer.getChildren();
-                            for(var i = 0; i < labelChildren.length; i++){
-                                var labelChildrenDepth = labelChildren[i].getChildren();
-                                for(var j = 0; j <labelChildrenDepth.length; j++){
-                                    if(labelChildrenDepth[j].name() == "lifes"){
-                                        labelChildrenDepth[j].setText('Lifes:' + lifeCounter);
-                                        labelLayer.draw();
-                                        break;
-                                    }
-                                }
-                            }
-                            var smashSound = new Audio("audio/smash2.wav"); 
-                            smashSound.play();
                             break;
                         }
                     }
@@ -215,15 +199,77 @@ var Presentation = window.Presentation || {};
             canvasStage.add(weaponLayer);     
             canvasStage.add(boxLayer);     
             canvasStage.add(enemyLayer);      
-            canvasStage.add(labelLayer);   
+            canvasStage.add(labelLayer);      
+            canvasStage.add(bulletLayer);   
             
-            createEnemy(5);
-            createBox(150,100,images);
-            
+            createEnemy(5, images);
+            createBox(150,100,images);            
             arrowKeys(images);
         }   
         
-        function createEnemy(pNumberOfEnemies){
+        function checkLifes(pAnimation, pLayer, i){
+            console.log(lifeCounter);
+            if(lifeCounter == 0){
+                car.remove();
+                vehicleLayer.draw();
+                pAnimation.stop();
+                setGameOver();
+            }else{
+                lifeCounter--;
+                pLayer[i].remove();
+                var labelChildren = labelLayer.getChildren();
+                for(var i = 0; i < labelChildren.length; i++){
+                    var labelChildrenDepth = labelChildren[i].getChildren();
+                    for(var j = 0; j <labelChildrenDepth.length; j++){
+                        if(labelChildrenDepth[j].name() == "lifes"){
+                            labelChildrenDepth[j].setText('Lifes:' + lifeCounter);
+                            labelLayer.draw();
+                            break;
+                        }
+                    }
+                }
+                var smashSound = new Audio("audio/smash2.wav"); 
+                smashSound.play();
+                return true;
+            }
+            return false;
+        }
+        
+        function setGameOver(){
+            var gameOverLabel = new Kinetic.Label({
+                x: canvasStage.getWidth() /2,
+                y: canvasStage.getHeight() /2,
+                opacity: 0.75
+            });
+
+            gameOverLabel.add(new Kinetic.Tag({
+                fill: 'black',
+                pointerDirection: 'down',
+                pointerWidth: 10,
+                pointerHeight: 10,
+                lineJoin: 'round',
+                shadowColor: 'black',
+                shadowBlur: 10,
+                shadowOffset: {x:10,y:20},
+                shadowOpacity: 0.5
+            }));
+
+            gameOverLabel.add(new Kinetic.Text({
+                text: 'Game Over',
+                fontFamily: 'Calibri',
+                fontSize: 60,
+                padding: 5,
+                fill: 'white',
+                name: "lifes"
+            }));
+
+            labelLayer.add(gameOverLabel);
+            labelLayer.draw();
+            
+            gameOver = true;
+        }
+        
+        function createEnemy(pNumberOfEnemies, pImages){
             //Falta crear el objeto enemigo
             var y = 50;
             var x = 175;
@@ -237,10 +283,12 @@ var Presentation = window.Presentation || {};
                     stroke: "#000",
                     strokeWidth: 10
                 });
+                createBullet(x, y, pImages);
                 x += 100;
                 y += 20;
                 enemyLayer.add(weapon);
                 enemyLayer.draw();
+
             }
         }
         
@@ -320,37 +368,51 @@ var Presentation = window.Presentation || {};
             
             anim.start();
         }
-        /*
-        function createBullet(pPosX, pPosY, images){
+        
+        function createBullet(pPosX, pPosY, pImages){
             var period = 2000;
-            pPosY = 380 + pPosY;
             
             var bullet = new Kinetic.Rect({
-                x: pPosX + 10, 
+                x: pPosX - 15, 
                 y: pPosY,
-                fillPatternImage: images.bullet,
+                fillPatternImage: pImages.bullet,
                 width: 32,
                 height: 32
             });
             
             bulletLayer.add(bullet);
-            bulletLayer.draw();    
+            bulletLayer.draw();  
+
+            var childrenBullets = bulletLayer.getChildren();
+            var childrenGroup = weaponLayer.getChildren();
+            var weaponChildren;
             
             var anim = new Kinetic.Animation(function(frame) {
-                if(pPosY > 0)
+                if(pPosY < 0)
                     bullet.setY(pPosY - (pPosY * frame.time * 4 / period));
                 else
                     bullet.setY(pPosY + (pPosY * frame.time * 4 / period));
-                if(frame.time >= 2000){
-                    var children = bulletLayer.get('Rect');
-                    children[0].remove();                    
-                    bulletLayer.draw();
-                    anim.stop();
+                if(frame.time >= 4000){
+                    if(childrenBullets.length > 0){
+                        childrenBullets[0].remove();                    
+                        bulletLayer.draw();
+                        anim.stop();    
+                    }                    
+                }
+                
+                for(var i = 0; i < childrenBullets.length; i++){
+                    if(childrenBullets[i].getX() - 10 == car.getX()
+                       && Math.abs(childrenBullets[i].getY() - (400 + car.getY())) <= 10){
+                        if(checkLifes(anim, childrenBullets, i)){
+                            bulletLayer.draw();
+                            break;
+                        }
+                    }    
                 }
             }, bulletLayer);
 
             anim.start();
-        }*/
+        }
         
         function createBox(pPosX, pPosY, images){
             var box = new Kinetic.Rect({
@@ -376,12 +438,13 @@ var Presentation = window.Presentation || {};
                         car.setX(car.getX() + 100);
                     return false;
                 }else if (e.keyCode == 32) {     //Space bar
-                    var x = car.getX();
-                    var y = car.getY();
-                    createWeapon(weaponObj);
-                    //createBullet(x, y, images);
-                    var bulletSound = new Audio("audio/shot.wav"); 
-                    bulletSound.play();
+                    if(!gameOver){
+                        var x = car.getX();
+                        var y = car.getY();
+                        createWeapon(weaponObj);
+                        var bulletSound = new Audio("audio/shot.wav"); 
+                        bulletSound.play();
+                    }
                     return false;
                 }
             });
