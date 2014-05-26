@@ -41,13 +41,43 @@
 
     var populationManager = (function(){
         
+        var population  =  new Array();
+        var COLOR = {
+            RED: 1,//{value: 1, RGB: "#FF0000"}, 
+            YELLOW: 2,//{value: 2, RGB: "#FFFF00"}, 
+            GREEN : 3,//{value: 3, RGB: "#008000"}
+        };
         
-        // Returns a random integer between min and max
-        // Using Math.round() will give you a non-uniform distribution!
-        function getRandomInt(min, max) {
-            return Math.floor(Math.random() * (max - min + 1)) + min;
+        var colors = ["#FF0000","#FFFF00","#008000"]
+        
+        var a = convertColor(2);
+        //var a = "#008000";
+        alert(a);
+        
+        function convertColor(numColor){
+            var color;
+            switch(numColor){
+                case COLOR.RED: {
+                    color = colors[numColor-1];
+                    break;
+                }
+                case COLOR.GREEN: {
+                    color = colors[numColor-1];
+                    break;
+                }
+                case COLOR.YELLOW: {
+                    color = colors[numColor-1];
+                    break;
+                }
+                default:{
+                    var colorMutate = colors[getRandomInt(0,2)];
+                    var posMutate = getRandomInt(4,6);
+                    var newBite = getRandomInt(0,9);
+                    var color= colorMutate.substring(0,posMutate)+ "" + newBite + ""+colorMutate.substring(posMutate+1,7);
+                }
+            }
+            return color;
         }
-
         
         function generateChromosomeWeapon(){
             var thickness = getRandomInt(0,255);
@@ -57,17 +87,19 @@
             return LibraryData.createChromosome(laneNumber,color,thickness,shapeWeapon);
         }
         
-        function generateAllChromosomes(){
-            var population =  new Array();
-            for(var chromosomeNumber = 0 ; chromosomeNumber < 20 ; chromosomeNumber ++){
-                population.push(generateChromosomeWeapon());
-            }
-            return population;
-        }
-        
         function convertChromosomeToWeapon(pChromosome){
-            
-            
+            var laneNumber = trunc((pChromosome.getLaneNumber()/85)+1,0);
+            var colorWeapon = trunc((pChromosome.getColor()/80)+1,0);
+            colorWeapon = convertColor(colorWeapon);
+            var thickness = trunc((pChromosome.getThickness()/25.5)+1,0);
+            var shape = trunc((pChromosome.getShapeWeapon()/80)+3,0);
+            var shapeWeapon = shape;
+            if(shape>5){
+                var mutateShape = getRandomInt(0,6);
+                shapeWeapon = shape + mutateShape;
+            }
+            var newWeapon = LibraryData.createWeapon(laneNumber,colorWeapon,thickness,shapeWeapon);
+            return newWeapon;
         }
         
         function convertToIntNumPositive(num){

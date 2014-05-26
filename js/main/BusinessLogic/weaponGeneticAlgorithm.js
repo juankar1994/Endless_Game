@@ -50,11 +50,6 @@
             }
         }
         
-        // Returns a random integer between min and max
-        // Using Math.round() will give you a non-uniform distribution!
-        function getRandomInt(min, max) {
-            return Math.floor(Math.random() * (max - min + 1)) + min;
-        }
         
         //Function for crossing than two chromosomes
         function reproduceWeaponPart(byte1,byte2,pointCrossing){
@@ -174,6 +169,7 @@
         
         }
         
+        
         /*
         alert("Ejemplo de Algoritmo genetico: ");
         alert("El arma en este punto solo esta creada a base de bits, una funcion de "+
@@ -195,6 +191,10 @@
               "\n Color : " + generateWeapon.getColor() + "\n Thickness : " + generateWeapon.getThickness() + 
               "\n Shape : " + generateWeapon.getShapeWeapon());
         */
+        
+        var as = 123.941;
+        as = trunc(as,0);
+        alert(as);
         
         //Let's make it public
         return {
