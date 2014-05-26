@@ -41,6 +41,17 @@
             return seed;
         }
         
+        function getLastRandomNumbers(number){
+            var lastseed = 6;
+            while(true){
+                var last = (lastseed * a + c) % m.valueOf();
+                if(last == number)return lastseed;
+                lastseed = last;
+            }
+        }
+        
+            
+        
         function getAncestorSeed(){
             //Inverse Euclides' algorithm
             var inverse = new BigNumber(xgcd(a, m.valueOf())[0]);
@@ -103,13 +114,28 @@
         }
         
         //Initial seed of the graph
-        initialIntersection();
-        getAncestorSeed();
+        //initialIntersection();
+        
+        //Prueba
+        var w ;
+        var z ;
+        for(var i = 0 ; i < 100000 ; i++){
+            if(i==65400){
+                w=getNewRandomSeed();
+                z=getNewRandomSeed();
+            }
+            
+                getNewRandomSeed();
+        }
+        
+        var s = getLastRandomNumbers(z);
+        alert(w+"\n"+z+"\n"+s);
+        /*getAncestorSeed();
         processSeed(0); //Second Intersection
         processSeed(0); //First Intersection
         processSeed(0); //First Intersection
-        /*processSeed(0); //First Intersection*/
-        graph.print();
+        processSeed(0); //First Intersection*/
+        //graph.print();
 
         //Let's make it public
         return {
