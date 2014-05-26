@@ -19,7 +19,7 @@
     'use strict';
 
     pContext.createWeapon = function(pLaneNumber,pColor,pThickness,pShapeWeapon) {
-        return new Chromosome(pLaneNumber,pColor,pThickness,pShapeWeapon);
+        return new Weapon(pLaneNumber,pColor,pThickness,pShapeWeapon);
     };
 
     var Weapon = Class.extend({
