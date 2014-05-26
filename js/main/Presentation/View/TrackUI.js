@@ -26,13 +26,21 @@ var Presentation = window.Presentation || {};
 
     TrackUI = (function(){
 
-        var car, canvasStage, vehicleLayer, bulletLayer, weaponLayer, enemyLayer, labelLayer, lifeCounter = 2;
+        var car, canvasStage, vehicleLayer, boxLayer, weaponLayer, enemyLayer, labelLayer, lifeCounter = 2;
 
         var weaponObj = {
             laneNumber : 3,
             color: "green",
             stroke: 4,
             shapeWeapon: 4
+        };
+        
+
+        var weaponObj2 = {
+            laneNumber : 1,
+            color: "red",
+            stroke: 4,
+            shapeWeapon: 3
         };
         
         init();
@@ -66,7 +74,7 @@ var Presentation = window.Presentation || {};
             });
 
             vehicleLayer = new Kinetic.Layer();
-            bulletLayer = new Kinetic.Layer();
+            boxLayer = new Kinetic.Layer();
             weaponLayer = new Kinetic.Layer();
             enemyLayer = new Kinetic.Layer();
             labelLayer = new Kinetic.Layer();
@@ -93,7 +101,8 @@ var Presentation = window.Presentation || {};
                 fillPatternImage: images.car,
                 width: 54,
                 height: 112,
-                offset : {x : 0, y : -430}
+                offset : {x : 0, y : -430},
+                id: "car"
             });
 
             var amplitude = 270;
@@ -109,8 +118,30 @@ var Presentation = window.Presentation || {};
             
             var anim2 = new Kinetic.Animation(function(frame) {
                 car.setY(-speedCar * frame.time * 2 / period);
-                if(frame.time >= 5000)
+                if(frame.time >= 5000){
                     frame.time = 0;
+                    enemyLayer.removeChildren();
+                    enemyLayer.draw();
+                    setTimeout(function(){
+                        createEnemy(5);
+                        createBox(350, 200,images);
+                    }, 500);
+                }
+                
+                var boxChildren = boxLayer.getChildren();
+                for(var k = 0; k < boxChildren.length; k++){
+                    if(car.getX() == boxChildren[k].getX()
+                       && 380 + car.getY() <= boxChildren[k].getY()){
+                        boxChildren[k].remove();
+                        boxLayer.draw();
+                        var boxSound = new Audio("audio/success.wav"); 
+                        boxSound.play();
+                        //Genetic algorithm
+                        weaponLayer.removeChildren();
+                        weaponObj = weaponObj2;
+                        break;
+                    }
+                }
 
                 var enemyChildren = enemyLayer.getChildren();
                 
@@ -121,6 +152,7 @@ var Presentation = window.Presentation || {};
                             car.remove();
                             vehicleLayer.draw();   
                         }else{
+                            lifeCounter--;
                             enemyChildren[i].remove();
                             enemyLayer.draw();
                             var labelChildren = labelLayer.getChildren();
@@ -134,7 +166,8 @@ var Presentation = window.Presentation || {};
                                     }
                                 }
                             }
-                            lifeCounter--;
+                            var smashSound = new Audio("audio/smash2.wav"); 
+                            smashSound.play();
                             break;
                         }
                     }
@@ -168,7 +201,7 @@ var Presentation = window.Presentation || {};
             }));
 
             lifesLabel.add(new Kinetic.Text({
-                text: 'Lifes: 3',
+                text: 'Lifes: 2',
                 fontFamily: 'Calibri',
                 fontSize: 24,
                 padding: 5,
@@ -180,48 +213,36 @@ var Presentation = window.Presentation || {};
             
             canvasStage.add(vehicleLayer);  
             canvasStage.add(weaponLayer);     
-            canvasStage.add(bulletLayer);     
+            canvasStage.add(boxLayer);     
             canvasStage.add(enemyLayer);      
             canvasStage.add(labelLayer);   
             
-            var weapon = new Kinetic.RegularPolygon({
-                x: 175,
-                y: 50,
-                fill: "purple",
-                sides: 4,
-                radius: 20,
-                stroke: "#000",
-                strokeWidth: 10
-            });
-            
-            enemyLayer.add(weapon);
-
-            var weapon2 = new Kinetic.RegularPolygon({
-                x: 575,
-                y: 100,
-                fill: "purple",
-                sides: 4,
-                radius: 20,
-                stroke: "#000",
-                strokeWidth: 10
-            });
-            enemyLayer.add(weapon2);
-            
-
-            var weapon3 = new Kinetic.RegularPolygon({
-                x: 375,
-                y: 150,
-                fill: "purple",
-                sides: 4,
-                radius: 20,
-                stroke: "#000",
-                strokeWidth: 10
-            });
-            enemyLayer.add(weapon3);
-            enemyLayer.draw();
+            createEnemy(5);
+            createBox(150,100,images);
             
             arrowKeys(images);
-        }    
+        }   
+        
+        function createEnemy(pNumberOfEnemies){
+            //Falta crear el objeto enemigo
+            var y = 50;
+            var x = 175;
+            for(var i = 0; i < pNumberOfEnemies; i++){
+                var weapon = new Kinetic.RegularPolygon({
+                    x: x,
+                    y: y,
+                    fill: "purple",
+                    sides: 4,
+                    radius: 20,
+                    stroke: "#000",
+                    strokeWidth: 10
+                });
+                x += 100;
+                y += 20;
+                enemyLayer.add(weapon);
+                enemyLayer.draw();
+            }
+        }
         
         function createWeapon(pWeapon){
             var period = 2000;
@@ -274,8 +295,7 @@ var Presentation = window.Presentation || {};
                 for(var j = 0; j < enemyChildren.length; j++){     
                     for(var k = 0; k < childrenGroup.length; k++){
                         weaponChildren = childrenGroup.getChildren()[k].getChildren();
-                        for(var i = 0; i < weaponChildren.length; i++){
-                
+                        for(var i = 0; i < weaponChildren.length; i++){                
                             if(enemyChildren[j] == undefined)
                                 break;
                             var enemyX = enemyChildren[j].getX();
@@ -300,7 +320,7 @@ var Presentation = window.Presentation || {};
             
             anim.start();
         }
-        
+        /*
         function createBullet(pPosX, pPosY, images){
             var period = 2000;
             pPosY = 380 + pPosY;
@@ -330,6 +350,19 @@ var Presentation = window.Presentation || {};
             }, bulletLayer);
 
             anim.start();
+        }*/
+        
+        function createBox(pPosX, pPosY, images){
+            var box = new Kinetic.Rect({
+                x: pPosX, 
+                y: pPosY,
+                fillPatternImage: images.box,
+                width: 64,
+                height: 64
+            });
+
+            boxLayer.add(box);
+            boxLayer.draw();  
         }
         
         function arrowKeys(images){
@@ -359,7 +392,8 @@ var Presentation = window.Presentation || {};
             var sources = {
                 pit: 'images/pits.png',
                 car: 'images/car.png',
-                bullet: 'images/bullet.png'
+                bullet: 'images/bullet.png',
+                box: 'images/box.png'
             };
             
             loadImages(sources, function(images) {
