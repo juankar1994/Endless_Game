@@ -39,3 +39,14 @@ header div h1{
     position: relative;
 }
 
+#btnPlay{
+    width: 72px;
+    height: 72px;
+    position: absolute;
+    display: block;
+    z-index: 2;
+    margin-left: 10px;
+    cursor: pointer;
+    border: none;
+}
+

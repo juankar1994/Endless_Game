@@ -24,10 +24,10 @@ var Presentation = window.Presentation || {};
         return TrackUI;
     };
 
-    TrackUI = (function(){
-
+    TrackUI = (function(){        
         var car, canvasStage, vehicleLayer, boxLayer, weaponLayer, enemyLayer, labelLayer, bulletLayer,
-            lifeCounter = 2, gameOver = false;
+            lifeCounter = 2, gameOver = false, vehicle, numberOfShots = 2, enemiesCollection = [],
+            enemiesPositionX = [175, 275, 375, 475, 575];
 
         var weaponObj = {
             laneNumber : 3,
@@ -44,7 +44,11 @@ var Presentation = window.Presentation || {};
             shapeWeapon: 3
         };
         
-        init();
+        $("#btnPlay").click(function(){
+            lifeCounter = 2;
+            gameOver = false;
+            init();
+        });
         
         function loadImages(sources, callback) {
             var images = {};
@@ -66,7 +70,7 @@ var Presentation = window.Presentation || {};
         }
         
         //Funtion that draws the kinetic Stage, layers and anchors
-        function drawCanvasStage(images){
+        function drawCanvasStage(images){            
             //We declare the stage to be working with 
             canvasStage = new Kinetic.Stage({
                 container: 'gameContainer',
@@ -98,14 +102,16 @@ var Presentation = window.Presentation || {};
             });
             
             car = new Kinetic.Rect({
-                x: 150,
+                x: 350,
                 y: 430,
                 fillPatternImage: images.car,
                 width: 54,
                 height: 112,
-                offset : {x : 0, y : -430},
-                id: "car"
+                offset : {x : 0, y : -430}
             });
+            
+            //Creation of the vehicle
+            vehicle = LibraryData.createVehicle(car.getX(), car.getY(), numberOfShots);
 
             var amplitude = 270;
             var speedCar = 210;
@@ -119,7 +125,9 @@ var Presentation = window.Presentation || {};
             }, vehicleLayer);
             
             var anim2 = new Kinetic.Animation(function(frame) {
-                car.setY(-speedCar * frame.time * 2 / period);
+                var yCalculation = -speedCar * frame.time * 2 / period;
+                vehicle.setPositionY(yCalculation);
+                car.setY(yCalculation);
                 if(frame.time >= 5000){
                     frame.time = 0;
                     enemyLayer.removeChildren();
@@ -127,7 +135,7 @@ var Presentation = window.Presentation || {};
                     setTimeout(function(){
                         createEnemy(5, images);
                         createBox(350, 200,images);
-                    }, 300);
+                    }, 500);
                 }
                 
                 var boxChildren = boxLayer.getChildren();
@@ -267,13 +275,19 @@ var Presentation = window.Presentation || {};
             labelLayer.draw();
             
             gameOver = true;
+            
         }
         
-        function createEnemy(pNumberOfEnemies, pImages){
-            //Falta crear el objeto enemigo
-            var y = 50;
-            var x = 175;
-            for(var i = 0; i < pNumberOfEnemies; i++){
+        function createEnemy(pNumberOfEnemies, pImages){     
+            enemiesCollection = [];
+            for(var i = 0; i < pNumberOfEnemies; i++){    
+                var y = getRandomInt(50, 300);
+                var x = getRandomInt(0, 4);
+                
+                enemiesCollection.push(LibraryData.createEnemy(enemiesPositionX[x], y, 1));
+                x = enemiesCollection[i].getPositionX();
+                y = enemiesCollection[i].getPositionY();           
+                
                 var weapon = new Kinetic.RegularPolygon({
                     x: x,
                     y: y,
@@ -283,12 +297,10 @@ var Presentation = window.Presentation || {};
                     stroke: "#000",
                     strokeWidth: 10
                 });
-                createBullet(x, y, pImages);
-                x += 100;
-                y += 20;
                 enemyLayer.add(weapon);
                 enemyLayer.draw();
-
+                
+                createBullet(x, y, pImages);
             }
         }
         
@@ -352,6 +364,8 @@ var Presentation = window.Presentation || {};
                                && weaponX == enemyX){
                                 enemyChildren[j].remove();                    
                                 enemyLayer.draw();
+                                weaponChildren[i].remove();
+                                weaponLayer.draw();
                                 if(enemyChildren.length == 0){
                                     weaponLayer.removeChildren();
                                     weaponChildren.draw();
@@ -430,17 +444,24 @@ var Presentation = window.Presentation || {};
         function arrowKeys(images){
             $(document).keydown(function(e){
                 if (e.keyCode == 37) { 
-                    if(car.getX() - 100 >= 150) //Left Arrow
-                        car.setX(car.getX() - 100);
+                    if(car.getX() - 100 >= 150){ //Left Arrow
+                        var xCalculation = vehicle.getPositionX() - 100;
+                        car.setX(xCalculation);
+                        vehicle.setPositionX(xCalculation);
+                    }
                     return false;
                 }else if (e.keyCode == 39) {    //RightArrow
-                    if(car.getX() + 100 <= 550)
-                        car.setX(car.getX() + 100);
+                    if(car.getX() + 100 <= 550){
+                        var xCalculation = vehicle.getPositionX() + 100;
+                        car.setX(xCalculation);
+                        vehicle.setPositionX(xCalculation);
+                    }
                     return false;
                 }else if (e.keyCode == 32) {     //Space bar
-                    if(!gameOver){
-                        var x = car.getX();
-                        var y = car.getY();
+                    var y = vehicle.getPositionY();
+                    
+                    if(!gameOver && y + 380 >= 90){
+                        var x = vehicle.getPositionX();
                         createWeapon(weaponObj);
                         var bulletSound = new Audio("audio/shot.wav"); 
                         bulletSound.play();
@@ -448,7 +469,11 @@ var Presentation = window.Presentation || {};
                     return false;
                 }
             });
-        }        
+        }  
+
+        function getRandomInt (min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
 
         function init(){            
             //Let's draw the default stage
