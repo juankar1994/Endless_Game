@@ -12,36 +12,15 @@
   * Description: Business layer
   */
 
-
-/**
- * Namespace declaration.
- */
-
-
 (function (pContext, $) {
     'use strict';
-    /**
-     * Public method to return a reference of parseBusinessLogic.
-     * 
-     * @return {parseBusinessLogic} Bussiness logic.
-         * @public
-     */
+    
     pContext.getWeaponGeneticAlgorithm = function(){
         return weaponGeneticAlgorithm;
     };
     
-    /**
-     * Module.
-     *      Module for logic layers and sections.
-     *
-     * @private
-     * @namespace
-     **/
-
-    
     var weaponGeneticAlgorithm = (function(){
-
-        //Function Adaptability
+        //Adaptability Function
         function selectChromosome(pChromosomeRange,bestRange){
             if(pChromosomeRange >= bestRange){
                 return true;
@@ -50,8 +29,7 @@
             }
         }
         
-        
-        //Function for crossing than two chromosomes
+        //Function for crossing the two chromosomes
         function reproduceWeaponPart(byte1,byte2,pointCrossing){
             byte1= BusinessLogic.getBasicOperatorsBL().shiftLeftByte(byte1,pointCrossing);
             byte2= BusinessLogic.getBasicOperatorsBL().shiftRightByte(byte2,pointCrossing);
@@ -59,8 +37,8 @@
             return son;
         }
         
-        //Function to get the average range of weapons according to chromosomes. 
-        //Taking the average of the bits and dividing by the number of population.
+        //Function to get the average range of weapons according to the chromosomes. 
+        //Taking the average of the bits and dividing them by the number of population.
         function getBestWeaponRange(pPopulation){
             var bestWeaponRange = 0;
             for(var chromosomeNumber = 0 ; chromosomeNumber < pPopulation.length ; chromosomeNumber ++){
@@ -121,8 +99,7 @@
             }
             
             //New Weapon returned for the player.This chromosome will be converted to object weapon when you go to use by the player.
-            return newWeapon;
-            
+            Presentation.getWeaponHandler().convertChromosomeToWeapon(newWeapon);
         }
         
         
@@ -167,9 +144,7 @@
             var son = LibraryData.createChromosome(newLaneNumber,newColorWeapon,newThickness,newShapeWeapon);
 
             return son;
-        
         }
-        
         
         /*
         alert("Ejemplo de Algoritmo genetico: ");
@@ -197,7 +172,7 @@
         //Let's make it public
         return {
             selectChromosome : selectChromosome,
-            getRandomInt : getRandomInt
+            geneticAlgorithm : geneticAlgorithm
         };  
     })();
 

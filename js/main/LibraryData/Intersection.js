@@ -45,5 +45,3 @@
     });
 
 }(LibraryData, jQuery));
-
-
