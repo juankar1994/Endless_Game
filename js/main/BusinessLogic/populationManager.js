@@ -87,6 +87,7 @@
             return LibraryData.createChromosome(laneNumber,color,thickness,shapeWeapon);
         }
         
+        
         function convertChromosomeToWeapon(pChromosome){
             var laneNumber = trunc((pChromosome.getLaneNumber()/85)+1,0);
             var colorWeapon = trunc((pChromosome.getColor()/80)+1,0);
@@ -113,8 +114,7 @@
 
         //Let's make it public
         return {
-            generateChromosomeWeapon : generateChromosomeWeapon,
-            generateAllChromosomes : generateAllChromosomes
+            generateChromosomeWeapon : generateChromosomeWeapon
         };  
     })();
 

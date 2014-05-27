@@ -117,7 +117,7 @@
         //initialIntersection();
         
         //Prueba
-        var w ;
+        /*var w ;
         var z ;
         for(var i = 0 ; i < 100000 ; i++){
             if(i==65400){
@@ -130,13 +130,55 @@
         
         var s = getLastRandomNumbers(z);
         alert(w+"\n"+z+"\n"+s);
-        /*getAncestorSeed();
+        getAncestorSeed();
         processSeed(0); //Second Intersection
         processSeed(0); //First Intersection
         processSeed(0); //First Intersection
         processSeed(0); //First Intersection*/
         //graph.print();
 
+        var g = LibraryData.createGraph();
+
+        g.addVertex(0,0,0);
+        g.addVertex(1,1,0);
+        g.addVertex(2,2,0);
+        g.addVertex(3,3,0);
+        g.addVertex(4,4,0);
+        g.addVertex(5,5,0);
+        g.addVertex(6,6,0);
+        g.addVertex(7,7,0);
+
+        g.addEdge(g.searchVertex(0), g.searchVertex(1));
+        g.addEdge(g.searchVertex(1), g.searchVertex(2));
+        g.addEdge(g.searchVertex(2), g.searchVertex(3));
+        g.addEdge(g.searchVertex(3), g.searchVertex(6));
+        g.addEdge(g.searchVertex(6), g.searchVertex(0));
+        /*g.addEdge(g.buscarVertice(5), g.buscarVertice(0));
+        g.addEdge(g.buscarVertice(1), g.buscarVertice(7));
+        g.agregarArista(g.buscarVertice(7), g.buscarVertice(1));
+        g.agregarArista(g.buscarVertice(2), g.buscarVertice(6));
+        g.agregarArista(g.buscarVertice(6), g.buscarVertice(2));
+        g.agregarArista(g.buscarVertice(3), g.buscarVertice(4));
+        g.agregarArista(g.buscarVertice(4), g.buscarVertice(3));
+        g.agregarArista(g.buscarVertice(3), g.buscarVertice(5));
+        g.agregarArista(g.buscarVertice(5), g.buscarVertice(3));
+        g.agregarArista(g.buscarVertice(4), g.buscarVertice(7));
+        g.agregarArista(g.buscarVertice(7), g.buscarVertice(4));
+        g.agregarArista(g.buscarVertice(4), g.buscarVertice(6));
+        g.agregarArista(g.buscarVertice(6), g.buscarVertice(4));
+        g.agregarArista(g.buscarVertice(4), g.buscarVertice(5));
+        g.agregarArista(g.buscarVertice(5), g.buscarVertice(4));
+
+*/
+        var a  = g.searchVertex(0).getIntersection().getIntersectionId();
+        alert(a);
+        alert(g.broadness(g.searchVertex(0)));
+
+        
+        g.print();
+        //g.anchura(g.vertices.get(0));
+
+        
         //Let's make it public
         return {
             getNewRandomSeed : getNewRandomSeed

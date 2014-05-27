@@ -96,14 +96,15 @@
                     selectedChromosome.push(chromosome);
                 }
             }
+            
+            /*
             var popuString = "Cromosomas seleccionados: \n";
             for( var i = 0; i < selectedChromosome.length ; i++){
                 var chromosome = i+":"+selectedChromosome[i].getLaneNumber()+"  ";
                 popuString +=chromosome;
             }
             alert(popuString);
-            
-            
+            */
             
             //Combination between 2 of the best chromosomes according to the scope
             var parent1 = selectedChromosome[getRandomInt(0,selectedChromosome.length-1)];
@@ -192,9 +193,6 @@
               "\n Shape : " + generateWeapon.getShapeWeapon());
         */
         
-        var as = 123.941;
-        as = trunc(as,0);
-        alert(as);
         
         //Let's make it public
         return {

@@ -64,15 +64,17 @@ var LibraryData = window.LibraryData || {};
 
         visitVertex: function(pVertex){
             for (var i = 0; i < this.vertices.length; i++){
-                if(this.vertices[i].getIntersection().getIntersectionId() == pVertex.getIntersection().getIntersectionId())
-                    vertices[i].setVisited(true);
+                console.log("a"+this.vertices[i].getIntersection().getIntersectionId());
+                console.log("b"+pVertex.getIntersection().getIntersectionId());
+                if((this.vertices[i].getIntersection().getIntersectionId() == pVertex.getIntersection().getIntersectionId()))
+                    this.vertices[i].setVisited(true);
             }
         },
         
         isVertexVisisted: function(pVertex){
             for (var i = 0; i < this.vertices.length; i++){
                 if(this.vertices[i].getIntersection().getIntersectionId() == pVertex.getIntersection().getIntersectionId())
-                    return vertices[i].getVisited();
+                    return this.vertices[i].getVisited();
             }
         },
         
@@ -87,7 +89,68 @@ var LibraryData = window.LibraryData || {};
                 }
                 console.log("\n");
             }
+        },
+        
+        cleanVisitVertex : function(){
+            for (var i = 0; i < this.vertices.length(); i++){
+                var vertex = this.vertices[i];
+                vertex.setVisited(false);
+            }
+		},
+        
+        broadness : function(pVertex)
+        {
+            this.visitVertex(pVertex);// marca el primer nodo
+            var cola = new Array();
+            // mete a la cola los adyacentes del nodo inicial
+            for (var i = 0 ; i < pVertex.getEdges().length ; i++) {
+                cola.push(this.searchVertex(pVertex.getEdges()[i].getId()));// es para buscar el nodo en vertices
+                this.visitVertex(pVertex.getEdges()[i]);
+                //System.out.println("COLA "+v.aristas.get(i).dato);
+            }
+            // mientras no se vacíe la cola
+            while(cola.length > 0){
+                // trabaja con el primero de la cola
+                var actualVertex = cola[0];
+
+                console.log("sss"+actualVertex.getId()+"  ");
+                this.visitVertex(actualVertex);
+                cola = this.remove(cola,0);
+                console.log(actualVertex.getEdges().length);
+                console.log("sss"+actualVertex.getId()+"  ");
+                // cada arista del vertice en la cola
+                for (var i = 0; i < actualVertex.getEdges().length; i++) {
+                    // si no se ha visitado se mete en la cola el adyacente
+                    if(this.isVertexVisisted(actualVertex.getEdges()[i])==false){
+                        // si no está ya en la cola, se mete
+                        console.log(actualVertex.getEdges()[i].getId());
+                        this.visitVertex(this.searchVertex(actualVertex.getEdges()[i].getId()));
+                        //                    System.out.println("METE"+ actual.aristas.get(i).dato+ "  "+actual.aristas.get(i).visitado);
+                        cola.push(actualVertex.getEdges()[i]);
+                        console.log("asasf"+cola.length);
+                    }
+                    else{
+                        if(actualVertex.getEdges()[i].getId() === pVertex.getId()){
+                            return true;
+                        }
+                    }
+                }
+            }
+            this.cleanVisitVertex();
+            return false;
+        },
+        
+        remove: function(arr, item) {
+            var i;
+            var array = new Array();
+            for(var i = 0 ; i < arr.length; i++){
+                if(i!=item)array.push(arr[i]);
+            }
+            console.log("..." + array.length);
+            return array;
         }
+        
+        
     });
 
 }(LibraryData, jQuery));

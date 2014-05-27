@@ -3,7 +3,7 @@
  * https://github.com/equiet/recognizer
  */
 
-var __recognizer311073645 = (function () {
+var __recognizer381312209 = (function () {
     'use strict';
 
     var global = this;
@@ -158,19 +158,19 @@ var __recognizer311073645 = (function () {
  */
 
 function getRandomInt(min, max) {
-    __recognizer311073645.logEntry([
+    __recognizer381312209.logEntry([
         3,
         13,
         3,
         25
     ], arguments);
     return function () {
-        var obj = __recognizer311073645.logProbe([
+        var obj = __recognizer381312209.logProbe([
                 4,
                 15,
                 4,
                 19
-            ], Math), fn = __recognizer311073645.logProbe([
+            ], Math), fn = __recognizer381312209.logProbe([
                 4,
                 20,
                 4,
@@ -178,29 +178,29 @@ function getRandomInt(min, max) {
             ], obj.floor);
         return fn.apply(obj, arguments);
     }.bind(this)(function () {
-        var obj = __recognizer311073645.logProbe([
+        var obj = __recognizer381312209.logProbe([
                 4,
                 26,
                 4,
                 30
-            ], Math), fn = __recognizer311073645.logProbe([
+            ], Math), fn = __recognizer381312209.logProbe([
                 4,
                 31,
                 4,
                 37
             ], obj.random);
         return fn.apply(obj, arguments);
-    }.bind(this)() * (__recognizer311073645.logProbe([
+    }.bind(this)() * (__recognizer381312209.logProbe([
         4,
         43,
         4,
         46
-    ], max) - __recognizer311073645.logProbe([
+    ], max) - __recognizer381312209.logProbe([
         4,
         49,
         4,
         52
-    ], min) + 1)) + __recognizer311073645.logProbe([
+    ], min) + 1)) + __recognizer381312209.logProbe([
         4,
         61,
         4,
@@ -208,52 +208,52 @@ function getRandomInt(min, max) {
     ], min);
 }
 function trunc(num, ndec) {
-    __recognizer311073645.logEntry([
+    __recognizer381312209.logEntry([
         9,
         13,
         9,
         18
     ], arguments);
     var fact = function () {
-            var obj = __recognizer311073645.logProbe([
+            var obj = __recognizer381312209.logProbe([
                     10,
                     19,
                     10,
                     23
-                ], Math), fn = __recognizer311073645.logProbe([
+                ], Math), fn = __recognizer381312209.logProbe([
                     10,
                     24,
                     10,
                     27
                 ], obj.pow);
             return fn.apply(obj, arguments);
-        }.bind(this)(10, __recognizer311073645.logProbe([
+        }.bind(this)(10, __recognizer381312209.logProbe([
             10,
             32,
             10,
             36
         ], ndec));
-    return __recognizer311073645.logProbe([
+    return __recognizer381312209.logProbe([
         15,
         15,
         15,
         35
-    ], __recognizer311073645.logProbe([
+    ], __recognizer381312209.logProbe([
         15,
         15,
         15,
         23
-    ], parseInt)(__recognizer311073645.logProbe([
+    ], parseInt)(__recognizer381312209.logProbe([
         15,
         24,
         15,
         27
-    ], num) * __recognizer311073645.logProbe([
+    ], num) * __recognizer381312209.logProbe([
         15,
         30,
         15,
         34
-    ], fact))) / __recognizer311073645.logProbe([
+    ], fact))) / __recognizer381312209.logProbe([
         15,
         38,
         15,
