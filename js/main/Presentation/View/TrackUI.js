@@ -26,26 +26,12 @@ var Presentation = window.Presentation || {};
 
     TrackUI = (function(){        
         var car, canvasStage, vehicleLayer, boxLayer, weaponLayer, enemyLayer, labelLayer, bulletLayer,
-            lifeCounter = 2, gameOver = false, vehicle, numberOfShots = 2, enemiesCollection = [],
+            gameOver = false, vehicle, numberOfShots = 2, enemiesCollection = [], player,
             enemiesPositionX = [175, 275, 375, 475, 575];
-
-        var weaponObj = {
-            laneNumber : 3,
-            color: "green",
-            stroke: 4,
-            shapeWeapon: 4
-        };
-        
-
-        var weaponObj2 = {
-            laneNumber : 1,
-            color: "red",
-            stroke: 4,
-            shapeWeapon: 3
-        };
+        var currentWeapon, currentChromosome, currentEnemies = [];
         
         $("#btnPlay").click(function(){
-            lifeCounter = 2;
+            player = LibraryData.createPlayer();
             gameOver = false;
             init();
         });
@@ -112,6 +98,9 @@ var Presentation = window.Presentation || {};
             
             //Creation of the vehicle
             vehicle = LibraryData.createVehicle(car.getX(), car.getY(), numberOfShots);
+            //Let's call the controller
+            Presentation.getWeaponHandler().askForInitialWeapon();
+            
 
             var amplitude = 270;
             var speedCar = 210;
@@ -128,14 +117,18 @@ var Presentation = window.Presentation || {};
                 var yCalculation = -speedCar * frame.time * 2 / period;
                 vehicle.setPositionY(yCalculation);
                 car.setY(yCalculation);
-                if(frame.time >= 5000){
+                if(frame.time >= 5000){         // 5 seconds
                     frame.time = 0;
                     enemyLayer.removeChildren();
                     enemyLayer.draw();
+                    boxLayer.removeChildren();
+                    boxLayer.draw();
+                    bulletLayer.removeChildren();
+                    bulletLayer.draw();
+                    vehicle.setNumberOfShots(numberOfShots);
                     setTimeout(function(){
-                        createEnemy(5, images);
-                        createBox(350, 200,images);
-                    }, 500);
+                        getRandomObjects(images);  
+                    }, 300);
                 }
                 
                 var boxChildren = boxLayer.getChildren();
@@ -144,11 +137,15 @@ var Presentation = window.Presentation || {};
                        && 380 + car.getY() <= boxChildren[k].getY()){
                         boxChildren[k].remove();
                         boxLayer.draw();
+                        
                         var boxSound = new Audio("audio/success.wav"); 
                         boxSound.play();
                         //Genetic algorithm
+                        //Let's call the controller
+                        Presentation.getWeaponHandler().askForInitialWeapon();
+                        Presentation.getWeaponHandler().getNewWeapon(currentChromosome);
+                        
                         weaponLayer.removeChildren();
-                        weaponObj = weaponObj2;
                         break;
                     }
                 }
@@ -210,27 +207,32 @@ var Presentation = window.Presentation || {};
             canvasStage.add(labelLayer);      
             canvasStage.add(bulletLayer);   
             
-            createEnemy(5, images);
-            createBox(150,100,images);            
+            getRandomObjects(images);          
             arrowKeys(images);
         }   
+        function getRandomObjects(pImages){
+            var randomEnemies = getRandomInt(1, 3);
+            var randomXBox = getRandomInt(0, 4);
+            var randomYBox = getRandomInt(50, 200);
+            createEnemy(randomEnemies, pImages);
+            createBox(enemiesPositionX[randomXBox] - 25, randomYBox, pImages);        
+        }
         
         function checkLifes(pAnimation, pLayer, i){
-            console.log(lifeCounter);
-            if(lifeCounter == 0){
+            if(player.getLifes() == 0){
                 car.remove();
                 vehicleLayer.draw();
                 pAnimation.stop();
                 setGameOver();
             }else{
-                lifeCounter--;
+                player.setLifes(player.getLifes() - 1);
                 pLayer[i].remove();
                 var labelChildren = labelLayer.getChildren();
                 for(var i = 0; i < labelChildren.length; i++){
                     var labelChildrenDepth = labelChildren[i].getChildren();
                     for(var j = 0; j <labelChildrenDepth.length; j++){
                         if(labelChildrenDepth[j].name() == "lifes"){
-                            labelChildrenDepth[j].setText('Lifes:' + lifeCounter);
+                            labelChildrenDepth[j].setText('Lifes:' + player.getLifes());
                             labelLayer.draw();
                             break;
                         }
@@ -280,13 +282,14 @@ var Presentation = window.Presentation || {};
         
         function createEnemy(pNumberOfEnemies, pImages){     
             enemiesCollection = [];
+            currentEnemies = [];
             for(var i = 0; i < pNumberOfEnemies; i++){    
-                var y = getRandomInt(50, 300);
+                var y = getRandomInt(50, 200);
                 var x = getRandomInt(0, 4);
                 
                 enemiesCollection.push(LibraryData.createEnemy(enemiesPositionX[x], y, 1));
                 x = enemiesCollection[i].getPositionX();
-                y = enemiesCollection[i].getPositionY();           
+                y = enemiesCollection[i].getPositionY();
                 
                 var weapon = new Kinetic.RegularPolygon({
                     x: x,
@@ -300,8 +303,14 @@ var Presentation = window.Presentation || {};
                 enemyLayer.add(weapon);
                 enemyLayer.draw();
                 
-                createBullet(x, y, pImages);
+                Presentation.getWeaponHandler().getNewEnemie();
+                
+                createBullet(x, y, currentEnemies[i],pImages);
             }
+        }
+        
+        function setEnemieWeapon(pWeapon){
+            currentEnemies.push(pWeapon);
         }
         
         function createWeapon(pWeapon){
@@ -310,7 +319,7 @@ var Presentation = window.Presentation || {};
             var group = new Kinetic.Group();
             var posY = 380 + car.getY();
             
-            for(var i = 0; i < weaponObj.laneNumber; i++){
+            for(var i = 0; i < currentWeapon.getLaneNumber(); i++){
                 (function() {
                     if(i == 2)
                         tmpX -= tmpX + 75;
@@ -319,11 +328,11 @@ var Presentation = window.Presentation || {};
                         var weapon = new Kinetic.RegularPolygon({
                             x: x,
                             y: posY,
-                            fill: weaponObj.color,
-                            sides: weaponObj.shapeWeapon,
+                            fill: currentWeapon.getColor(),
+                            sides: currentWeapon.getShapeWeapon(),
                             radius: 20,
                             stroke: "#000",
-                            strokeWidth: weaponObj.stroke
+                            strokeWidth: currentWeapon.getThickness()
                         });
                         group.add(weapon);
                     }
@@ -383,15 +392,17 @@ var Presentation = window.Presentation || {};
             anim.start();
         }
         
-        function createBullet(pPosX, pPosY, pImages){
-            var period = 2000;
+        function createBullet(pPosX, pPosY, pObject, pImages){
+            var period = 3000;
             
-            var bullet = new Kinetic.Rect({
-                x: pPosX - 15, 
+            var bullet = new Kinetic.RegularPolygon({
+                x: pPosX,
                 y: pPosY,
-                fillPatternImage: pImages.bullet,
-                width: 32,
-                height: 32
+                fill: pObject.getColor(),
+                sides: pObject.getShapeWeapon(),
+                radius: 20,
+                stroke: "#000",
+                strokeWidth: pObject.getThickness()
             });
             
             bulletLayer.add(bullet);
@@ -406,17 +417,38 @@ var Presentation = window.Presentation || {};
                     bullet.setY(pPosY - (pPosY * frame.time * 4 / period));
                 else
                     bullet.setY(pPosY + (pPosY * frame.time * 4 / period));
-                if(frame.time >= 4000){
+                /*if(frame.time >= 4000){
+                    console.log(childrenBullets.length);
                     if(childrenBullets.length > 0){
                         childrenBullets[0].remove();                    
                         bulletLayer.draw();
                         anim.stop();    
-                    }                    
+                    }                   
+                }*/
+                
+                for(var j = 0; j < childrenGroup.length; j++){
+                    weaponChildren = childrenGroup[j].getChildren();
+                    for(var k = 0; k < weaponChildren.length; k++){
+                        for(var i = 0; i < childrenBullets.length; i++){
+                            //var yCalculation = 405 + car.getY() - childrenBullets[i].getY();
+                            if(weaponChildren[k] == undefined)
+                                break;
+                            if(weaponChildren[k].getX() == childrenBullets[i].getX()
+                               && (childrenBullets[i].getY() <= weaponChildren[k].getY())){
+                                childrenBullets[i].remove();
+                                bulletLayer.draw();
+                                weaponChildren[k].remove();
+                                weaponLayer.draw();
+                            }
+                        }
+                    }
                 }
                 
                 for(var i = 0; i < childrenBullets.length; i++){
-                    if(childrenBullets[i].getX() - 10 == car.getX()
-                       && Math.abs(childrenBullets[i].getY() - (400 + car.getY())) <= 10){
+                    var yCalculation = 405 + car.getY() - childrenBullets[i].getY();
+                    
+                    if(childrenBullets[i].getX() - 25 == car.getX()
+                       && yCalculation <= 10 && yCalculation >= -160){
                         if(checkLifes(anim, childrenBullets, i)){
                             bulletLayer.draw();
                             break;
@@ -458,11 +490,11 @@ var Presentation = window.Presentation || {};
                     }
                     return false;
                 }else if (e.keyCode == 32) {     //Space bar
-                    var y = vehicle.getPositionY();
-                    
-                    if(!gameOver && y + 380 >= 90){
+                    var y = vehicle.getPositionY();                    
+                    if(!gameOver && y + 380 >= 60 && vehicle.getNumberOfShots() != 0){
+                        vehicle.setNumberOfShots(vehicle.getNumberOfShots() - 1);
                         var x = vehicle.getPositionX();
-                        createWeapon(weaponObj);
+                        createWeapon(currentWeapon);
                         var bulletSound = new Audio("audio/shot.wav"); 
                         bulletSound.play();
                     }
@@ -473,6 +505,15 @@ var Presentation = window.Presentation || {};
 
         function getRandomInt (min, max) {
             return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+        
+        function setInitialWeapon(pWeapon){
+            currentChromosome = pWeapon;
+            Presentation.getWeaponHandler().convertChromosomeToWeapon(currentChromosome);
+        }
+
+        function setConvertedWeapon(pWeapon){
+            currentWeapon = pWeapon;
         }
 
         function init(){            
@@ -490,7 +531,10 @@ var Presentation = window.Presentation || {};
         }
 
         return {
-            init: init
+            init: init,
+            setInitialWeapon : setInitialWeapon,
+            setConvertedWeapon : setConvertedWeapon,
+            setEnemieWeapon : setEnemieWeapon
         };            
     })()
 

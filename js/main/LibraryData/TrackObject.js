@@ -27,6 +27,7 @@ var TrackObject;
             this.positionX = pPositionX;
             this.positionY = pPositionY;
             this.numberOfShots = pNumberOfShots;
+            this.weapon = undefined;
         },
 
         setPositionX: function(pPositionX){
@@ -37,8 +38,12 @@ var TrackObject;
             this.positionY = pPositionY;
         },
 
-        setNumbeOfShots: function(pNumberOfShots){
+        setNumberOfShots: function(pNumberOfShots){
             this.numberOfShots = pNumberOfShots;
+        },
+        
+        setWeapon: function(pWeapon){
+            this.weapon = pWeapon;
         },
 
         getPositionX: function(){
@@ -51,6 +56,10 @@ var TrackObject;
 
         getNumberOfShots: function(){
             return this.numberOfShots;
+        },
+        
+        getWeapon: function(){
+            return this.weapon;
         }
     });
 

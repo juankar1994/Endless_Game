@@ -23,7 +23,7 @@
     };
     
     var Chromosome = Class.extend({
-
+        
         init: function(pLaneNumber,pColor,pThickness,pShapeWeapon){
             this.laneNumber = pLaneNumber;
             this.color = pColor;

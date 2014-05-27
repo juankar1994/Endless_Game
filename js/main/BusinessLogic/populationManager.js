@@ -13,31 +13,12 @@
   */
 
 
-/**
- * Namespace declaration.
- */
-
-
 (function (pContext, $) {
     'use strict';
-    /**
-     * Public method to return a reference of parseBusinessLogic.
-     * 
-     * @return {parseBusinessLogic} Bussiness logic.
-         * @public
-     */
+    
     pContext.getPopulationManager = function(){
         return populationManager;
     };
-
-    /**
-     * Module.
-     *      Module for logic layers and sections.
-     *
-     * @private
-     * @namespace
-     **/
-
 
     var populationManager = (function(){
         
@@ -52,7 +33,7 @@
         
         var a = convertColor(2);
         //var a = "#008000";
-        alert(a);
+        //alert(a);
         
         function convertColor(numColor){
             var color;
@@ -79,15 +60,28 @@
             return color;
         }
         
+        function getNewEnemie(){
+            var thickness = getRandomInt(0,255);
+            var color = getRandomInt(0,255);
+            var shapeWeapon = getRandomInt(0,255);
+            var laneNumber = getRandomInt(0,255);
+            var chromosome = LibraryData.createChromosome(laneNumber,color,thickness,shapeWeapon);
+            
+            convertChromosomeToWeapon(chromosome, true);
+        }
+        
         function generateChromosomeWeapon(){
             var thickness = getRandomInt(0,255);
             var color = getRandomInt(0,255);
             var shapeWeapon = getRandomInt(0,255);
             var laneNumber = getRandomInt(0,255);
-            return LibraryData.createChromosome(laneNumber,color,thickness,shapeWeapon);
+            var chromosome = LibraryData.createChromosome(laneNumber,color,thickness,shapeWeapon);
+            if(population.length == 0)
+                population.push(chromosome);
+            Presentation.getWeaponHandler().sendInitialWeapon(chromosome);
         }
         
-        function convertChromosomeToWeapon(pChromosome){
+        function convertChromosomeToWeapon(pChromosome, pFlag){
             var laneNumber = trunc((pChromosome.getLaneNumber()/85)+1,0);
             var colorWeapon = trunc((pChromosome.getColor()/80)+1,0);
             colorWeapon = convertColor(colorWeapon);
@@ -99,22 +93,29 @@
                 shapeWeapon = shape + mutateShape;
             }
             var newWeapon = LibraryData.createWeapon(laneNumber,colorWeapon,thickness,shapeWeapon);
-            return newWeapon;
+            if(!pFlag)
+                Presentation.getWeaponHandler().sendConvertedWeapon(newWeapon);
+            else
+                Presentation.getWeaponHandler().sendEnemieWeapon(newWeapon);
+        }
+        
+        function getNewWeapon(pChromosome){
+            Presentation.getWeaponHandler().sendToGeneticAlgorithm(population, pChromosome);
         }
         
         function convertToIntNumPositive(num){
             num = num - 0.5;
             num = num.toFixed();
-            if(num<0)num=0;
+            if(num<0) num=0;
             return num;
         }
-
-
-
+        
         //Let's make it public
         return {
             generateChromosomeWeapon : generateChromosomeWeapon,
-            generateAllChromosomes : generateAllChromosomes
+            convertChromosomeToWeapon : convertChromosomeToWeapon,
+            getNewWeapon : getNewWeapon,
+            getNewEnemie : getNewEnemie
         };  
     })();
 
