@@ -3,7 +3,7 @@
  * https://github.com/equiet/recognizer
  */
 
-var __recognizer170807212 = (function () {
+var __recognizer775863306 = (function () {
     'use strict';
 
     var global = this;
@@ -158,7 +158,7 @@ var __recognizer170807212 = (function () {
  */
 
 (function (pContext, $) {
-    __recognizer170807212.logEntry([
+    __recognizer775863306.logEntry([
         16,
         1,
         16,
@@ -166,23 +166,23 @@ var __recognizer170807212 = (function () {
     ], arguments);
     'use strict';
     pContext.createIntersection = function (pIntersectionId, pBifurcation) {
-        __recognizer170807212.logEntry([
+        __recognizer775863306.logEntry([
             19,
             34,
             19,
             42
         ], arguments);
-        return new (__recognizer170807212.logProbe([
+        return new (__recognizer775863306.logProbe([
             20,
             19,
             20,
             31
-        ], Intersection))(__recognizer170807212.logProbe([
+        ], Intersection))(__recognizer775863306.logProbe([
             20,
             32,
             20,
             47
-        ], pIntersectionId), __recognizer170807212.logProbe([
+        ], pIntersectionId), __recognizer775863306.logProbe([
             20,
             49,
             20,
@@ -190,12 +190,12 @@ var __recognizer170807212 = (function () {
         ], pBifurcation));
     };
     var Intersection = function () {
-            var obj = __recognizer170807212.logProbe([
+            var obj = __recognizer775863306.logProbe([
                     23,
                     23,
                     23,
                     28
-                ], Class), fn = __recognizer170807212.logProbe([
+                ], Class), fn = __recognizer775863306.logProbe([
                     23,
                     29,
                     23,
@@ -204,19 +204,19 @@ var __recognizer170807212 = (function () {
             return fn.apply(obj, arguments);
         }.bind(this)({
             init: function (pIntersectionId, pBifurcation) {
-                __recognizer170807212.logEntry([
+                __recognizer775863306.logEntry([
                     25,
                     14,
                     25,
                     22
                 ], arguments);
-                this.id = __recognizer170807212.logProbe([
+                this.id = __recognizer775863306.logProbe([
                     26,
                     22,
                     26,
                     37
                 ], pIntersectionId);
-                this.bifurcation = __recognizer170807212.logProbe([
+                this.bifurcation = __recognizer775863306.logProbe([
                     27,
                     31,
                     27,
@@ -224,13 +224,13 @@ var __recognizer170807212 = (function () {
                 ], pBifurcation);
             },
             setIntersectionId: function (pId) {
-                __recognizer170807212.logEntry([
+                __recognizer775863306.logEntry([
                     30,
                     27,
                     30,
                     35
                 ], arguments);
-                this.id = __recognizer170807212.logProbe([
+                this.id = __recognizer775863306.logProbe([
                     31,
                     22,
                     31,
@@ -238,13 +238,13 @@ var __recognizer170807212 = (function () {
                 ], pId);
             },
             setBifurcation: function (pBifurcation) {
-                __recognizer170807212.logEntry([
+                __recognizer775863306.logEntry([
                     34,
                     24,
                     34,
                     32
                 ], arguments);
-                this.bifurcation = __recognizer170807212.logProbe([
+                this.bifurcation = __recognizer775863306.logProbe([
                     35,
                     31,
                     35,
@@ -252,18 +252,18 @@ var __recognizer170807212 = (function () {
                 ], pBifurcation);
             },
             getIntersectionId: function () {
-                __recognizer170807212.logEntry([
+                __recognizer775863306.logEntry([
                     38,
                     28,
                     38,
                     36
                 ], arguments);
-                return __recognizer170807212.logProbe([
+                return __recognizer775863306.logProbe([
                     39,
                     24,
                     39,
                     26
-                ], __recognizer170807212.logProbe([
+                ], __recognizer775863306.logProbe([
                     39,
                     19,
                     39,
@@ -271,18 +271,18 @@ var __recognizer170807212 = (function () {
                 ], this).id);
             },
             getBifurcation: function () {
-                __recognizer170807212.logEntry([
+                __recognizer775863306.logEntry([
                     42,
                     25,
                     42,
                     33
                 ], arguments);
-                return __recognizer170807212.logProbe([
+                return __recognizer775863306.logProbe([
                     43,
                     24,
                     43,
                     35
-                ], __recognizer170807212.logProbe([
+                ], __recognizer775863306.logProbe([
                     43,
                     19,
                     43,
@@ -290,12 +290,12 @@ var __recognizer170807212 = (function () {
                 ], this).bifurcation);
             }
         });
-}(__recognizer170807212.logProbe([
+}(__recognizer775863306.logProbe([
     47,
     2,
     47,
     13
-], LibraryData), __recognizer170807212.logProbe([
+], LibraryData), __recognizer775863306.logProbe([
     47,
     15,
     47,

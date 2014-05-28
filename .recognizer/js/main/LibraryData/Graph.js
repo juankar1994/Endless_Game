@@ -3,7 +3,7 @@
  * https://github.com/equiet/recognizer
  */
 
-var __recognizer913080153 = (function () {
+var __recognizer281601961 = (function () {
     'use strict';
 
     var global = this;
@@ -157,19 +157,19 @@ var __recognizer913080153 = (function () {
  * Instrumented code
  */
 
-var LibraryData = __recognizer913080153.logProbe([
+var LibraryData = __recognizer281601961.logProbe([
         19,
         25,
         19,
         36
-    ], __recognizer913080153.logProbe([
+    ], __recognizer281601961.logProbe([
         19,
         18,
         19,
         24
     ], window).LibraryData) || {};
 (function (pContext, $) {
-    __recognizer913080153.logEntry([
+    __recognizer281601961.logEntry([
         21,
         1,
         21,
@@ -177,26 +177,26 @@ var LibraryData = __recognizer913080153.logProbe([
     ], arguments);
     var instance;
     pContext.createGraph = function () {
-        __recognizer913080153.logEntry([
+        __recognizer281601961.logEntry([
             25,
             27,
             25,
             35
         ], arguments);
-        if (!__recognizer913080153.logProbe([
+        if (!__recognizer281601961.logProbe([
                 28,
                 14,
                 28,
                 22
             ], instance)) {
-            instance = new (__recognizer913080153.logProbe([
+            instance = new (__recognizer281601961.logProbe([
                 29,
                 27,
                 29,
                 32
             ], Graph))();
         }
-        return __recognizer913080153.logProbe([
+        return __recognizer281601961.logProbe([
             31,
             15,
             31,
@@ -204,12 +204,12 @@ var LibraryData = __recognizer913080153.logProbe([
         ], instance);
     };
     var Graph = function () {
-            var obj = __recognizer913080153.logProbe([
+            var obj = __recognizer281601961.logProbe([
                     34,
                     16,
                     34,
                     21
-                ], Class), fn = __recognizer913080153.logProbe([
+                ], Class), fn = __recognizer281601961.logProbe([
                     34,
                     22,
                     34,
@@ -218,13 +218,13 @@ var LibraryData = __recognizer913080153.logProbe([
             return fn.apply(obj, arguments);
         }.bind(this)({
             init: function () {
-                __recognizer913080153.logEntry([
+                __recognizer281601961.logEntry([
                     35,
                     14,
                     35,
                     22
                 ], arguments);
-                this.vertices = new (__recognizer913080153.logProbe([
+                this.vertices = new (__recognizer281601961.logProbe([
                     36,
                     32,
                     36,
@@ -232,24 +232,24 @@ var LibraryData = __recognizer913080153.logProbe([
                 ], Array))();
             },
             addVertex: function (pId, pIntersectionId, pBifurcation) {
-                __recognizer913080153.logEntry([
+                __recognizer281601961.logEntry([
                     39,
                     19,
                     39,
                     27
                 ], arguments);
                 (function () {
-                    var obj = __recognizer913080153.logProbe([
+                    var obj = __recognizer281601961.logProbe([
                             40,
                             17,
                             40,
                             25
-                        ], __recognizer913080153.logProbe([
+                        ], __recognizer281601961.logProbe([
                             40,
                             12,
                             40,
                             16
-                        ], this).vertices), fn = __recognizer913080153.logProbe([
+                        ], this).vertices), fn = __recognizer281601961.logProbe([
                             40,
                             26,
                             40,
@@ -257,29 +257,29 @@ var LibraryData = __recognizer913080153.logProbe([
                         ], obj.push);
                     return fn.apply(obj, arguments);
                 }.bind(this)(function () {
-                    var obj = __recognizer913080153.logProbe([
+                    var obj = __recognizer281601961.logProbe([
                             40,
                             31,
                             40,
                             42
-                        ], LibraryData), fn = __recognizer913080153.logProbe([
+                        ], LibraryData), fn = __recognizer281601961.logProbe([
                             40,
                             43,
                             40,
                             55
                         ], obj.createVertex);
                     return fn.apply(obj, arguments);
-                }.bind(this)(__recognizer913080153.logProbe([
+                }.bind(this)(__recognizer281601961.logProbe([
                     40,
                     56,
                     40,
                     59
-                ], pId), __recognizer913080153.logProbe([
+                ], pId), __recognizer281601961.logProbe([
                     40,
                     61,
                     40,
                     76
-                ], pIntersectionId), __recognizer913080153.logProbe([
+                ], pIntersectionId), __recognizer281601961.logProbe([
                     40,
                     78,
                     40,
@@ -287,33 +287,33 @@ var LibraryData = __recognizer913080153.logProbe([
                 ], pBifurcation))));
             },
             addVertexAccordingToPath: function (pValue, pBifurcation) {
-                __recognizer913080153.logEntry([
+                __recognizer281601961.logEntry([
                     43,
                     34,
                     43,
                     42
                 ], arguments);
-                for (var i = 0; __recognizer913080153.logProbe([
+                for (var i = 0; __recognizer281601961.logProbe([
                         44,
                         28,
                         44,
                         29
-                    ], i) < __recognizer913080153.logProbe([
+                    ], i) < __recognizer281601961.logProbe([
                         44,
                         46,
                         44,
                         52
-                    ], __recognizer913080153.logProbe([
+                    ], __recognizer281601961.logProbe([
                         44,
                         37,
                         44,
                         45
-                    ], __recognizer913080153.logProbe([
+                    ], __recognizer281601961.logProbe([
                         44,
                         32,
                         44,
                         36
-                    ], this).vertices).length); __recognizer913080153.logProbe([
+                    ], this).vertices).length); __recognizer281601961.logProbe([
                         44,
                         54,
                         44,
@@ -321,36 +321,36 @@ var LibraryData = __recognizer913080153.logProbe([
                     ], i)++) {
                     if (function () {
                             var obj = function () {
-                                    var obj = __recognizer913080153.logProbe([
+                                    var obj = __recognizer281601961.logProbe([
                                             45,
                                             33,
                                             45,
                                             34
-                                        ], __recognizer913080153.logProbe([
+                                        ], __recognizer281601961.logProbe([
                                             45,
                                             24,
                                             45,
                                             32
-                                        ], __recognizer913080153.logProbe([
+                                        ], __recognizer281601961.logProbe([
                                             45,
                                             19,
                                             45,
                                             23
-                                        ], this).vertices)[i]), fn = __recognizer913080153.logProbe([
+                                        ], this).vertices)[i]), fn = __recognizer281601961.logProbe([
                                             45,
                                             36,
                                             45,
                                             51
                                         ], obj.getIntersection);
                                     return fn.apply(obj, arguments);
-                                }.bind(this)(), fn = __recognizer913080153.logProbe([
+                                }.bind(this)(), fn = __recognizer281601961.logProbe([
                                     45,
                                     54,
                                     45,
                                     71
                                 ], obj.getIntersectionId);
                             return fn.apply(obj, arguments);
-                        }.bind(this)() == __recognizer913080153.logProbe([
+                        }.bind(this)() == __recognizer281601961.logProbe([
                             45,
                             77,
                             45,
@@ -359,42 +359,42 @@ var LibraryData = __recognizer913080153.logProbe([
                         return {
                             idIntersection: function () {
                                 var obj = function () {
-                                        var obj = __recognizer913080153.logProbe([
+                                        var obj = __recognizer281601961.logProbe([
                                                 46,
                                                 72,
                                                 46,
                                                 84
                                             ], function () {
-                                                var obj = __recognizer913080153.logProbe([
+                                                var obj = __recognizer281601961.logProbe([
                                                         46,
                                                         58,
                                                         46,
                                                         59
-                                                    ], __recognizer913080153.logProbe([
+                                                    ], __recognizer281601961.logProbe([
                                                         46,
                                                         49,
                                                         46,
                                                         57
-                                                    ], __recognizer913080153.logProbe([
+                                                    ], __recognizer281601961.logProbe([
                                                         46,
                                                         44,
                                                         46,
                                                         48
-                                                    ], this).vertices)[i]), fn = __recognizer913080153.logProbe([
+                                                    ], this).vertices)[i]), fn = __recognizer281601961.logProbe([
                                                         46,
                                                         61,
                                                         46,
                                                         69
                                                     ], obj.getEdges);
                                                 return fn.apply(obj, arguments);
-                                            }.bind(this)()[pBifurcation]), fn = __recognizer913080153.logProbe([
+                                            }.bind(this)()[pBifurcation]), fn = __recognizer281601961.logProbe([
                                                 46,
                                                 86,
                                                 46,
                                                 101
                                             ], obj.getIntersection);
                                         return fn.apply(obj, arguments);
-                                    }.bind(this)(), fn = __recognizer913080153.logProbe([
+                                    }.bind(this)(), fn = __recognizer281601961.logProbe([
                                         46,
                                         104,
                                         46,
@@ -404,42 +404,42 @@ var LibraryData = __recognizer913080153.logProbe([
                             }.bind(this)(),
                             bifurcation: function () {
                                 var obj = function () {
-                                        var obj = __recognizer913080153.logProbe([
+                                        var obj = __recognizer281601961.logProbe([
                                                 47,
                                                 69,
                                                 47,
                                                 81
                                             ], function () {
-                                                var obj = __recognizer913080153.logProbe([
+                                                var obj = __recognizer281601961.logProbe([
                                                         47,
                                                         55,
                                                         47,
                                                         56
-                                                    ], __recognizer913080153.logProbe([
+                                                    ], __recognizer281601961.logProbe([
                                                         47,
                                                         46,
                                                         47,
                                                         54
-                                                    ], __recognizer913080153.logProbe([
+                                                    ], __recognizer281601961.logProbe([
                                                         47,
                                                         41,
                                                         47,
                                                         45
-                                                    ], this).vertices)[i]), fn = __recognizer913080153.logProbe([
+                                                    ], this).vertices)[i]), fn = __recognizer281601961.logProbe([
                                                         47,
                                                         58,
                                                         47,
                                                         66
                                                     ], obj.getEdges);
                                                 return fn.apply(obj, arguments);
-                                            }.bind(this)()[pBifurcation]), fn = __recognizer913080153.logProbe([
+                                            }.bind(this)()[pBifurcation]), fn = __recognizer281601961.logProbe([
                                                 47,
                                                 83,
                                                 47,
                                                 98
                                             ], obj.getIntersection);
                                         return fn.apply(obj, arguments);
-                                    }.bind(this)(), fn = __recognizer913080153.logProbe([
+                                    }.bind(this)(), fn = __recognizer281601961.logProbe([
                                         47,
                                         101,
                                         47,
@@ -452,37 +452,37 @@ var LibraryData = __recognizer913080153.logProbe([
                 return null;
             },
             addEdge: function (pSource, pDestiny) {
-                __recognizer913080153.logEntry([
+                __recognizer281601961.logEntry([
                     52,
                     17,
                     52,
                     25
                 ], arguments);
-                if (__recognizer913080153.logProbe([
+                if (__recognizer281601961.logProbe([
                         53,
                         15,
                         53,
                         22
-                    ], pSource) != null && __recognizer913080153.logProbe([
+                    ], pSource) != null && __recognizer281601961.logProbe([
                         53,
                         34,
                         53,
                         42
                     ], pDestiny) != null)
                     (function () {
-                        var obj = __recognizer913080153.logProbe([
+                        var obj = __recognizer281601961.logProbe([
                                 54,
                                 16,
                                 54,
                                 23
-                            ], pSource), fn = __recognizer913080153.logProbe([
+                            ], pSource), fn = __recognizer281601961.logProbe([
                                 54,
                                 24,
                                 54,
                                 31
                             ], obj.addEdge);
                         return fn.apply(obj, arguments);
-                    }.bind(this)(__recognizer913080153.logProbe([
+                    }.bind(this)(__recognizer281601961.logProbe([
                         54,
                         32,
                         54,
@@ -490,33 +490,33 @@ var LibraryData = __recognizer913080153.logProbe([
                     ], pDestiny)));
             },
             searchVertex: function (pValue) {
-                __recognizer913080153.logEntry([
+                __recognizer281601961.logEntry([
                     57,
                     22,
                     57,
                     30
                 ], arguments);
-                for (var i = 0; __recognizer913080153.logProbe([
+                for (var i = 0; __recognizer281601961.logProbe([
                         58,
                         28,
                         58,
                         29
-                    ], i) < __recognizer913080153.logProbe([
+                    ], i) < __recognizer281601961.logProbe([
                         58,
                         46,
                         58,
                         52
-                    ], __recognizer913080153.logProbe([
+                    ], __recognizer281601961.logProbe([
                         58,
                         37,
                         58,
                         45
-                    ], __recognizer913080153.logProbe([
+                    ], __recognizer281601961.logProbe([
                         58,
                         32,
                         58,
                         36
-                    ], this).vertices).length); __recognizer913080153.logProbe([
+                    ], this).vertices).length); __recognizer281601961.logProbe([
                         58,
                         54,
                         58,
@@ -524,52 +524,52 @@ var LibraryData = __recognizer913080153.logProbe([
                     ], i)++) {
                     if (function () {
                             var obj = function () {
-                                    var obj = __recognizer913080153.logProbe([
+                                    var obj = __recognizer281601961.logProbe([
                                             59,
                                             33,
                                             59,
                                             34
-                                        ], __recognizer913080153.logProbe([
+                                        ], __recognizer281601961.logProbe([
                                             59,
                                             24,
                                             59,
                                             32
-                                        ], __recognizer913080153.logProbe([
+                                        ], __recognizer281601961.logProbe([
                                             59,
                                             19,
                                             59,
                                             23
-                                        ], this).vertices)[i]), fn = __recognizer913080153.logProbe([
+                                        ], this).vertices)[i]), fn = __recognizer281601961.logProbe([
                                             59,
                                             36,
                                             59,
                                             51
                                         ], obj.getIntersection);
                                     return fn.apply(obj, arguments);
-                                }.bind(this)(), fn = __recognizer913080153.logProbe([
+                                }.bind(this)(), fn = __recognizer281601961.logProbe([
                                     59,
                                     54,
                                     59,
                                     71
                                 ], obj.getIntersectionId);
                             return fn.apply(obj, arguments);
-                        }.bind(this)() == __recognizer913080153.logProbe([
+                        }.bind(this)() == __recognizer281601961.logProbe([
                             59,
                             77,
                             59,
                             83
                         ], pValue))
-                        return __recognizer913080153.logProbe([
+                        return __recognizer281601961.logProbe([
                             60,
                             41,
                             60,
                             42
-                        ], __recognizer913080153.logProbe([
+                        ], __recognizer281601961.logProbe([
                             60,
                             32,
                             60,
                             40
-                        ], __recognizer913080153.logProbe([
+                        ], __recognizer281601961.logProbe([
                             60,
                             27,
                             60,
@@ -579,516 +579,1341 @@ var LibraryData = __recognizer913080153.logProbe([
                 return null;
             },
             visitVertex: function (pVertex) {
-                __recognizer913080153.logEntry([
+                __recognizer281601961.logEntry([
                     65,
                     21,
                     65,
                     29
                 ], arguments);
-                for (var i = 0; __recognizer913080153.logProbe([
+                for (var i = 0; __recognizer281601961.logProbe([
                         66,
                         28,
                         66,
                         29
-                    ], i) < __recognizer913080153.logProbe([
+                    ], i) < __recognizer281601961.logProbe([
                         66,
                         46,
                         66,
                         52
-                    ], __recognizer913080153.logProbe([
+                    ], __recognizer281601961.logProbe([
                         66,
                         37,
                         66,
                         45
-                    ], __recognizer913080153.logProbe([
+                    ], __recognizer281601961.logProbe([
                         66,
                         32,
                         66,
                         36
-                    ], this).vertices).length); __recognizer913080153.logProbe([
+                    ], this).vertices).length); __recognizer281601961.logProbe([
                         66,
                         54,
                         66,
                         55
                     ], i)++) {
+                    (function () {
+                        var obj = __recognizer281601961.logProbe([
+                                67,
+                                16,
+                                67,
+                                23
+                            ], console), fn = __recognizer281601961.logProbe([
+                                67,
+                                24,
+                                67,
+                                27
+                            ], obj.log);
+                        return fn.apply(obj, arguments);
+                    }.bind(this)('a' + function () {
+                        var obj = function () {
+                                var obj = __recognizer281601961.logProbe([
+                                        67,
+                                        46,
+                                        67,
+                                        47
+                                    ], __recognizer281601961.logProbe([
+                                        67,
+                                        37,
+                                        67,
+                                        45
+                                    ], __recognizer281601961.logProbe([
+                                        67,
+                                        32,
+                                        67,
+                                        36
+                                    ], this).vertices)[i]), fn = __recognizer281601961.logProbe([
+                                        67,
+                                        49,
+                                        67,
+                                        64
+                                    ], obj.getIntersection);
+                                return fn.apply(obj, arguments);
+                            }.bind(this)(), fn = __recognizer281601961.logProbe([
+                                67,
+                                67,
+                                67,
+                                84
+                            ], obj.getIntersectionId);
+                        return fn.apply(obj, arguments);
+                    }.bind(this)()));
+                    (function () {
+                        var obj = __recognizer281601961.logProbe([
+                                68,
+                                16,
+                                68,
+                                23
+                            ], console), fn = __recognizer281601961.logProbe([
+                                68,
+                                24,
+                                68,
+                                27
+                            ], obj.log);
+                        return fn.apply(obj, arguments);
+                    }.bind(this)('b' + function () {
+                        var obj = function () {
+                                var obj = __recognizer281601961.logProbe([
+                                        68,
+                                        32,
+                                        68,
+                                        39
+                                    ], pVertex), fn = __recognizer281601961.logProbe([
+                                        68,
+                                        40,
+                                        68,
+                                        55
+                                    ], obj.getIntersection);
+                                return fn.apply(obj, arguments);
+                            }.bind(this)(), fn = __recognizer281601961.logProbe([
+                                68,
+                                58,
+                                68,
+                                75
+                            ], obj.getIntersectionId);
+                        return fn.apply(obj, arguments);
+                    }.bind(this)()));
                     if (function () {
                             var obj = function () {
-                                    var obj = __recognizer913080153.logProbe([
-                                            67,
-                                            33,
-                                            67,
-                                            34
-                                        ], __recognizer913080153.logProbe([
-                                            67,
-                                            24,
-                                            67,
-                                            32
-                                        ], __recognizer913080153.logProbe([
-                                            67,
-                                            19,
-                                            67,
-                                            23
-                                        ], this).vertices)[i]), fn = __recognizer913080153.logProbe([
-                                            67,
-                                            36,
-                                            67,
-                                            51
+                                    var obj = __recognizer281601961.logProbe([
+                                            69,
+                                            34,
+                                            69,
+                                            35
+                                        ], __recognizer281601961.logProbe([
+                                            69,
+                                            25,
+                                            69,
+                                            33
+                                        ], __recognizer281601961.logProbe([
+                                            69,
+                                            20,
+                                            69,
+                                            24
+                                        ], this).vertices)[i]), fn = __recognizer281601961.logProbe([
+                                            69,
+                                            37,
+                                            69,
+                                            52
                                         ], obj.getIntersection);
                                     return fn.apply(obj, arguments);
-                                }.bind(this)(), fn = __recognizer913080153.logProbe([
-                                    67,
-                                    54,
-                                    67,
-                                    71
+                                }.bind(this)(), fn = __recognizer281601961.logProbe([
+                                    69,
+                                    55,
+                                    69,
+                                    72
                                 ], obj.getIntersectionId);
                             return fn.apply(obj, arguments);
                         }.bind(this)() == function () {
                             var obj = function () {
-                                    var obj = __recognizer913080153.logProbe([
-                                            67,
-                                            77,
-                                            67,
-                                            84
-                                        ], pVertex), fn = __recognizer913080153.logProbe([
-                                            67,
-                                            85,
-                                            67,
-                                            100
+                                    var obj = __recognizer281601961.logProbe([
+                                            69,
+                                            78,
+                                            69,
+                                            85
+                                        ], pVertex), fn = __recognizer281601961.logProbe([
+                                            69,
+                                            86,
+                                            69,
+                                            101
                                         ], obj.getIntersection);
                                     return fn.apply(obj, arguments);
-                                }.bind(this)(), fn = __recognizer913080153.logProbe([
-                                    67,
-                                    103,
-                                    67,
-                                    120
+                                }.bind(this)(), fn = __recognizer281601961.logProbe([
+                                    69,
+                                    104,
+                                    69,
+                                    121
                                 ], obj.getIntersectionId);
                             return fn.apply(obj, arguments);
                         }.bind(this)())
                         (function () {
-                            var obj = __recognizer913080153.logProbe([
-                                    68,
-                                    29,
-                                    68,
-                                    30
-                                ], __recognizer913080153.logProbe([
-                                    68,
+                            var obj = __recognizer281601961.logProbe([
+                                    70,
+                                    34,
+                                    70,
+                                    35
+                                ], __recognizer281601961.logProbe([
+                                    70,
+                                    25,
+                                    70,
+                                    33
+                                ], __recognizer281601961.logProbe([
+                                    70,
                                     20,
-                                    68,
-                                    28
-                                ], vertices)[i]), fn = __recognizer913080153.logProbe([
-                                    68,
-                                    32,
-                                    68,
-                                    42
+                                    70,
+                                    24
+                                ], this).vertices)[i]), fn = __recognizer281601961.logProbe([
+                                    70,
+                                    37,
+                                    70,
+                                    47
                                 ], obj.setVisited);
                             return fn.apply(obj, arguments);
                         }.bind(this)(true));
                 }
             },
             isVertexVisisted: function (pVertex) {
-                __recognizer913080153.logEntry([
-                    72,
+                __recognizer281601961.logEntry([
+                    74,
                     26,
-                    72,
+                    74,
                     34
                 ], arguments);
-                for (var i = 0; __recognizer913080153.logProbe([
-                        73,
+                for (var i = 0; __recognizer281601961.logProbe([
+                        75,
                         28,
-                        73,
+                        75,
                         29
-                    ], i) < __recognizer913080153.logProbe([
-                        73,
+                    ], i) < __recognizer281601961.logProbe([
+                        75,
                         46,
-                        73,
+                        75,
                         52
-                    ], __recognizer913080153.logProbe([
-                        73,
+                    ], __recognizer281601961.logProbe([
+                        75,
                         37,
-                        73,
+                        75,
                         45
-                    ], __recognizer913080153.logProbe([
-                        73,
+                    ], __recognizer281601961.logProbe([
+                        75,
                         32,
-                        73,
+                        75,
                         36
-                    ], this).vertices).length); __recognizer913080153.logProbe([
-                        73,
+                    ], this).vertices).length); __recognizer281601961.logProbe([
+                        75,
                         54,
-                        73,
+                        75,
                         55
                     ], i)++) {
                     if (function () {
                             var obj = function () {
-                                    var obj = __recognizer913080153.logProbe([
-                                            74,
+                                    var obj = __recognizer281601961.logProbe([
+                                            76,
                                             33,
-                                            74,
+                                            76,
                                             34
-                                        ], __recognizer913080153.logProbe([
-                                            74,
+                                        ], __recognizer281601961.logProbe([
+                                            76,
                                             24,
-                                            74,
+                                            76,
                                             32
-                                        ], __recognizer913080153.logProbe([
-                                            74,
+                                        ], __recognizer281601961.logProbe([
+                                            76,
                                             19,
-                                            74,
+                                            76,
                                             23
-                                        ], this).vertices)[i]), fn = __recognizer913080153.logProbe([
-                                            74,
+                                        ], this).vertices)[i]), fn = __recognizer281601961.logProbe([
+                                            76,
                                             36,
-                                            74,
+                                            76,
                                             51
                                         ], obj.getIntersection);
                                     return fn.apply(obj, arguments);
-                                }.bind(this)(), fn = __recognizer913080153.logProbe([
-                                    74,
+                                }.bind(this)(), fn = __recognizer281601961.logProbe([
+                                    76,
                                     54,
-                                    74,
+                                    76,
                                     71
                                 ], obj.getIntersectionId);
                             return fn.apply(obj, arguments);
                         }.bind(this)() == function () {
                             var obj = function () {
-                                    var obj = __recognizer913080153.logProbe([
-                                            74,
+                                    var obj = __recognizer281601961.logProbe([
+                                            76,
                                             77,
-                                            74,
+                                            76,
                                             84
-                                        ], pVertex), fn = __recognizer913080153.logProbe([
-                                            74,
+                                        ], pVertex), fn = __recognizer281601961.logProbe([
+                                            76,
                                             85,
-                                            74,
+                                            76,
                                             100
                                         ], obj.getIntersection);
                                     return fn.apply(obj, arguments);
-                                }.bind(this)(), fn = __recognizer913080153.logProbe([
-                                    74,
+                                }.bind(this)(), fn = __recognizer281601961.logProbe([
+                                    76,
                                     103,
-                                    74,
+                                    76,
                                     120
                                 ], obj.getIntersectionId);
                             return fn.apply(obj, arguments);
                         }.bind(this)())
                         return function () {
-                            var obj = __recognizer913080153.logProbe([
-                                    75,
-                                    36,
-                                    75,
-                                    37
-                                ], __recognizer913080153.logProbe([
-                                    75,
+                            var obj = __recognizer281601961.logProbe([
+                                    77,
+                                    41,
+                                    77,
+                                    42
+                                ], __recognizer281601961.logProbe([
+                                    77,
+                                    32,
+                                    77,
+                                    40
+                                ], __recognizer281601961.logProbe([
+                                    77,
                                     27,
-                                    75,
-                                    35
-                                ], vertices)[i]), fn = __recognizer913080153.logProbe([
-                                    75,
-                                    39,
-                                    75,
-                                    49
+                                    77,
+                                    31
+                                ], this).vertices)[i]), fn = __recognizer281601961.logProbe([
+                                    77,
+                                    44,
+                                    77,
+                                    54
                                 ], obj.getVisited);
                             return fn.apply(obj, arguments);
                         }.bind(this)();
                 }
             },
             print: function () {
-                __recognizer913080153.logEntry([
-                    79,
+                __recognizer281601961.logEntry([
+                    81,
                     15,
-                    79,
+                    81,
                     23
                 ], arguments);
-                for (var i = 0; __recognizer913080153.logProbe([
-                        80,
+                for (var i = 0; __recognizer281601961.logProbe([
+                        82,
                         28,
-                        80,
+                        82,
                         29
-                    ], i) < __recognizer913080153.logProbe([
-                        80,
+                    ], i) < __recognizer281601961.logProbe([
+                        82,
                         46,
-                        80,
+                        82,
                         52
-                    ], __recognizer913080153.logProbe([
-                        80,
+                    ], __recognizer281601961.logProbe([
+                        82,
                         37,
-                        80,
+                        82,
                         45
-                    ], __recognizer913080153.logProbe([
-                        80,
+                    ], __recognizer281601961.logProbe([
+                        82,
                         32,
-                        80,
+                        82,
                         36
-                    ], this).vertices).length); __recognizer913080153.logProbe([
-                        80,
+                    ], this).vertices).length); __recognizer281601961.logProbe([
+                        82,
                         54,
-                        80,
+                        82,
                         55
                     ], i)++) {
                     (function () {
-                        var obj = __recognizer913080153.logProbe([
-                                81,
+                        var obj = __recognizer281601961.logProbe([
+                                83,
                                 16,
-                                81,
+                                83,
                                 23
-                            ], console), fn = __recognizer913080153.logProbe([
-                                81,
+                            ], console), fn = __recognizer281601961.logProbe([
+                                83,
                                 24,
-                                81,
+                                83,
                                 27
                             ], obj.log);
                         return fn.apply(obj, arguments);
                     }.bind(this)('Vertice ' + function () {
                         var obj = function () {
-                                var obj = __recognizer913080153.logProbe([
-                                        81,
+                                var obj = __recognizer281601961.logProbe([
+                                        83,
                                         54,
-                                        81,
+                                        83,
                                         55
-                                    ], __recognizer913080153.logProbe([
-                                        81,
+                                    ], __recognizer281601961.logProbe([
+                                        83,
                                         45,
-                                        81,
+                                        83,
                                         53
-                                    ], __recognizer913080153.logProbe([
-                                        81,
+                                    ], __recognizer281601961.logProbe([
+                                        83,
                                         40,
-                                        81,
+                                        83,
                                         44
-                                    ], this).vertices)[i]), fn = __recognizer913080153.logProbe([
-                                        81,
+                                    ], this).vertices)[i]), fn = __recognizer281601961.logProbe([
+                                        83,
                                         57,
-                                        81,
+                                        83,
                                         72
                                     ], obj.getIntersection);
                                 return fn.apply(obj, arguments);
-                            }.bind(this)(), fn = __recognizer913080153.logProbe([
-                                81,
+                            }.bind(this)(), fn = __recognizer281601961.logProbe([
+                                83,
                                 75,
-                                81,
+                                83,
                                 92
                             ], obj.getIntersectionId);
                         return fn.apply(obj, arguments);
                     }.bind(this)() + ':  '));
                     (function () {
-                        var obj = __recognizer913080153.logProbe([
-                                82,
+                        var obj = __recognizer281601961.logProbe([
+                                84,
                                 16,
-                                82,
+                                84,
                                 23
-                            ], console), fn = __recognizer913080153.logProbe([
-                                82,
+                            ], console), fn = __recognizer281601961.logProbe([
+                                84,
                                 24,
-                                82,
+                                84,
                                 27
                             ], obj.log);
                         return fn.apply(obj, arguments);
                     }.bind(this)('   Cont: ' + function () {
-                        var obj = __recognizer913080153.logProbe([
-                                82,
+                        var obj = __recognizer281601961.logProbe([
+                                84,
                                 56,
-                                82,
+                                84,
                                 57
-                            ], __recognizer913080153.logProbe([
-                                82,
+                            ], __recognizer281601961.logProbe([
+                                84,
                                 47,
-                                82,
+                                84,
                                 55
-                            ], __recognizer913080153.logProbe([
-                                82,
+                            ], __recognizer281601961.logProbe([
+                                84,
                                 42,
-                                82,
+                                84,
                                 46
-                            ], this).vertices)[i]), fn = __recognizer913080153.logProbe([
-                                82,
+                            ], this).vertices)[i]), fn = __recognizer281601961.logProbe([
+                                84,
                                 59,
-                                82,
+                                84,
                                 64
                             ], obj.getId);
                         return fn.apply(obj, arguments);
                     }.bind(this)()));
                     (function () {
-                        var obj = __recognizer913080153.logProbe([
-                                83,
+                        var obj = __recognizer281601961.logProbe([
+                                85,
                                 16,
-                                83,
+                                85,
                                 23
-                            ], console), fn = __recognizer913080153.logProbe([
-                                83,
+                            ], console), fn = __recognizer281601961.logProbe([
+                                85,
                                 24,
-                                83,
+                                85,
                                 27
                             ], obj.log);
                         return fn.apply(obj, arguments);
                     }.bind(this)('   Bifurcacion(s): ' + function () {
                         var obj = function () {
-                                var obj = __recognizer913080153.logProbe([
-                                        83,
+                                var obj = __recognizer281601961.logProbe([
+                                        85,
                                         66,
-                                        83,
+                                        85,
                                         67
-                                    ], __recognizer913080153.logProbe([
-                                        83,
+                                    ], __recognizer281601961.logProbe([
+                                        85,
                                         57,
-                                        83,
+                                        85,
                                         65
-                                    ], __recognizer913080153.logProbe([
-                                        83,
+                                    ], __recognizer281601961.logProbe([
+                                        85,
                                         52,
-                                        83,
+                                        85,
                                         56
-                                    ], this).vertices)[i]), fn = __recognizer913080153.logProbe([
-                                        83,
+                                    ], this).vertices)[i]), fn = __recognizer281601961.logProbe([
+                                        85,
                                         69,
-                                        83,
+                                        85,
                                         84
                                     ], obj.getIntersection);
                                 return fn.apply(obj, arguments);
-                            }.bind(this)(), fn = __recognizer913080153.logProbe([
-                                83,
+                            }.bind(this)(), fn = __recognizer281601961.logProbe([
+                                85,
                                 87,
-                                83,
+                                85,
                                 101
                             ], obj.getBifurcation);
                         return fn.apply(obj, arguments);
                     }.bind(this)()));
                     (function () {
-                        var obj = __recognizer913080153.logProbe([
-                                84,
+                        var obj = __recognizer281601961.logProbe([
+                                86,
                                 16,
-                                84,
+                                86,
                                 23
-                            ], console), fn = __recognizer913080153.logProbe([
-                                84,
+                            ], console), fn = __recognizer281601961.logProbe([
+                                86,
                                 24,
-                                84,
+                                86,
                                 27
                             ], obj.log);
                         return fn.apply(obj, arguments);
                     }.bind(this)('   Connection(s): '));
-                    for (var j = 0; __recognizer913080153.logProbe([
-                            85,
+                    for (var j = 0; __recognizer281601961.logProbe([
+                            87,
                             32,
-                            85,
+                            87,
                             33
-                        ], j) < __recognizer913080153.logProbe([
-                            85,
+                        ], j) < __recognizer281601961.logProbe([
+                            87,
                             64,
-                            85,
+                            87,
                             70
                         ], function () {
-                            var obj = __recognizer913080153.logProbe([
-                                    85,
+                            var obj = __recognizer281601961.logProbe([
+                                    87,
                                     50,
-                                    85,
+                                    87,
                                     51
-                                ], __recognizer913080153.logProbe([
-                                    85,
+                                ], __recognizer281601961.logProbe([
+                                    87,
                                     41,
-                                    85,
+                                    87,
                                     49
-                                ], __recognizer913080153.logProbe([
-                                    85,
+                                ], __recognizer281601961.logProbe([
+                                    87,
                                     36,
-                                    85,
+                                    87,
                                     40
-                                ], this).vertices)[i]), fn = __recognizer913080153.logProbe([
-                                    85,
+                                ], this).vertices)[i]), fn = __recognizer281601961.logProbe([
+                                    87,
                                     53,
-                                    85,
+                                    87,
                                     61
                                 ], obj.getEdges);
                             return fn.apply(obj, arguments);
-                        }.bind(this)().length); __recognizer913080153.logProbe([
-                            85,
+                        }.bind(this)().length); __recognizer281601961.logProbe([
+                            87,
                             72,
-                            85,
+                            87,
                             73
                         ], j)++) {
                         (function () {
-                            var obj = __recognizer913080153.logProbe([
-                                    86,
+                            var obj = __recognizer281601961.logProbe([
+                                    88,
                                     20,
-                                    86,
+                                    88,
                                     27
-                                ], console), fn = __recognizer913080153.logProbe([
-                                    86,
+                                ], console), fn = __recognizer281601961.logProbe([
+                                    88,
                                     28,
-                                    86,
+                                    88,
                                     31
                                 ], obj.log);
                             return fn.apply(obj, arguments);
                         }.bind(this)('         ' + function () {
                             var obj = function () {
-                                    var obj = __recognizer913080153.logProbe([
-                                            86,
+                                    var obj = __recognizer281601961.logProbe([
+                                            88,
                                             74,
-                                            86,
+                                            88,
                                             75
                                         ], function () {
-                                            var obj = __recognizer913080153.logProbe([
-                                                    86,
+                                            var obj = __recognizer281601961.logProbe([
+                                                    88,
                                                     60,
-                                                    86,
+                                                    88,
                                                     61
-                                                ], __recognizer913080153.logProbe([
-                                                    86,
+                                                ], __recognizer281601961.logProbe([
+                                                    88,
                                                     51,
-                                                    86,
+                                                    88,
                                                     59
-                                                ], __recognizer913080153.logProbe([
-                                                    86,
+                                                ], __recognizer281601961.logProbe([
+                                                    88,
                                                     46,
-                                                    86,
+                                                    88,
                                                     50
-                                                ], this).vertices)[i]), fn = __recognizer913080153.logProbe([
-                                                    86,
+                                                ], this).vertices)[i]), fn = __recognizer281601961.logProbe([
+                                                    88,
                                                     63,
-                                                    86,
+                                                    88,
                                                     71
                                                 ], obj.getEdges);
                                             return fn.apply(obj, arguments);
-                                        }.bind(this)()[j]), fn = __recognizer913080153.logProbe([
-                                            86,
+                                        }.bind(this)()[j]), fn = __recognizer281601961.logProbe([
+                                            88,
                                             77,
-                                            86,
+                                            88,
                                             92
                                         ], obj.getIntersection);
                                     return fn.apply(obj, arguments);
-                                }.bind(this)(), fn = __recognizer913080153.logProbe([
-                                    86,
+                                }.bind(this)(), fn = __recognizer281601961.logProbe([
+                                    88,
                                     95,
-                                    86,
+                                    88,
                                     112
                                 ], obj.getIntersectionId);
                             return fn.apply(obj, arguments);
                         }.bind(this)() + '  '));
                     }
                     (function () {
-                        var obj = __recognizer913080153.logProbe([
-                                88,
+                        var obj = __recognizer281601961.logProbe([
+                                90,
                                 16,
-                                88,
+                                90,
                                 23
-                            ], console), fn = __recognizer913080153.logProbe([
-                                88,
+                            ], console), fn = __recognizer281601961.logProbe([
+                                90,
                                 24,
-                                88,
+                                90,
                                 27
                             ], obj.log);
                         return fn.apply(obj, arguments);
                     }.bind(this)('\n'));
                 }
+            },
+            cleanVisitVertex: function () {
+                __recognizer281601961.logEntry([
+                    94,
+                    27,
+                    94,
+                    35
+                ], arguments);
+                for (var i = 0; __recognizer281601961.logProbe([
+                        95,
+                        28,
+                        95,
+                        29
+                    ], i) < function () {
+                        var obj = __recognizer281601961.logProbe([
+                                95,
+                                37,
+                                95,
+                                45
+                            ], __recognizer281601961.logProbe([
+                                95,
+                                32,
+                                95,
+                                36
+                            ], this).vertices), fn = __recognizer281601961.logProbe([
+                                95,
+                                46,
+                                95,
+                                52
+                            ], obj.length);
+                        return fn.apply(obj, arguments);
+                    }.bind(this)(); __recognizer281601961.logProbe([
+                        95,
+                        56,
+                        95,
+                        57
+                    ], i)++) {
+                    var vertex = __recognizer281601961.logProbe([
+                            96,
+                            43,
+                            96,
+                            44
+                        ], __recognizer281601961.logProbe([
+                            96,
+                            34,
+                            96,
+                            42
+                        ], __recognizer281601961.logProbe([
+                            96,
+                            29,
+                            96,
+                            33
+                        ], this).vertices)[i]);
+                    (function () {
+                        var obj = __recognizer281601961.logProbe([
+                                97,
+                                16,
+                                97,
+                                22
+                            ], vertex), fn = __recognizer281601961.logProbe([
+                                97,
+                                23,
+                                97,
+                                33
+                            ], obj.setVisited);
+                        return fn.apply(obj, arguments);
+                    }.bind(this)(false));
+                }
+            },
+            broadness: function (pVertex) {
+                __recognizer281601961.logEntry([
+                    101,
+                    20,
+                    101,
+                    28
+                ], arguments);
+                (function () {
+                    var obj = __recognizer281601961.logProbe([
+                            103,
+                            12,
+                            103,
+                            16
+                        ], this), fn = __recognizer281601961.logProbe([
+                            103,
+                            17,
+                            103,
+                            28
+                        ], obj.visitVertex);
+                    return fn.apply(obj, arguments);
+                }.bind(this)(__recognizer281601961.logProbe([
+                    103,
+                    29,
+                    103,
+                    36
+                ], pVertex)));
+                var cola = new (__recognizer281601961.logProbe([
+                        104,
+                        27,
+                        104,
+                        32
+                    ], Array))();
+                for (var i = 0; __recognizer281601961.logProbe([
+                        106,
+                        29,
+                        106,
+                        30
+                    ], i) < __recognizer281601961.logProbe([
+                        106,
+                        52,
+                        106,
+                        58
+                    ], function () {
+                        var obj = __recognizer281601961.logProbe([
+                                106,
+                                33,
+                                106,
+                                40
+                            ], pVertex), fn = __recognizer281601961.logProbe([
+                                106,
+                                41,
+                                106,
+                                49
+                            ], obj.getEdges);
+                        return fn.apply(obj, arguments);
+                    }.bind(this)().length); __recognizer281601961.logProbe([
+                        106,
+                        61,
+                        106,
+                        62
+                    ], i)++) {
+                    (function () {
+                        var obj = __recognizer281601961.logProbe([
+                                107,
+                                16,
+                                107,
+                                20
+                            ], cola), fn = __recognizer281601961.logProbe([
+                                107,
+                                21,
+                                107,
+                                25
+                            ], obj.push);
+                        return fn.apply(obj, arguments);
+                    }.bind(this)(function () {
+                        var obj = __recognizer281601961.logProbe([
+                                107,
+                                26,
+                                107,
+                                30
+                            ], this), fn = __recognizer281601961.logProbe([
+                                107,
+                                31,
+                                107,
+                                43
+                            ], obj.searchVertex);
+                        return fn.apply(obj, arguments);
+                    }.bind(this)(function () {
+                        var obj = __recognizer281601961.logProbe([
+                                107,
+                                63,
+                                107,
+                                64
+                            ], function () {
+                                var obj = __recognizer281601961.logProbe([
+                                        107,
+                                        44,
+                                        107,
+                                        51
+                                    ], pVertex), fn = __recognizer281601961.logProbe([
+                                        107,
+                                        52,
+                                        107,
+                                        60
+                                    ], obj.getEdges);
+                                return fn.apply(obj, arguments);
+                            }.bind(this)()[i]), fn = __recognizer281601961.logProbe([
+                                107,
+                                66,
+                                107,
+                                71
+                            ], obj.getId);
+                        return fn.apply(obj, arguments);
+                    }.bind(this)())));
+                    (function () {
+                        var obj = __recognizer281601961.logProbe([
+                                108,
+                                16,
+                                108,
+                                20
+                            ], this), fn = __recognizer281601961.logProbe([
+                                108,
+                                21,
+                                108,
+                                32
+                            ], obj.visitVertex);
+                        return fn.apply(obj, arguments);
+                    }.bind(this)(__recognizer281601961.logProbe([
+                        108,
+                        52,
+                        108,
+                        53
+                    ], function () {
+                        var obj = __recognizer281601961.logProbe([
+                                108,
+                                33,
+                                108,
+                                40
+                            ], pVertex), fn = __recognizer281601961.logProbe([
+                                108,
+                                41,
+                                108,
+                                49
+                            ], obj.getEdges);
+                        return fn.apply(obj, arguments);
+                    }.bind(this)()[i])));
+                }
+                while (__recognizer281601961.logProbe([
+                        112,
+                        23,
+                        112,
+                        29
+                    ], __recognizer281601961.logProbe([
+                        112,
+                        18,
+                        112,
+                        22
+                    ], cola).length) > 0) {
+                    var actualVertex = __recognizer281601961.logProbe([
+                            114,
+                            40,
+                            114,
+                            41
+                        ], __recognizer281601961.logProbe([
+                            114,
+                            35,
+                            114,
+                            39
+                        ], cola)[0]);
+                    (function () {
+                        var obj = __recognizer281601961.logProbe([
+                                116,
+                                16,
+                                116,
+                                23
+                            ], console), fn = __recognizer281601961.logProbe([
+                                116,
+                                24,
+                                116,
+                                27
+                            ], obj.log);
+                        return fn.apply(obj, arguments);
+                    }.bind(this)('sss' + function () {
+                        var obj = __recognizer281601961.logProbe([
+                                116,
+                                34,
+                                116,
+                                46
+                            ], actualVertex), fn = __recognizer281601961.logProbe([
+                                116,
+                                47,
+                                116,
+                                52
+                            ], obj.getId);
+                        return fn.apply(obj, arguments);
+                    }.bind(this)() + '  '));
+                    (function () {
+                        var obj = __recognizer281601961.logProbe([
+                                117,
+                                16,
+                                117,
+                                20
+                            ], this), fn = __recognizer281601961.logProbe([
+                                117,
+                                21,
+                                117,
+                                32
+                            ], obj.visitVertex);
+                        return fn.apply(obj, arguments);
+                    }.bind(this)(__recognizer281601961.logProbe([
+                        117,
+                        33,
+                        117,
+                        45
+                    ], actualVertex)));
+                    cola = function () {
+                        var obj = __recognizer281601961.logProbe([
+                                118,
+                                23,
+                                118,
+                                27
+                            ], this), fn = __recognizer281601961.logProbe([
+                                118,
+                                28,
+                                118,
+                                34
+                            ], obj.remove);
+                        return fn.apply(obj, arguments);
+                    }.bind(this)(__recognizer281601961.logProbe([
+                        118,
+                        35,
+                        118,
+                        39
+                    ], cola), 0);
+                    (function () {
+                        var obj = __recognizer281601961.logProbe([
+                                119,
+                                16,
+                                119,
+                                23
+                            ], console), fn = __recognizer281601961.logProbe([
+                                119,
+                                24,
+                                119,
+                                27
+                            ], obj.log);
+                        return fn.apply(obj, arguments);
+                    }.bind(this)(__recognizer281601961.logProbe([
+                        119,
+                        52,
+                        119,
+                        58
+                    ], function () {
+                        var obj = __recognizer281601961.logProbe([
+                                119,
+                                28,
+                                119,
+                                40
+                            ], actualVertex), fn = __recognizer281601961.logProbe([
+                                119,
+                                41,
+                                119,
+                                49
+                            ], obj.getEdges);
+                        return fn.apply(obj, arguments);
+                    }.bind(this)().length)));
+                    (function () {
+                        var obj = __recognizer281601961.logProbe([
+                                120,
+                                16,
+                                120,
+                                23
+                            ], console), fn = __recognizer281601961.logProbe([
+                                120,
+                                24,
+                                120,
+                                27
+                            ], obj.log);
+                        return fn.apply(obj, arguments);
+                    }.bind(this)('sss' + function () {
+                        var obj = __recognizer281601961.logProbe([
+                                120,
+                                34,
+                                120,
+                                46
+                            ], actualVertex), fn = __recognizer281601961.logProbe([
+                                120,
+                                47,
+                                120,
+                                52
+                            ], obj.getId);
+                        return fn.apply(obj, arguments);
+                    }.bind(this)() + '  '));
+                    for (var i = 0; __recognizer281601961.logProbe([
+                            122,
+                            32,
+                            122,
+                            33
+                        ], i) < __recognizer281601961.logProbe([
+                            122,
+                            60,
+                            122,
+                            66
+                        ], function () {
+                            var obj = __recognizer281601961.logProbe([
+                                    122,
+                                    36,
+                                    122,
+                                    48
+                                ], actualVertex), fn = __recognizer281601961.logProbe([
+                                    122,
+                                    49,
+                                    122,
+                                    57
+                                ], obj.getEdges);
+                            return fn.apply(obj, arguments);
+                        }.bind(this)().length); __recognizer281601961.logProbe([
+                            122,
+                            68,
+                            122,
+                            69
+                        ], i)++) {
+                        if (function () {
+                                var obj = __recognizer281601961.logProbe([
+                                        124,
+                                        23,
+                                        124,
+                                        27
+                                    ], this), fn = __recognizer281601961.logProbe([
+                                        124,
+                                        28,
+                                        124,
+                                        44
+                                    ], obj.isVertexVisisted);
+                                return fn.apply(obj, arguments);
+                            }.bind(this)(__recognizer281601961.logProbe([
+                                124,
+                                69,
+                                124,
+                                70
+                            ], function () {
+                                var obj = __recognizer281601961.logProbe([
+                                        124,
+                                        45,
+                                        124,
+                                        57
+                                    ], actualVertex), fn = __recognizer281601961.logProbe([
+                                        124,
+                                        58,
+                                        124,
+                                        66
+                                    ], obj.getEdges);
+                                return fn.apply(obj, arguments);
+                            }.bind(this)()[i])) == false) {
+                            (function () {
+                                var obj = __recognizer281601961.logProbe([
+                                        126,
+                                        24,
+                                        126,
+                                        31
+                                    ], console), fn = __recognizer281601961.logProbe([
+                                        126,
+                                        32,
+                                        126,
+                                        35
+                                    ], obj.log);
+                                return fn.apply(obj, arguments);
+                            }.bind(this)(function () {
+                                var obj = __recognizer281601961.logProbe([
+                                        126,
+                                        60,
+                                        126,
+                                        61
+                                    ], function () {
+                                        var obj = __recognizer281601961.logProbe([
+                                                126,
+                                                36,
+                                                126,
+                                                48
+                                            ], actualVertex), fn = __recognizer281601961.logProbe([
+                                                126,
+                                                49,
+                                                126,
+                                                57
+                                            ], obj.getEdges);
+                                        return fn.apply(obj, arguments);
+                                    }.bind(this)()[i]), fn = __recognizer281601961.logProbe([
+                                        126,
+                                        63,
+                                        126,
+                                        68
+                                    ], obj.getId);
+                                return fn.apply(obj, arguments);
+                            }.bind(this)()));
+                            (function () {
+                                var obj = __recognizer281601961.logProbe([
+                                        127,
+                                        24,
+                                        127,
+                                        28
+                                    ], this), fn = __recognizer281601961.logProbe([
+                                        127,
+                                        29,
+                                        127,
+                                        40
+                                    ], obj.visitVertex);
+                                return fn.apply(obj, arguments);
+                            }.bind(this)(function () {
+                                var obj = __recognizer281601961.logProbe([
+                                        127,
+                                        41,
+                                        127,
+                                        45
+                                    ], this), fn = __recognizer281601961.logProbe([
+                                        127,
+                                        46,
+                                        127,
+                                        58
+                                    ], obj.searchVertex);
+                                return fn.apply(obj, arguments);
+                            }.bind(this)(function () {
+                                var obj = __recognizer281601961.logProbe([
+                                        127,
+                                        83,
+                                        127,
+                                        84
+                                    ], function () {
+                                        var obj = __recognizer281601961.logProbe([
+                                                127,
+                                                59,
+                                                127,
+                                                71
+                                            ], actualVertex), fn = __recognizer281601961.logProbe([
+                                                127,
+                                                72,
+                                                127,
+                                                80
+                                            ], obj.getEdges);
+                                        return fn.apply(obj, arguments);
+                                    }.bind(this)()[i]), fn = __recognizer281601961.logProbe([
+                                        127,
+                                        86,
+                                        127,
+                                        91
+                                    ], obj.getId);
+                                return fn.apply(obj, arguments);
+                            }.bind(this)())));
+                            (function () {
+                                var obj = __recognizer281601961.logProbe([
+                                        129,
+                                        24,
+                                        129,
+                                        28
+                                    ], cola), fn = __recognizer281601961.logProbe([
+                                        129,
+                                        29,
+                                        129,
+                                        33
+                                    ], obj.push);
+                                return fn.apply(obj, arguments);
+                            }.bind(this)(__recognizer281601961.logProbe([
+                                129,
+                                58,
+                                129,
+                                59
+                            ], function () {
+                                var obj = __recognizer281601961.logProbe([
+                                        129,
+                                        34,
+                                        129,
+                                        46
+                                    ], actualVertex), fn = __recognizer281601961.logProbe([
+                                        129,
+                                        47,
+                                        129,
+                                        55
+                                    ], obj.getEdges);
+                                return fn.apply(obj, arguments);
+                            }.bind(this)()[i])));
+                            (function () {
+                                var obj = __recognizer281601961.logProbe([
+                                        130,
+                                        24,
+                                        130,
+                                        31
+                                    ], console), fn = __recognizer281601961.logProbe([
+                                        130,
+                                        32,
+                                        130,
+                                        35
+                                    ], obj.log);
+                                return fn.apply(obj, arguments);
+                            }.bind(this)('asasf' + __recognizer281601961.logProbe([
+                                130,
+                                49,
+                                130,
+                                55
+                            ], __recognizer281601961.logProbe([
+                                130,
+                                44,
+                                130,
+                                48
+                            ], cola).length)));
+                        } else {
+                            if (function () {
+                                    var obj = __recognizer281601961.logProbe([
+                                            133,
+                                            51,
+                                            133,
+                                            52
+                                        ], function () {
+                                            var obj = __recognizer281601961.logProbe([
+                                                    133,
+                                                    27,
+                                                    133,
+                                                    39
+                                                ], actualVertex), fn = __recognizer281601961.logProbe([
+                                                    133,
+                                                    40,
+                                                    133,
+                                                    48
+                                                ], obj.getEdges);
+                                            return fn.apply(obj, arguments);
+                                        }.bind(this)()[i]), fn = __recognizer281601961.logProbe([
+                                            133,
+                                            54,
+                                            133,
+                                            59
+                                        ], obj.getId);
+                                    return fn.apply(obj, arguments);
+                                }.bind(this)() === function () {
+                                    var obj = __recognizer281601961.logProbe([
+                                            133,
+                                            66,
+                                            133,
+                                            73
+                                        ], pVertex), fn = __recognizer281601961.logProbe([
+                                            133,
+                                            74,
+                                            133,
+                                            79
+                                        ], obj.getId);
+                                    return fn.apply(obj, arguments);
+                                }.bind(this)()) {
+                                return true;
+                            }
+                        }
+                    }
+                }
+                (function () {
+                    var obj = __recognizer281601961.logProbe([
+                            139,
+                            12,
+                            139,
+                            16
+                        ], this), fn = __recognizer281601961.logProbe([
+                            139,
+                            17,
+                            139,
+                            33
+                        ], obj.cleanVisitVertex);
+                    return fn.apply(obj, arguments);
+                }.bind(this)());
+                return false;
+            },
+            remove: function (arr, item) {
+                __recognizer281601961.logEntry([
+                    143,
+                    16,
+                    143,
+                    24
+                ], arguments);
+                var i;
+                var array = new (__recognizer281601961.logProbe([
+                        145,
+                        28,
+                        145,
+                        33
+                    ], Array))();
+                for (var i = 0; __recognizer281601961.logProbe([
+                        146,
+                        28,
+                        146,
+                        29
+                    ], i) < __recognizer281601961.logProbe([
+                        146,
+                        36,
+                        146,
+                        42
+                    ], __recognizer281601961.logProbe([
+                        146,
+                        32,
+                        146,
+                        35
+                    ], arr).length); __recognizer281601961.logProbe([
+                        146,
+                        44,
+                        146,
+                        45
+                    ], i)++) {
+                    if (__recognizer281601961.logProbe([
+                            147,
+                            19,
+                            147,
+                            20
+                        ], i) != __recognizer281601961.logProbe([
+                            147,
+                            22,
+                            147,
+                            26
+                        ], item))
+                        (function () {
+                            var obj = __recognizer281601961.logProbe([
+                                    147,
+                                    27,
+                                    147,
+                                    32
+                                ], array), fn = __recognizer281601961.logProbe([
+                                    147,
+                                    33,
+                                    147,
+                                    37
+                                ], obj.push);
+                            return fn.apply(obj, arguments);
+                        }.bind(this)(__recognizer281601961.logProbe([
+                            147,
+                            42,
+                            147,
+                            43
+                        ], __recognizer281601961.logProbe([
+                            147,
+                            38,
+                            147,
+                            41
+                        ], arr)[i])));
+                }
+                (function () {
+                    var obj = __recognizer281601961.logProbe([
+                            149,
+                            12,
+                            149,
+                            19
+                        ], console), fn = __recognizer281601961.logProbe([
+                            149,
+                            20,
+                            149,
+                            23
+                        ], obj.log);
+                    return fn.apply(obj, arguments);
+                }.bind(this)('...' + __recognizer281601961.logProbe([
+                    149,
+                    38,
+                    149,
+                    44
+                ], __recognizer281601961.logProbe([
+                    149,
+                    32,
+                    149,
+                    37
+                ], array).length)));
+                return __recognizer281601961.logProbe([
+                    150,
+                    19,
+                    150,
+                    24
+                ], array);
             }
         });
-}(__recognizer913080153.logProbe([
-    93,
+}(__recognizer281601961.logProbe([
+    156,
     2,
-    93,
+    156,
     13
-], LibraryData), __recognizer913080153.logProbe([
-    93,
+], LibraryData), __recognizer281601961.logProbe([
+    156,
     15,
-    93,
+    156,
     21
 ], jQuery)));

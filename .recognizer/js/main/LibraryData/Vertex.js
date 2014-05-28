@@ -3,7 +3,7 @@
  * https://github.com/equiet/recognizer
  */
 
-var __recognizer402468991 = (function () {
+var __recognizer72015479 = (function () {
     'use strict';
 
     var global = this;
@@ -158,35 +158,35 @@ var __recognizer402468991 = (function () {
  */
 
 (function (pContext, $) {
-    __recognizer402468991.logEntry([
+    __recognizer72015479.logEntry([
         20,
         1,
         20,
         9
     ], arguments);
     pContext.createVertex = function (pId, pIntersectionId, pBifurcation) {
-        __recognizer402468991.logEntry([
+        __recognizer72015479.logEntry([
             22,
             28,
             22,
             36
         ], arguments);
-        return new (__recognizer402468991.logProbe([
+        return new (__recognizer72015479.logProbe([
             23,
             19,
             23,
             25
-        ], Vertex))(__recognizer402468991.logProbe([
+        ], Vertex))(__recognizer72015479.logProbe([
             23,
             26,
             23,
             29
-        ], pId), __recognizer402468991.logProbe([
+        ], pId), __recognizer72015479.logProbe([
             23,
             31,
             23,
             46
-        ], pIntersectionId), __recognizer402468991.logProbe([
+        ], pIntersectionId), __recognizer72015479.logProbe([
             23,
             48,
             23,
@@ -194,12 +194,12 @@ var __recognizer402468991 = (function () {
         ], pBifurcation));
     };
     var Vertex = function () {
-            var obj = __recognizer402468991.logProbe([
+            var obj = __recognizer72015479.logProbe([
                     26,
                     17,
                     26,
                     22
-                ], Class), fn = __recognizer402468991.logProbe([
+                ], Class), fn = __recognizer72015479.logProbe([
                     26,
                     23,
                     26,
@@ -208,44 +208,44 @@ var __recognizer402468991 = (function () {
             return fn.apply(obj, arguments);
         }.bind(this)({
             init: function (pId, pIntersectionId, pBifurcation) {
-                __recognizer402468991.logEntry([
+                __recognizer72015479.logEntry([
                     27,
                     14,
                     27,
                     22
                 ], arguments);
-                this.id = __recognizer402468991.logProbe([
+                this.id = __recognizer72015479.logProbe([
                     28,
                     22,
                     28,
                     25
                 ], pId);
                 this.visited = false;
-                this.edges = new (__recognizer402468991.logProbe([
+                this.edges = new (__recognizer72015479.logProbe([
                     30,
                     29,
                     30,
                     34
                 ], Array))();
                 this.intersection = function () {
-                    var obj = __recognizer402468991.logProbe([
+                    var obj = __recognizer72015479.logProbe([
                             31,
                             32,
                             31,
                             43
-                        ], LibraryData), fn = __recognizer402468991.logProbe([
+                        ], LibraryData), fn = __recognizer72015479.logProbe([
                             31,
                             44,
                             31,
                             62
                         ], obj.createIntersection);
                     return fn.apply(obj, arguments);
-                }.bind(this)(__recognizer402468991.logProbe([
+                }.bind(this)(__recognizer72015479.logProbe([
                     31,
                     63,
                     31,
                     78
-                ], pIntersectionId), __recognizer402468991.logProbe([
+                ], pIntersectionId), __recognizer72015479.logProbe([
                     31,
                     80,
                     31,
@@ -253,13 +253,13 @@ var __recognizer402468991 = (function () {
                 ], pBifurcation));
             },
             setId: function (pId) {
-                __recognizer402468991.logEntry([
+                __recognizer72015479.logEntry([
                     35,
                     15,
                     35,
                     23
                 ], arguments);
-                this.id = __recognizer402468991.logProbe([
+                this.id = __recognizer72015479.logProbe([
                     36,
                     22,
                     36,
@@ -267,13 +267,13 @@ var __recognizer402468991 = (function () {
                 ], pId);
             },
             setVisited: function (pVisited) {
-                __recognizer402468991.logEntry([
+                __recognizer72015479.logEntry([
                     39,
                     20,
                     39,
                     28
                 ], arguments);
-                this.visited = __recognizer402468991.logProbe([
+                this.visited = __recognizer72015479.logProbe([
                     40,
                     27,
                     40,
@@ -281,13 +281,13 @@ var __recognizer402468991 = (function () {
                 ], pVisited);
             },
             setEdges: function (pEdges) {
-                __recognizer402468991.logEntry([
+                __recognizer72015479.logEntry([
                     43,
                     18,
                     43,
                     26
                 ], arguments);
-                this.edges = __recognizer402468991.logProbe([
+                this.edges = __recognizer72015479.logProbe([
                     44,
                     25,
                     44,
@@ -295,13 +295,13 @@ var __recognizer402468991 = (function () {
                 ], pEdges);
             },
             setIntersection: function (pIntersection) {
-                __recognizer402468991.logEntry([
+                __recognizer72015479.logEntry([
                     47,
                     25,
                     47,
                     33
                 ], arguments);
-                this.intersection = __recognizer402468991.logProbe([
+                this.intersection = __recognizer72015479.logProbe([
                     48,
                     32,
                     48,
@@ -309,18 +309,18 @@ var __recognizer402468991 = (function () {
                 ], pIntersection);
             },
             getId: function () {
-                __recognizer402468991.logEntry([
+                __recognizer72015479.logEntry([
                     52,
                     15,
                     52,
                     23
                 ], arguments);
-                return __recognizer402468991.logProbe([
+                return __recognizer72015479.logProbe([
                     53,
                     24,
                     53,
                     26
-                ], __recognizer402468991.logProbe([
+                ], __recognizer72015479.logProbe([
                     53,
                     19,
                     53,
@@ -328,18 +328,18 @@ var __recognizer402468991 = (function () {
                 ], this).id);
             },
             getVisited: function () {
-                __recognizer402468991.logEntry([
+                __recognizer72015479.logEntry([
                     56,
                     20,
                     56,
                     28
                 ], arguments);
-                return __recognizer402468991.logProbe([
+                return __recognizer72015479.logProbe([
                     57,
                     24,
                     57,
                     31
-                ], __recognizer402468991.logProbe([
+                ], __recognizer72015479.logProbe([
                     57,
                     19,
                     57,
@@ -347,18 +347,18 @@ var __recognizer402468991 = (function () {
                 ], this).visited);
             },
             getEdges: function () {
-                __recognizer402468991.logEntry([
+                __recognizer72015479.logEntry([
                     60,
                     18,
                     60,
                     26
                 ], arguments);
-                return __recognizer402468991.logProbe([
+                return __recognizer72015479.logProbe([
                     61,
                     24,
                     61,
                     29
-                ], __recognizer402468991.logProbe([
+                ], __recognizer72015479.logProbe([
                     61,
                     19,
                     61,
@@ -366,18 +366,18 @@ var __recognizer402468991 = (function () {
                 ], this).edges);
             },
             getIntersection: function () {
-                __recognizer402468991.logEntry([
+                __recognizer72015479.logEntry([
                     64,
                     25,
                     64,
                     33
                 ], arguments);
-                return __recognizer402468991.logProbe([
+                return __recognizer72015479.logProbe([
                     65,
                     24,
                     65,
                     36
-                ], __recognizer402468991.logProbe([
+                ], __recognizer72015479.logProbe([
                     65,
                     19,
                     65,
@@ -385,33 +385,33 @@ var __recognizer402468991 = (function () {
                 ], this).intersection);
             },
             searchEdge: function (pVertex) {
-                __recognizer402468991.logEntry([
+                __recognizer72015479.logEntry([
                     68,
                     20,
                     68,
                     28
                 ], arguments);
-                for (var i = 0; __recognizer402468991.logProbe([
+                for (var i = 0; __recognizer72015479.logProbe([
                         69,
                         27,
                         69,
                         28
-                    ], i) < __recognizer402468991.logProbe([
+                    ], i) < __recognizer72015479.logProbe([
                         69,
                         42,
                         69,
                         48
-                    ], __recognizer402468991.logProbe([
+                    ], __recognizer72015479.logProbe([
                         69,
                         36,
                         69,
                         41
-                    ], __recognizer402468991.logProbe([
+                    ], __recognizer72015479.logProbe([
                         69,
                         31,
                         69,
                         35
-                    ], this).edges).length); __recognizer402468991.logProbe([
+                    ], this).edges).length); __recognizer72015479.logProbe([
                         69,
                         50,
                         69,
@@ -419,19 +419,19 @@ var __recognizer402468991 = (function () {
                     ], i)++) {
                     if (function () {
                             var obj = function () {
-                                    var obj = __recognizer402468991.logProbe([
+                                    var obj = __recognizer72015479.logProbe([
                                             70,
                                             19,
                                             70,
                                             26
-                                        ], pVertex), fn = __recognizer402468991.logProbe([
+                                        ], pVertex), fn = __recognizer72015479.logProbe([
                                             70,
                                             27,
                                             70,
                                             42
                                         ], obj.getIntersection);
                                     return fn.apply(obj, arguments);
-                                }.bind(this)(), fn = __recognizer402468991.logProbe([
+                                }.bind(this)(), fn = __recognizer72015479.logProbe([
                                     70,
                                     45,
                                     70,
@@ -440,29 +440,29 @@ var __recognizer402468991 = (function () {
                             return fn.apply(obj, arguments);
                         }.bind(this)() === function () {
                             var obj = function () {
-                                    var obj = __recognizer402468991.logProbe([
+                                    var obj = __recognizer72015479.logProbe([
                                             70,
                                             80,
                                             70,
                                             81
-                                        ], __recognizer402468991.logProbe([
+                                        ], __recognizer72015479.logProbe([
                                             70,
                                             74,
                                             70,
                                             79
-                                        ], __recognizer402468991.logProbe([
+                                        ], __recognizer72015479.logProbe([
                                             70,
                                             69,
                                             70,
                                             73
-                                        ], this).edges)[i]), fn = __recognizer402468991.logProbe([
+                                        ], this).edges)[i]), fn = __recognizer72015479.logProbe([
                                             70,
                                             83,
                                             70,
                                             98
                                         ], obj.getIntersection);
                                     return fn.apply(obj, arguments);
-                                }.bind(this)(), fn = __recognizer402468991.logProbe([
+                                }.bind(this)(), fn = __recognizer72015479.logProbe([
                                     70,
                                     101,
                                     70,
@@ -470,7 +470,7 @@ var __recognizer402468991 = (function () {
                                 ], obj.getIntersectionId);
                             return fn.apply(obj, arguments);
                         }.bind(this)())
-                        return __recognizer402468991.logProbe([
+                        return __recognizer72015479.logProbe([
                             71,
                             27,
                             71,
@@ -480,50 +480,50 @@ var __recognizer402468991 = (function () {
                 return -1;
             },
             addEdge: function (pVertex) {
-                __recognizer402468991.logEntry([
+                __recognizer72015479.logEntry([
                     76,
                     17,
                     76,
                     25
                 ], arguments);
                 if (function () {
-                        var obj = __recognizer402468991.logProbe([
+                        var obj = __recognizer72015479.logProbe([
                                 77,
                                 15,
                                 77,
                                 19
-                            ], this), fn = __recognizer402468991.logProbe([
+                            ], this), fn = __recognizer72015479.logProbe([
                                 77,
                                 20,
                                 77,
                                 30
                             ], obj.searchEdge);
                         return fn.apply(obj, arguments);
-                    }.bind(this)(__recognizer402468991.logProbe([
+                    }.bind(this)(__recognizer72015479.logProbe([
                         77,
                         31,
                         77,
                         38
                     ], pVertex)) === -1)
                     (function () {
-                        var obj = __recognizer402468991.logProbe([
+                        var obj = __recognizer72015479.logProbe([
                                 78,
                                 21,
                                 78,
                                 26
-                            ], __recognizer402468991.logProbe([
+                            ], __recognizer72015479.logProbe([
                                 78,
                                 16,
                                 78,
                                 20
-                            ], this).edges), fn = __recognizer402468991.logProbe([
+                            ], this).edges), fn = __recognizer72015479.logProbe([
                                 78,
                                 27,
                                 78,
                                 31
                             ], obj.push);
                         return fn.apply(obj, arguments);
-                    }.bind(this)(__recognizer402468991.logProbe([
+                    }.bind(this)(__recognizer72015479.logProbe([
                         78,
                         32,
                         78,
@@ -531,12 +531,12 @@ var __recognizer402468991 = (function () {
                     ], pVertex)));
             }
         });
-}(__recognizer402468991.logProbe([
+}(__recognizer72015479.logProbe([
     83,
     2,
     83,
     13
-], LibraryData), __recognizer402468991.logProbe([
+], LibraryData), __recognizer72015479.logProbe([
     83,
     15,
     83,

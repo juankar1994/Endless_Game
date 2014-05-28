@@ -57,10 +57,13 @@
         <script src="js/vendor/bootstrap.min.js"></script>
         <script src="js/vendor/bootbox.js"></script>
         <script src="js/vendor/MathematicalFunctions.js"></script>
-
+        <script src="js/vendor/jshashtable-3.0.js"></script>
+        
         <script src="js/main/Presentation/View/TrackUI.js"></script>
         <script src="js/main/Presentation/Controller/WeaponController.js"></script>
-
+        <script src="js/main/Presentation/Controller/controller.js"></script>
+        
+        
         <script src="js/main/LibraryData/Graph.js"></script>
         <script src="js/main/LibraryData/Vertex.js"></script>
         <script src="js/main/LibraryData/chromosome.js"></script>
@@ -71,13 +74,36 @@
         <script src="js/main/LibraryData/Enemy.js"></script>
         <script src="js/main/LibraryData/Player.js"></script>
         <script src="js/main/LibraryData/Billboard.js"></script>
+        <script src="js/main/LibraryData/Nodo.js"></script>
 
-        
+
         <script src="js/main/BusinessLogic/BasicOperators.js"></script>
         <script src="js/main/BusinessLogic/randomSeed.js"></script>
 
+        
+        
         <script src="js/main/BusinessLogic/populationManager.js"></script>
         <script src="js/main/BusinessLogic/weaponGeneticAlgorithm.js"></script>
 
+        <script type="text/javascript">
+            
+            var nodo = LibraryData.createNodo(Presentation.getControllerSeed().getNewRandomSeed(),101,0); 
+            var i = 0;
+            while(i<100){
+                //var path = prompt("camino a seguir: ",nodo.getNumberIntersections());
+                nodo.nextNodo(nodo.getNumberIntersections());
+                console.log(nodo.getSeed());
+                i++;
+            }
+            i=0;
+            var s;
+            BusinessLogic.getRandomSeed().reset(6);
+            while(i<100){
+                
+                console.log(BusinessLogic.getRandomSeed().getNewRandomSeed());
+                i++;
+            }
+        </script>
+        
     </body>
 </html>
