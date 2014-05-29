@@ -25,7 +25,7 @@ var Presentation = window.Presentation || {};
     };
 
     TrackUI = (function(){        
-        var car, canvasStage, vehicleLayer, boxLayer, weaponLayer, enemyLayer, labelLayer, bulletLayer,
+        var car, canvasStage, vehicleLayer, boxLayer, weaponLayer, enemyLayer, labelLayer, bulletLayer, intersectionLayer,
             gameOver = false, vehicle, numberOfShots = 2, enemiesCollection = [], player,
             enemiesPositionX = [175, 275, 375, 475, 575];
         var currentWeapon, currentChromosome, currentEnemies = [];
@@ -70,6 +70,7 @@ var Presentation = window.Presentation || {};
             enemyLayer = new Kinetic.Layer();
             labelLayer = new Kinetic.Layer();
             bulletLayer = new Kinetic.Layer();
+            intersectionLayer = new Kinetic.Layer();
             
             var pit = new Kinetic.Rect({
                 x: 90,
@@ -80,7 +81,7 @@ var Presentation = window.Presentation || {};
             });
             
             var pit2 = new Kinetic.Rect({
-                x: 650,
+                x: 645,
                 fillPatternImage: images.pit,
                 width: 34,
                 height: 1200,
@@ -206,10 +207,47 @@ var Presentation = window.Presentation || {};
             canvasStage.add(enemyLayer);      
             canvasStage.add(labelLayer);      
             canvasStage.add(bulletLayer);   
+            canvasStage.add(intersectionLayer);
             
             getRandomObjects(images);          
             arrowKeys(images);
+            createIntersection(3);
         }   
+        
+        function createIntersection(pIntersection){
+            var x = 124;
+            var width = 521;
+            var color = ["#CC0000", "#FF6600", "#009900"];
+            for(var i = 0; i < pIntersection; i++){
+                createGraphicalIntersection(x , width, color[i]);
+                if(pIntersection == 2){
+                    x += 314;   
+                    width = 207;
+                }
+                if(pIntersection == 3){
+                    if(i == 0)
+                        x += 314;
+                    else
+                        x += 103;
+                    
+                    width = 104;
+                }
+            }
+        }
+        
+        function createGraphicalIntersection(pPosX, pWidth, pColor){
+            var intersection = new Kinetic.Rect({
+                x: pPosX,
+                y: 0,
+                fill: pColor,
+                width: pWidth,
+                height: 10
+            });
+            intersectionLayer.add(intersection);
+            intersectionLayer.draw();   
+        }
+        
+        
         function getRandomObjects(pImages){
             var randomEnemies = getRandomInt(1, 3);
             var randomXBox = getRandomInt(0, 4);
