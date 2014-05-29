@@ -92,8 +92,9 @@
             console.log("anasfnl : "+arrayLevel[(this.seed+1)%arrayLevel.length]);
             console.log("l "+arrayLevel.length);
             console.log("w"+(this.seed+1)%arrayLevel.length);
+            
             this.seed = arrayLevel[(this.seed+1)%arrayLevel.length];
-            BusinessLogic.getRandomSeed().reset(this.seed);
+            BusinessLogic.getRandomSeed().resetSeed(this.seed);
         },                  
         
         nextNodo : function(pNumberPath){

@@ -79,6 +79,7 @@
 
         <script src="js/main/BusinessLogic/BasicOperators.js"></script>
         <script src="js/main/BusinessLogic/randomSeed.js"></script>
+        <script src="js/main/BusinessLogic/GreedyAlgorithm.js"></script>
 
         
         
@@ -89,20 +90,16 @@
             
             var nodo = LibraryData.createNodo(Presentation.getControllerSeed().getNewRandomSeed(),101,0); 
             var i = 0;
-            while(i<100){
+            while(i<20){
                 //var path = prompt("camino a seguir: ",nodo.getNumberIntersections());
                 nodo.nextNodo(nodo.getNumberIntersections());
                 console.log(nodo.getSeed());
                 i++;
             }
-            i=0;
-            var s;
-            BusinessLogic.getRandomSeed().reset(6);
-            while(i<100){
-                
-                console.log(BusinessLogic.getRandomSeed().getNewRandomSeed());
-                i++;
-            }
+            console.log("---------------------------------------------------------------------");
+            BusinessLogic.getGreedyAlgorithm().greedy(nodo);
+            
+            
         </script>
         
     </body>

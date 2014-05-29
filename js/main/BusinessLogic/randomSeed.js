@@ -36,7 +36,7 @@
         //alert(graph === graph2);  //Returns True
         
         
-        function reset(pSeed){
+        function resetSeed(pSeed){
             seed=pSeed;
         }
         
@@ -152,7 +152,7 @@
         return {
             getNewRandomSeed : getNewRandomSeed,
             getLastRandomNumbers : getLastRandomNumbers,
-            reset:reset
+            resetSeed : resetSeed
         };  
     })();
 
