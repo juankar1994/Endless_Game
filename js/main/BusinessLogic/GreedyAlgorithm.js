@@ -24,9 +24,13 @@
         function greedy(pNodo){
             //saving data pNodo
             var saveNodo = LibraryData.createNodo(pNodo.getSeed(),pNodo.getMask(),pNodo.getLevel());
+            //array for visited nodes
             var visitedNodo = new Array();
+            //The first node is already visited
             visitedNodo.push(saveNodo);
+            //array for adjacent nodes
             var adjacent = new Array();
+            //for que guarda en la lista de adyacentes los adyaccentes del nodo actual
             for(var i = 0 ; i < (saveNodo.getNumberIntersections()+1) ; i ++ ){
                 BusinessLogic.getRandomSeed().resetSeed(saveNodo.getSeed());
                 var nodoTemp = saveNodo;
@@ -37,11 +41,16 @@
             
             console.log("a"+adjacent);
             console.log("v"+visitedNodo);
-            var deep = 100;
+            //variable que determina la profundidad de la busqueda
+            var deep = 100; 
+            //while para recorrer los adyacentes y seguir sus caminos para encontrar cerradura transitiva
             while(adjacent.length > 0 && deep>0){
+                // toma nodo de la lista de adyacentes
                 var actualNodo  = adjacent[0];
                 visitedNodo.push(actualNodo);
+                // se remueve de la lista de adyacentes el actualNodo
                 adjacent = remove(adjacent,0);
+                //for para guardar los adyacentes de los nodos adyacentes
                 for(var i = 0 ; i < (actualNodo.getNumberIntersections()+1) ; i++){
                     BusinessLogic.getRandomSeed().resetSeed(actualNodo.getSeed());
                     var nodoTemp = LibraryData.createNodo(actualNodo.getSeed(),actualNodo.getMask(),actualNodo.getLevel());
