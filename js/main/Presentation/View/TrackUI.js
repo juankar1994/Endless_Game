@@ -31,10 +31,28 @@ var Presentation = window.Presentation || {};
         var currentWeapon, currentChromosome, currentEnemies = [];
         
         $("#btnPlay").click(function(){
-            player = LibraryData.createPlayer();
-            gameOver = false;
-            init();
-        });
+            $("#imgMedal1").hide("explode", { pieces: 64 }, 1000);
+            $("#imgMedal2").hide("explode", { pieces: 64 }, 1000);
+            $("#imgMedal3").hide("explode", { pieces: 64 }, 1000);
+            $("#imgMedal4").hide("explode", { pieces: 64 }, 1000);
+            $(this).hide("explode", { pieces: 16 }, 1000);
+            $("#gameContainer").effect('explode', { pieces: 16 }, 1000, function(){
+                player = LibraryData.createPlayer();
+                gameOver = false;
+                init();
+                $(this).removeAttr("style").hide().fadeIn();
+                $("#imgMedal1").removeAttr("style").hide().fadeIn();
+                $("#imgMedal2").removeAttr("style").hide().fadeIn();
+                $("#imgMedal3").removeAttr("style").hide().fadeIn();
+                $("#imgMedal4").removeAttr("style").hide().fadeIn();
+            });
+        });     
+
+        $("#imgMedal1").click(function(){
+            $("#audio").attr('src', "audio/aceleration.mp3").appendTo(this.parent());
+        });     
+        
+
         
         function loadImages(sources, callback) {
             var images = {};
@@ -62,7 +80,7 @@ var Presentation = window.Presentation || {};
                 container: 'gameContainer',
                 width: 800,
                 height: 550
-            });
+            });  
 
             vehicleLayer = new Kinetic.Layer();
             boxLayer = new Kinetic.Layer();
@@ -79,13 +97,29 @@ var Presentation = window.Presentation || {};
                 height: 1200,
                 offset : {x : 0, y : 650}             
             });
-            
+
             var pit2 = new Kinetic.Rect({
                 x: 645,
                 fillPatternImage: images.pit,
                 width: 34,
                 height: 1200,
                 offset : {x : 0, y : 650}
+            });
+
+            var trees = new Kinetic.Rect({
+                x: 60,
+                fillPatternImage: images.trees,
+                width: 36,
+                height: 1200,
+                offset : {x : 0, y : 600}
+            });
+
+            var animals = new Kinetic.Rect({
+                x: 10,
+                fillPatternImage: images.animals,
+                width: 36,
+                height: 1200,
+                offset : {x : 0, y : 690}
             });
             
             car = new Kinetic.Rect({
@@ -106,6 +140,18 @@ var Presentation = window.Presentation || {};
             var amplitude = 270;
             var speedCar = 210;
             var period = 5000;
+
+            var animalsAnim = new Kinetic.Animation(function(frame) {
+                animals.setY(amplitude *frame.time* 2 / period);
+                if(frame.time >= 4490)
+                    frame.time = 0;
+            }, vehicleLayer);
+
+            var treesAnim = new Kinetic.Animation(function(frame) {
+                trees.setY(amplitude *frame.time* 2 / period);
+                if(frame.time >= 4850)
+                    frame.time = 0;
+            }, vehicleLayer);
 
             var anim = new Kinetic.Animation(function(frame) {
                 pit.setY(amplitude *frame.time * 2 / period);
@@ -167,39 +213,14 @@ var Presentation = window.Presentation || {};
 
             anim.start();
             anim2.start();
+            treesAnim.start();
+            animalsAnim.start();
             
             vehicleLayer.add(pit);   
-            vehicleLayer.add(pit2);   
+            vehicleLayer.add(pit2);  
+            vehicleLayer.add(trees); 
+            vehicleLayer.add(animals);   
             vehicleLayer.add(car);  
-            
-            var lifesLabel = new Kinetic.Label({
-                x: 745,
-                y: 75,
-                opacity: 0.75
-            });
-
-            lifesLabel.add(new Kinetic.Tag({
-                fill: 'black',
-                pointerDirection: 'down',
-                pointerWidth: 10,
-                pointerHeight: 10,
-                lineJoin: 'round',
-                shadowColor: 'black',
-                shadowBlur: 10,
-                shadowOffset: {x:10,y:20},
-                shadowOpacity: 0.5
-            }));
-
-            lifesLabel.add(new Kinetic.Text({
-                text: 'Lifes: 2',
-                fontFamily: 'Calibri',
-                fontSize: 24,
-                padding: 5,
-                fill: 'white',
-                name: "lifes"
-            }));
-
-            labelLayer.add(lifesLabel);
             
             canvasStage.add(vehicleLayer);  
             canvasStage.add(weaponLayer);     
@@ -208,11 +229,81 @@ var Presentation = window.Presentation || {};
             canvasStage.add(labelLayer);      
             canvasStage.add(bulletLayer);   
             canvasStage.add(intersectionLayer);
+
+            
+            createLabel("Lifes:\n2", 740, 100, 16, 5, "black");
+            createLabel("ID:\n1234567891234567891", 740, 150, 16, 5, "#9d1826");
+            createLabel("Name:\nDel río", 740, 200, 16, 5, "#8fc9c1");
+            createLabel("Points:\n0", 740, 250, 16, 5, "#3d594b");
             
             getRandomObjects(images);          
             arrowKeys(images);
-            createIntersection(3);
+            createIntersection(3);            
         }   
+        
+        function createLabel(pText, pPosX, pPosY, pFontSize, pPadding,pFillColor){
+
+            var label = new Kinetic.Label({
+                x: pPosX,
+                y: pPosY,
+                opacity: 0.75
+            });
+
+            label.add(new Kinetic.Tag({
+                fill: pFillColor,
+                pointerDirection: 'down',
+                lineJoin: 'round',
+                shadowColor: 'black',
+                shadowBlur: 10,
+                shadowOffset: {x:10,y:20},
+                shadowOpacity: 0.5
+            }));
+            
+            var text =new Kinetic.Text({
+                text: pText,
+                fontFamily: 'Calibri',
+                fontSize: pFontSize,
+                padding: pPadding,
+                fill: 'white',
+                name: "lifes",
+                width: 122,
+                height: 50,
+                align: "center",
+                name: pFillColor
+            });
+            
+            label.add(text);
+            labelLayer.add(label);
+            labelLayer.draw();
+
+            text.tween = new Kinetic.Tween({
+                node: text,
+                easing: Kinetic.Easings.ElasticEaseInOut,
+                duration: 1.5,
+                x: -80
+            });
+            
+
+            // use event delegation
+            labelLayer.on('mouseover touchstart', function(evt) {                
+                evt.target.tween.play();
+                if(evt.target.name() == "#8fc9c1")
+                    evt.target.setFill("#000000");
+                else if(evt.target.name() == "#9d1826")
+                    evt.target.setFill("#b8bc6f");
+                else if(evt.target.name() == "#3d594b")
+                    evt.target.setFill("#d5fac4");
+                else
+                    evt.target.setFill("#ff8000");
+                evt.target.fontStyle("Bold");
+            });
+
+            labelLayer.on('mouseout touchend', function(evt) {
+                evt.target.tween.reverse();
+                evt.target.setFill("white");
+                evt.target.fontStyle("Normal");
+            });
+        }
         
         function createIntersection(pIntersection){
             var x = 124;
@@ -560,7 +651,9 @@ var Presentation = window.Presentation || {};
                 pit: 'images/pits.png',
                 car: 'images/car.png',
                 bullet: 'images/bullet.png',
-                box: 'images/box.png'
+                box: 'images/box.png',
+                trees: 'images/trees.png',
+                animals: 'images/animals.png'
             };
             
             loadImages(sources, function(images) {
