@@ -26,7 +26,7 @@ var Presentation = window.Presentation || {};
 
     TrackUI = (function(){        
         var car, canvasStage, vehicleLayer, boxLayer, weaponLayer, enemyLayer, labelLayer, bulletLayer, intersectionLayer,
-            gameOver = false, vehicle, numberOfShots = 2, enemiesCollection = [], player,
+            gameOver = false, vehicle, numberOfShots = 2, enemiesCollection = [], player, billboard, actualIntersections,
             enemiesPositionX = [175, 275, 375, 475, 575];
         var currentWeapon, currentChromosome, currentEnemies = [];
         
@@ -38,6 +38,7 @@ var Presentation = window.Presentation || {};
             $(this).hide("explode", { pieces: 16 }, 1000);
             $("#gameContainer").effect('explode', { pieces: 16 }, 1000, function(){
                 player = LibraryData.createPlayer();
+                billboard = LibraryData.createBillboard();
                 gameOver = false;
                 init();
                 $(this).removeAttr("style").hide().fadeIn();
@@ -51,8 +52,6 @@ var Presentation = window.Presentation || {};
         $("#imgMedal1").click(function(){
             $("#audio").attr('src', "audio/aceleration.mp3").appendTo(this.parent());
         });     
-        
-
         
         function loadImages(sources, callback) {
             var images = {};
@@ -173,6 +172,10 @@ var Presentation = window.Presentation || {};
                     bulletLayer.removeChildren();
                     bulletLayer.draw();
                     vehicle.setNumberOfShots(numberOfShots);
+                    //It could be 3 or 1
+                    billboard.setPoints(billboard.getPoints() + 3);
+                    updateLabel("Points", billboard.getPoints());
+                    alert(checkLaneNumber());
                     setTimeout(function(){
                         getRandomObjects(images);  
                     }, 300);
@@ -229,24 +232,31 @@ var Presentation = window.Presentation || {};
             canvasStage.add(labelLayer);      
             canvasStage.add(bulletLayer);   
             canvasStage.add(intersectionLayer);
-
             
-            createLabel("Lifes:\n2", 740, 100, 16, 5, "black");
-            createLabel("ID:\n1234567891234567891", 740, 150, 16, 5, "#9d1826");
-            createLabel("Name:\nDel río", 740, 200, 16, 5, "#8fc9c1");
-            createLabel("Points:\n0", 740, 250, 16, 5, "#3d594b");
+            createLabel("Lifes:\n" + player.getLifes(), 740, 100, 16, 5, "black", "Lifes");
+            createLabel("ID:\n", 740, 150, 16, 5, "#9d1826", "ID");
+            createLabel("Name:\n" , 740, 200, 16, 5, "#8fc9c1", "Name");
+            createLabel("Points:\n" + billboard.getPoints(), 740, 250, 16, 5, "#3d594b", "Points");
             
             getRandomObjects(images);          
             arrowKeys(images);
-            createIntersection(3);            
+            
+            //This is to make the number of bifurcations
+            createIntersection(3);    
+            checkLaneNumber(); // returns the lane number, 1-2-3
+            
+            /*updateLabel("ID", 123);
+            updateLabel("Name", "Costa Rica");
+            updateLabel("Points", 10);*/
         }   
         
-        function createLabel(pText, pPosX, pPosY, pFontSize, pPadding,pFillColor){
+        function createLabel(pText, pPosX, pPosY, pFontSize, pPadding,pFillColor, pName){
 
             var label = new Kinetic.Label({
                 x: pPosX,
                 y: pPosY,
-                opacity: 0.75
+                opacity: 0.75,
+                name: pName
             });
 
             label.add(new Kinetic.Tag({
@@ -309,6 +319,7 @@ var Presentation = window.Presentation || {};
             var x = 124;
             var width = 521;
             var color = ["#CC0000", "#FF6600", "#009900"];
+            actualIntersections = pIntersection;
             for(var i = 0; i < pIntersection; i++){
                 createGraphicalIntersection(x , width, color[i]);
                 if(pIntersection == 2){
@@ -323,6 +334,26 @@ var Presentation = window.Presentation || {};
                     
                     width = 104;
                 }
+            }
+        }
+        
+        function checkLaneNumber(){
+            var x = 124;
+            var width = 521;
+            var positionsX = [];
+            if(actualIntersections == 1)
+                return 1;
+            else if(actualIntersections == 2){
+                if(car.getX() < 400)
+                    return 1;
+                return 2;
+            }else{
+                var carPos = vehicle.getPositionX();
+                if(carPos < 400)
+                    return 1;
+                else if(carPos >400 && carPos < 500)
+                    return 2;
+                return 3;
             }
         }
         
@@ -356,22 +387,24 @@ var Presentation = window.Presentation || {};
             }else{
                 player.setLifes(player.getLifes() - 1);
                 pLayer[i].remove();
-                var labelChildren = labelLayer.getChildren();
-                for(var i = 0; i < labelChildren.length; i++){
-                    var labelChildrenDepth = labelChildren[i].getChildren();
-                    for(var j = 0; j <labelChildrenDepth.length; j++){
-                        if(labelChildrenDepth[j].name() == "lifes"){
-                            labelChildrenDepth[j].setText('Lifes:' + player.getLifes());
-                            labelLayer.draw();
-                            break;
-                        }
-                    }
-                }
+                updateLabel("Lifes", player.getLifes());
                 var smashSound = new Audio("audio/smash2.wav"); 
                 smashSound.play();
                 return true;
             }
             return false;
+        }
+        
+        function updateLabel(pName, pText){
+            var labelChildren = labelLayer.getChildren();
+            for(var i = 0; i < labelChildren.length; i++){
+                if(labelChildren[i].name() == pName){
+                    var labelChildrenDepth = labelChildren[i].getChildren();
+                    labelChildrenDepth[1].setText(pName + ': \n' + pText);
+                    labelLayer.draw();
+                    break;
+                }       
+            }
         }
         
         function setGameOver(){
