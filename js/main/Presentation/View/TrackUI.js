@@ -27,7 +27,7 @@ var Presentation = window.Presentation || {};
     TrackUI = (function(){        
         var car, canvasStage, vehicleLayer, boxLayer, weaponLayer, enemyLayer, labelLayer, bulletLayer, intersectionLayer,
             gameOver = false, vehicle, numberOfShots = 2, enemiesCollection = [], player, billboard, actualIntersections,
-            enemiesPositionX = [175, 275, 375, 475, 575];
+            suggestionLayer, enemiesPositionX = [175, 275, 375, 475, 575];
         var currentWeapon, currentChromosome, currentEnemies = [];
         
         $("#btnPlay").click(function(){
@@ -88,6 +88,7 @@ var Presentation = window.Presentation || {};
             labelLayer = new Kinetic.Layer();
             bulletLayer = new Kinetic.Layer();
             intersectionLayer = new Kinetic.Layer();
+            suggestionLayer = new Kinetic.Layer();
             
             var pit = new Kinetic.Rect({
                 x: 90,
@@ -171,11 +172,12 @@ var Presentation = window.Presentation || {};
                     boxLayer.draw();
                     bulletLayer.removeChildren();
                     bulletLayer.draw();
+                    suggestionLayer.removeChildren();
+                    suggestionLayer.draw();
                     vehicle.setNumberOfShots(numberOfShots);
                     //It could be 3 or 1
                     billboard.setPoints(billboard.getPoints() + 3);
                     updateLabel("Points", billboard.getPoints());
-                    alert(checkLaneNumber());
                     setTimeout(function(){
                         getRandomObjects(images);  
                     }, 300);
@@ -232,6 +234,7 @@ var Presentation = window.Presentation || {};
             canvasStage.add(labelLayer);      
             canvasStage.add(bulletLayer);   
             canvasStage.add(intersectionLayer);
+            canvasStage.add(suggestionLayer);
             
             createLabel("Lifes:\n" + player.getLifes(), 740, 100, 16, 5, "black", "Lifes");
             createLabel("ID:\n", 740, 150, 16, 5, "#9d1826", "ID");
@@ -244,14 +247,50 @@ var Presentation = window.Presentation || {};
             //This is to make the number of bifurcations
             createIntersection(3);    
             checkLaneNumber(); // returns the lane number, 1-2-3
+
+            //This if for creating the suggestion of the path
+            createSuggestion(1);
             
             /*updateLabel("ID", 123);
             updateLabel("Name", "Costa Rica");
             updateLabel("Points", 10);*/
         }   
         
-        function createLabel(pText, pPosX, pPosY, pFontSize, pPadding,pFillColor, pName){
+        function createSuggestion(pSuggestion){
+            var x;
+            if(pSuggestion == 1)
+                x = 275;
+            else if(pSuggestion == 2)
+                x = 485;
+            else
+                x = 585;
+                
+            var star = new Kinetic.Star({
+                x: x,
+                y: 14,
+                numPoints: 5,
+                innerRadius: 7,
+                outerRadius: 12,
+                fill: 'yellow',
+                stroke: 'black',
+                strokeWidth: 4,
+                offset: {x: 3, y:6}
+            });
+        
+            suggestionLayer.add(star);
+            suggestionLayer.draw();
+            
+            // one revolution per 4 seconds
+            var angularSpeed = 360 / 4;
+            var anim = new Kinetic.Animation(function(frame) {
+                var angleDiff = frame.timeDiff * angularSpeed / 1000;
+                star.rotate(angleDiff);
+            }, suggestionLayer);
 
+            anim.start();
+        }
+        
+        function createLabel(pText, pPosX, pPosY, pFontSize, pPadding,pFillColor, pName){
             var label = new Kinetic.Label({
                 x: pPosX,
                 y: pPosY,
@@ -316,6 +355,8 @@ var Presentation = window.Presentation || {};
         }
         
         function createIntersection(pIntersection){
+            intersectionLayer.removeChildren();
+            intersectionLayer.draw();  
             var x = 124;
             var width = 521;
             var color = ["#CC0000", "#FF6600", "#009900"];
@@ -357,7 +398,7 @@ var Presentation = window.Presentation || {};
             }
         }
         
-        function createGraphicalIntersection(pPosX, pWidth, pColor){
+        function createGraphicalIntersection(pPosX, pWidth, pColor){            
             var intersection = new Kinetic.Rect({
                 x: pPosX,
                 y: 0,
