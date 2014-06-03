@@ -67,11 +67,6 @@
         },
         
         createHashNodo : function(){
-            var a = new BigNumber("123712478126487421687462.9");
-            a = a.round();
-            console.log("AAAA: " + a.valueOf());
-            a = Math.round(a.divide(3).valueOf());
-            console.log("a: "+a);
             var hash = new Hashtable();
             var matrix = new Array();
             for(var i = 0 ; i < 4 ; i++){
@@ -113,8 +108,9 @@
 
         nextNodo : function(pNumberPath){
             if(this.level==3){
-                var pathReturn = this.seedBif % this.getNumberIntersections();
-                console.log(pathReturn);
+                var b  = this.getNumberIntersections()+1; 
+                var pathReturn = this.seedBif%b;
+                console.log("return: " +pathReturn);
                 if(pNumberPath == pathReturn){
                     this.reHash();
                     return; 
@@ -143,8 +139,7 @@
             this.level++;
             this.mask = 101 + pNumberPath;
 
-        }*/
-        
+        }*/      
             
         
     });

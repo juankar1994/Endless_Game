@@ -29,6 +29,7 @@ var Presentation = window.Presentation || {};
             gameOver = false, vehicle, numberOfShots = 2, enemiesCollection = [], player, billboard, actualIntersections,
             suggestionLayer, enemiesPositionX = [175, 275, 375, 475, 575];
         var currentWeapon, currentChromosome, currentEnemies = [];
+        var nodo;
         
         $("#btnPlay").click(function(){
             $("#imgMedal1").hide("explode", { pieces: 64 }, 1000);
@@ -175,6 +176,15 @@ var Presentation = window.Presentation || {};
                     suggestionLayer.removeChildren();
                     suggestionLayer.draw();
                     vehicle.setNumberOfShots(numberOfShots);
+                    
+                    nodo.nextNodo(checkLaneNumber() - 1);
+                    console.log(nodo);
+                    console.log("actualIntersections: "+actualIntersections);
+                    console.log("nC: "+ (checkLaneNumber() - 1));
+
+                    createIntersection(nodo.getNumberIntersections() + 1);
+                    updateLabel("ID", nodo.getNumInt());
+                    updateLabel("Name",nodo.getLevel());
                     //It could be 3 or 1
                     billboard.setPoints(billboard.getPoints() + 3);
                     updateLabel("Points", billboard.getPoints());
@@ -236,16 +246,17 @@ var Presentation = window.Presentation || {};
             canvasStage.add(intersectionLayer);
             canvasStage.add(suggestionLayer);
             
+            nodo = LibraryData.createNodo(); 
             createLabel("Lifes:\n" + player.getLifes(), 740, 100, 16, 5, "black", "Lifes");
-            createLabel("ID:\n", 740, 150, 16, 5, "#9d1826", "ID");
+            createLabel("ID:\n" + nodo.getNumInt(), 740, 150, 16, 5, "#9d1826", "ID");
             createLabel("Name:\n" , 740, 200, 16, 5, "#8fc9c1", "Name");
             createLabel("Points:\n" + billboard.getPoints(), 740, 250, 16, 5, "#3d594b", "Points");
-            
+            createLabel("Level:\n" + (nodo.getLevel()+1),740,300,16,5,"pink","Level");
             getRandomObjects(images);          
             arrowKeys(images);
             
             //This is to make the number of bifurcations
-            createIntersection(3);    
+            createIntersection(nodo.getNumBif() + 1);    
             checkLaneNumber(); // returns the lane number, 1-2-3
 
             //This if for creating the suggestion of the path
@@ -480,7 +491,7 @@ var Presentation = window.Presentation || {};
             labelLayer.draw();
             
             gameOver = true;
-            
+            canvasStage.removeChildren().draw();
         }
         
         function createEnemy(pNumberOfEnemies, pImages){     
