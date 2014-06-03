@@ -17,7 +17,7 @@ BigNumber = function(n, p, r){
 };
 with({$: BigNumber, o: BigNumber.prototype}){
 	$.ROUND_HALF_EVEN = ($.ROUND_HALF_DOWN = ($.ROUND_HALF_UP = ($.ROUND_FLOOR = ($.ROUND_CEIL = ($.ROUND_DOWN = ($.ROUND_UP = 0) + 1) + 1) + 1) + 1) + 1) + 1;
-	$.defaultPrecision = 40;
+	$.defaultPrecision = 0;
 	$.defaultRoundType = $.ROUND_HALF_UP;
 	o.add = function(n){
 		if(this._s != (n = new BigNumber(n))._s)

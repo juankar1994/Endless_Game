@@ -16,50 +16,62 @@
 (function (pContext, $) {
     'use strict';
 
-    pContext.createNodo = function(pSeed, pMask, pLevel) {
-        return new Nodo(pSeed, pMask,pLevel);
+    pContext.createNodo = function() {
+        return new Nodo();
     };
 
     var Nodo = Class.extend({
-        init: function(pSeed, pMask ,pLevel){
-            this.seed = pSeed;
-            this.mask = pMask;
-            this.level = pLevel;
-            this.hashLevel = null;
+        init: function(){
+            this.numInt = 1;
+            this.seedBif = BusinessLogic.getRandomSeed().getNewRandomSeed(this.numInt);
+            this.level = 0;
+            this.numBif = (this.seedBif + this.level) % 3;
+            this.hashLevel = this.createHashNodo();
+            console.log(this);
         },
 
-        setSeed: function(pSeed){
-            this.seed = pSeed;
+        setNumInt: function(pNumInt){
+            this.numInt = pNumInt;
         },
 
-        setMask: function(pMask){
-            this.mask = pMask;
-        },
-        
         setLevel : function(pLevel){
             this.level = pLevel;
         },
         
-        getSeed : function(){
-            return this.seed;
-        },
-
-        getMask : function(){
-            return this.mask;
+        setNumBif : function(pNumInt){
+            this.seedBif = BusinessLogic.getRandomSeed().getNewRandomSeed(pNumInt);
+            this.numBif = (this.seedBif + this.level) % 3;
         },
         
+        getNumInt : function(){
+            return this.numInt;
+        },
+
         getLevel : function(){
             return this.level; 
         },
         
+        getSeedBif : function(){
+            return this.seedBif;
+        },
+
+        getNumBif : function(){
+            return this.numBif;
+        },
+        
         getNumberIntersections : function(){
-            if((this.seed+this.mask)%3 == 0 &&  this.getLevel() == 4){
+            if(this.numBif == 0 &&  this.getLevel() == 3){
                 return 1;
             }
-            return (this.seed+this.mask)%3;
+            return this.numBif;
         },
         
         createHashNodo : function(){
+            var a = new BigNumber("123712478126487421687462.9");
+            a = a.round();
+            console.log("AAAA: " + a.valueOf());
+            a = Math.round(a.divide(3).valueOf());
+            console.log("a: "+a);
             var hash = new Hashtable();
             var matrix = new Array();
             for(var i = 0 ; i < 4 ; i++){
@@ -67,15 +79,17 @@
             }
             var i = 12;
             var l = this.level;
-            var seed = this.seed;
-            while( i > 0 && BusinessLogic.getRandomSeed().getLastRandomNumbers(seed)>0){
-                seed=BusinessLogic.getRandomSeed().getLastRandomNumbers(seed);
+            var numInt = this.numInt;
+            //console.log(this.numInt);
+            while( i > 0 && Math.round(numInt/3)!=0){
                 l--;
                 if(l<0)l=3;
-                matrix[l].push(seed);
+                matrix[l].push(Math.round(numInt/3));
                 i--;
+                numInt = Math.round(numInt/3);
                 
             }
+            //console.log(this.numInt);
             console.log(matrix);
             hash.put(0,matrix[0]);
             hash.put(1,matrix[1]);
@@ -86,17 +100,34 @@
         
         reHash : function(){
             this.hashLevel= this.createHashNodo();
-            this.level = this.seed % 3;
+            this.level = this.numBif % 3;
             var arrayLevel = this.hashLevel.get(this.level);
-            console.log(arrayLevel);
-            console.log("anasfnl : "+arrayLevel[(this.seed+1)%arrayLevel.length]);
-            console.log("l "+arrayLevel.length);
-            console.log("w"+(this.seed+1)%arrayLevel.length);
-            
-            this.seed = arrayLevel[(this.seed+1)%arrayLevel.length];
-            BusinessLogic.getRandomSeed().resetSeed(this.seed);
+            //console.log(arrayLevel);
+            //console.log("anasfnl : "+arrayLevel[(this.numInt+1)%arrayLevel.length]);
+            //console.log("l "+arrayLevel.length);
+            //console.log("w"+(this.numInt+1)%arrayLevel.length);
+            this.setNumInt(arrayLevel[(this.numInt+1)%arrayLevel.length]);
+            this.setNumBif(this.numInt);
         },                  
         
+
+        nextNodo : function(pNumberPath){
+            if(this.level==3){
+                var pathReturn = this.seedBif % this.getNumberIntersections();
+                console.log(pathReturn);
+                if(pNumberPath == pathReturn){
+                    this.reHash();
+                    return; 
+                }
+                this.level= -1;
+            }
+            var n = 3*this.numInt  -1 + pNumberPath
+            this.setNumInt(n);
+            this.level++;
+            this.setNumBif(this.numInt);
+            this.hashLevel = this.createHashNodo();
+
+        }/*
         nextNodo : function(pNumberPath){
             console.log(this.level);
             console.log("i: "+this.getNumberIntersections());
@@ -112,7 +143,7 @@
             this.level++;
             this.mask = 101 + pNumberPath;
 
-        }
+        }*/
         
             
         

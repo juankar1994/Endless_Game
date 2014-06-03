@@ -21,8 +21,8 @@
     
     var RandomSeed = (function(){
         // the initial variables
-        var m = new BigNumber("1152921504606846976");   // 2 ^ 60
-        var m = new BigNumber("1125899906842624");      // 2 ^ 50
+        var m = new BigNumber("11529215046068469761214632213124125125211");   // 2 ^ 60
+                             //492385451090245700000
         //"Magic numbers"
         var a = 9301;
         var c = 49297;
@@ -40,10 +40,10 @@
             seed=pSeed;
         }
         
-        function getNewRandomSeed(){
+        function getNewRandomSeed(pSeed){
             //Lehmer's algorithm
-            seed = (seed * a + c) % m.valueOf();
-            return seed;
+            pSeed = (pSeed * a + c) % m.valueOf();
+            return pSeed;
         }
         
         function getLastRandomNumbers(number){

@@ -90,17 +90,27 @@
 
         <script type="text/javascript">
             
-            var nodo = LibraryData.createNodo(Presentation.getControllerSeed().getNewRandomSeed(),101,0); 
+            var a = 0.5333;
+            var b = Math.round(a);
+            console.log(b);
+            var nodo = LibraryData.createNodo(); 
             var i = 0;
-            while(i<20){
-                //var path = prompt("camino a seguir: ",nodo.getNumberIntersections());
-                nodo.nextNodo(nodo.getNumberIntersections());
-                console.log(nodo.getSeed());
+            while(true){
+                if(nodo.getLevel() == 3){
+                    alert("toma: " + (nodo.getSeedBif() % nodo.getNumberIntersections() ));
+                }
+                var path = prompt("camino a seguir: ",nodo.getNumberIntersections());
+                if(path=='a')break;
+                path = parseInt(path);
+                console.log(path);
+                nodo.nextNodo(path.valueOf());
+                console.log(nodo);
+                console.log(nodo.getNumInt().valueOf());
+                console.log(nodo.getSeedBif().valueOf());
                 i++;
             }
             console.log("---------------------------------------------------------------------");
-            BusinessLogic.getGreedyAlgorithm().greedy(nodo);
-            
+            //BusinessLogic.getGreedyAlgorithm().greedy(nodo);
             
         </script>
         
