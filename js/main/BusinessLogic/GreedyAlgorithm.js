@@ -23,28 +23,30 @@
         
         function greedy(pNodo){
             //saving data pNodo
-            var saveNodo = LibraryData.createNodo(pNodo.getSeed(),pNodo.getMask(),pNodo.getLevel());
+            var saveNodo = LibraryData.createNodo(pNodo.getNumInt(),pNodo.getLevel());
             //array for visited nodes
-            var visitedNodo = new Array();
+            var backUp= new Array();
             //The first node is already visited
             visitedNodo.push(saveNodo);
             //array for adjacent nodes
             var adjacent = new Array();
             //for que guarda en la lista de adyacentes los adyaccentes del nodo actual
             for(var i = 0 ; i < (saveNodo.getNumberIntersections()+1) ; i ++ ){
-                BusinessLogic.getRandomSeed().resetSeed(saveNodo.getSeed());
-                var nodoTemp = saveNodo;
+                var nodoTemp = LibraryData.createNodo(saveNodo.getNumInt(),saveNodo.getLevel());
                 nodoTemp.nextNodo(i);
                 adjacent.push(nodoTemp);
-                visitedNodo.push(nodoTemp);
             }
-            
             console.log("a"+adjacent);
-            console.log("v"+visitedNodo);
+            for(var l = 0;l < adjacent.length;l++){
+                console.log(l+ "  "+adjacent[l].getNumInt());
+            }
+
             //variable que determina la profundidad de la busqueda
-            var deep = 100; 
+            var deep = 12; 
+            var visitedNodo = new Array();
             //while para recorrer los adyacentes y seguir sus caminos para encontrar cerradura transitiva
             while(adjacent.length > 0 && deep>0){
+                visitedNodo = backUp;
                 // toma nodo de la lista de adyacentes
                 var actualNodo  = adjacent[0];
                 visitedNodo.push(actualNodo);
@@ -52,11 +54,10 @@
                 adjacent = remove(adjacent,0);
                 //for para guardar los adyacentes de los nodos adyacentes
                 for(var i = 0 ; i < (actualNodo.getNumberIntersections()+1) ; i++){
-                    BusinessLogic.getRandomSeed().resetSeed(actualNodo.getSeed());
-                    var nodoTemp = LibraryData.createNodo(actualNodo.getSeed(),actualNodo.getMask(),actualNodo.getLevel());
-                    console.log(nodoTemp);
+                    var nodoTemp = LibraryData.createNodo(actualNodo.getNumInt(),actualNodo.getLevel());
+                    //console.log(nodoTemp);
                     nodoTemp.nextNodo(i);
-                    console.log(nodoTemp);
+                    //console.log(nodoTemp);
                     if(!(checkVisited(visitedNodo,nodoTemp))){
                         visitedNodo.push(nodoTemp);
                         adjacent.push(nodoTemp);
@@ -87,6 +88,8 @@
             }
             return false;
         }
+        
+        
 
 
         //Let's make it public

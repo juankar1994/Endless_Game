@@ -89,8 +89,15 @@
         <script src="js/main/BusinessLogic/weaponGeneticAlgorithm.js"></script>
 
         <script type="text/javascript">
-            
-            var nodo = LibraryData.createNodo(); 
+            /*var b =  "123256787342334246342";
+            var a = new BigNumber(b);
+            console.log(a.valueOf());*/
+            var c = LibraryData.createNodo("25",3);
+            BusinessLogic.getGreedyAlgorithm().greedy(c);
+/*
+            var a= divideBigNumberBy3(22);
+            console.log(a.valueOf());*/
+           /* var nodo = LibraryData.createNodo(); 
             var i = 0;
             while(true){
                 if(nodo.getLevel() == 3){
@@ -105,7 +112,7 @@
                 console.log(nodo.getNumInt().valueOf());
                 console.log(nodo.getSeedBif().valueOf());
                 i++;
-            }
+            }*/
             console.log("---------------------------------------------------------------------");
             //BusinessLogic.getGreedyAlgorithm().greedy(nodo);
             

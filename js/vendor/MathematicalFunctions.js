@@ -14,3 +14,30 @@
         el punto decimal en su sitio. */ 
         return parseInt(num * fact) / fact; 
     } 
+
+    function  getCenterVertex(num){
+        var a = new BigNumber();
+        a.set(num);
+        var b  = a;
+        var d  = a;
+        if(a.mod(3).valueOf() == 0){
+            return b;
+        }else{
+            if(a.subtract(1).mod(3).valueOf() == 0){
+                return b.subtract(1);
+            }else{
+                return d.add(1);
+            }
+        }
+    }
+
+    function divideBigNumberBy3(num){
+        var a = getCenterVertex(num);
+        if(a.valueOf()==0)
+            return 0;
+        return a.divide(3);
+    }
+
+
+            
+        

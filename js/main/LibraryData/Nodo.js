@@ -16,18 +16,17 @@
 (function (pContext, $) {
     'use strict';
 
-    pContext.createNodo = function() {
-        return new Nodo();
+    pContext.createNodo = function(pNumber,pLevel) {
+        return new Nodo(pNumber,pLevel);
     };
 
     var Nodo = Class.extend({
-        init: function(){
-            this.numInt = 1;
+        init: function(pNumber,pLevel){
+            this.numInt = new BigNumber(pNumber);
             this.seedBif = BusinessLogic.getRandomSeed().getNewRandomSeed(this.numInt);
-            this.level = 0;
+            this.level = pLevel;
             this.numBif = (this.seedBif + this.level) % 3;
-            this.hashLevel = this.createHashNodo();
-            console.log(this);
+            this.hashLevel = this.createHashNodo(); 
         },
 
         setNumInt: function(pNumInt){
@@ -66,6 +65,8 @@
             return this.numBif;
         },
         
+        
+        
         createHashNodo : function(){
             var hash = new Hashtable();
             var matrix = new Array();
@@ -85,7 +86,7 @@
                 
             }
             //console.log(this.numInt);
-            console.log(matrix);
+            //console.log(matrix);
             hash.put(0,matrix[0]);
             hash.put(1,matrix[1]);
             hash.put(2,matrix[2]);
@@ -110,7 +111,7 @@
             if(this.level==3){
                 var b  = this.getNumberIntersections()+1; 
                 var pathReturn = this.seedBif%b;
-                console.log("return: " +pathReturn);
+                //console.log("return: " +pathReturn);
                 if(pNumberPath == pathReturn){
                     this.reHash();
                     return; 

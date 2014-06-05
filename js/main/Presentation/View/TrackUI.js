@@ -246,7 +246,7 @@ var Presentation = window.Presentation || {};
             canvasStage.add(intersectionLayer);
             canvasStage.add(suggestionLayer);
             
-            nodo = LibraryData.createNodo(); 
+            nodo = LibraryData.createNodo("1",0); 
             createLabel("Lifes:\n" + player.getLifes(), 740, 100, 16, 5, "black", "Lifes");
             createLabel("ID:\n" + nodo.getNumInt(), 740, 150, 16, 5, "#9d1826", "ID");
             createLabel("Name:\n" , 740, 200, 16, 5, "#8fc9c1", "Name");
@@ -490,8 +490,6 @@ var Presentation = window.Presentation || {};
             labelLayer.add(gameOverLabel);
             labelLayer.draw();
             
-            gameOver = true;
-            canvasStage.removeChildren().draw();
         }
         
         function createEnemy(pNumberOfEnemies, pImages){     
