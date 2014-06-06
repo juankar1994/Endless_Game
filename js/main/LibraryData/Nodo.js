@@ -111,12 +111,12 @@
             if(this.reference.valueOf() == 1){
                 return false;
             }
-            console.log("fffffff"+getCenterVertex(this.reference));
-            console.log("aaaa#"+this.getNumInt());
-            console.log("qqqqq"+getCenterVertex(this.reference).mod(this.getNumInt()).valueOf());
+            console.log("First "+getCenterVertex(this.reference));
+            console.log("Second "+this.getNumInt());
+            console.log("Result "+getCenterVertex(this.reference).mod(this.getNumInt()).valueOf());
             
             if(getCenterVertex(this.reference).mod(this.getNumInt()).valueOf()==0 ||
-               this.getNumInt() == this.reference)
+               this.getNumInt() <= this.reference)
                 return true;
             return false;
         },  

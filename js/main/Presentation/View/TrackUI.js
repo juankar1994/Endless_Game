@@ -200,13 +200,14 @@ var Presentation = window.Presentation || {};
                     updateLabel("Level",nodo.getLevel());
                     //It could be 3 or 1
                     var pointAdded = 3;
-                    var c = "#3d594b";
+                    var color = "#9d1826";
                     if(nodo.getVisited()){
                         pointAdded = 1;
-                        c = "#2EE1E7";
+                        color = "#2EE1E7";
                     }
+                    updateIdContainer("ID", color);
                     billboard.setPoints(billboard.getPoints() + pointAdded);
-                    updateLabel("Points", billboard.getPoints(), c);
+                    updateLabel("Points", billboard.getPoints());
                     setTimeout(function(){
                         getRandomObjects(images);  
                     }, 300);
@@ -268,7 +269,7 @@ var Presentation = window.Presentation || {};
             nodo = LibraryData.createNodo("1",0); 
             createLabel("Lifes:\n" + player.getLifes(), 740, 100, 16, 5, "black", "Lifes");
             createLabel("ID:\n" + nodo.getNumInt(), 740, 150, 16, 5, "#9d1826", "ID");
-            createLabel("Int Name:\n" + convertToHex(nodo.getNumInt()) , 740, 200, 16, 5, "#8fc9c1", "Name");
+            createLabel("Name:\n" + convertToHex(nodo.getNumInt()) , 740, 200, 16, 5, "#8fc9c1", "Name");
             createLabel("Level:\n" + (nodo.getLevel()),740,250,16,5,"#4aba8d","Level");
             createLabel("Points:\n" + billboard.getPoints(), 740, 300, 16, 5, "#3d594b", "Points");
             getRandomObjects(images);          
@@ -364,17 +365,19 @@ var Presentation = window.Presentation || {};
             
 
             // use event delegation
-            labelLayer.on('mouseover touchstart', function(evt) {                
-                evt.target.tween.play();
-                if(evt.target.name() == "#8fc9c1")
-                    evt.target.setFill("#000000");
-                else if(evt.target.name() == "#9d1826")
-                    evt.target.setFill("#b8bc6f");
-                else if(evt.target.name() == "#3d594b")
-                    evt.target.setFill("#d5fac4");
-                else
-                    evt.target.setFill("#ff8000");
-                evt.target.fontStyle("Bold");
+            labelLayer.on('mouseover touchstart', function(evt) {      
+                if(evt.target !== undefined){
+                    evt.target.tween.play();
+                    if(evt.target.name() == "#8fc9c1")
+                        evt.target.setFill("#000000");
+                    else if(evt.target.name() == "#9d1826")
+                        evt.target.setFill("#b8bc6f");
+                    else if(evt.target.name() == "#3d594b")
+                        evt.target.setFill("#d5fac4");
+                    else
+                        evt.target.setFill("#ff8000");
+                    evt.target.fontStyle("Bold");
+                }
             });
 
             labelLayer.on('mouseout touchend', function(evt) {
@@ -451,7 +454,8 @@ var Presentation = window.Presentation || {};
         
         function checkLifes(pAnimation, pLayer, i){
             if(player.getLifes() == 0){
-                car.remove();
+                //car.remove();
+                vehicleLayer.removeChildren();
                 vehicleLayer.draw();
                 pAnimation.stop();
                 setGameOver();
@@ -466,14 +470,24 @@ var Presentation = window.Presentation || {};
             return false;
         }
         
-        function updateLabel(pName, pText, pColor){
+        function updateLabel(pName, pText){
             var labelChildren = labelLayer.getChildren();
             for(var i = 0; i < labelChildren.length; i++){
                 if(labelChildren[i].name() == pName){
-                    var labelChildrenDepth = labelChildren[i].getChildren();
-                    if(labelChildren[i].name() == "ID")
-                        labelChildrenDepth[1].setFill(pColor);
+                    var labelChildrenDepth = labelChildren[i].getChildren();                        
                     labelChildrenDepth[1].setText(pName + ': \n' + pText);
+                    labelLayer.draw();
+                    break;
+                }       
+            }
+        }
+        
+        function updateIdContainer(pName, pColor){
+            var labelChildren = labelLayer.getChildren();
+            for(var i = 0; i < labelChildren.length; i++){
+                if(labelChildren[i].name() == pName){
+                    var labelChildrenDepth = labelChildren[i].getChildren();  
+                    labelChildrenDepth[0].fill(pColor); 
                     labelLayer.draw();
                     break;
                 }       
