@@ -26,7 +26,8 @@
             this.seedBif = BusinessLogic.getRandomSeed().getNewRandomSeed(this.numInt);
             this.level = pLevel;
             this.numBif = (this.seedBif + this.level) % 3;
-            this.hashLevel = this.createHashNodo(); 
+            this.hashLevel = this.createHashNodo();
+            this.reference  = new BigNumber("1");
         },
 
         setNumInt: function(pNumInt){
@@ -65,8 +66,6 @@
             return this.numBif;
         },
         
-        
-        
         createHashNodo : function(){
             var hash = new Hashtable();
             var matrix = new Array();
@@ -98,21 +97,39 @@
             this.hashLevel= this.createHashNodo();
             this.level = this.numBif % 3;
             var arrayLevel = this.hashLevel.get(this.level);
-            //console.log(arrayLevel);
-            //console.log("anasfnl : "+arrayLevel[(this.numInt+1)%arrayLevel.length]);
-            //console.log("l "+arrayLevel.length);
-            //console.log("w"+(this.numInt+1)%arrayLevel.length);
             this.setNumInt(arrayLevel[(this.numInt+1)%arrayLevel.length]);
             this.setNumBif(this.numInt);
-        },                  
+        },      
         
+        retorno  : function (){
+            var b  = this.getNumberIntersections()+1; 
+            var pathReturn = this.seedBif%b;
+            return pathReturn;
+        },
+        
+        getVisited : function() {
+            if(this.reference.valueOf() == 1){
+                return false;
+            }
+            console.log("fffffff"+getCenterVertex(this.reference));
+            console.log("aaaa#"+this.getNumInt());
+            console.log("qqqqq"+getCenterVertex(this.reference).mod(this.getNumInt()).valueOf());
+            
+            if(getCenterVertex(this.reference).mod(this.getNumInt()).valueOf()==0 ||
+               this.getNumInt() == this.reference)
+                return true;
+            return false;
+        },  
 
         nextNodo : function(pNumberPath){
-            if(this.level==3){
-                var b  = this.getNumberIntersections()+1; 
-                var pathReturn = this.seedBif%b;
+            if(this.level==3){ 
+                var pathReturn = this.retorno();
                 //console.log("return: " +pathReturn);
                 if(pNumberPath == pathReturn){
+                    if(!this.getVisited()){
+                        this.reference = this.getNumInt();
+                        console.log("reference: "+this.reference);
+                    }
                     this.reHash();
                     return this; 
                 }

@@ -73,44 +73,58 @@
         
         
         
-        function greddyAux(pNodo,contador,deep){
+        function greddyAux(pNodo,contador,deep,nodoCerradura){
+            console.log("INTERSECTION: " + pNodo.getNumInt());
             deep--;
-            if(pNodo.getLevel() == 3 || deep <0){
-                console.log("_________________________");
-                var bestNodo = new Array(3);
-                for(var numBif = 0; numBif < pNodo.getNumberIntersections(); numBif ++ ){
-                    var nodoTemp = LibraryData.createNodo(pNodo.getNumInt(),pNodo.getLevel());
-                    var nodoBif = nodoTemp.nextNodo(numBif);
-                    return contador;
-                }
+            if( pNodo.getNumInt() == nodoCerradura)
+            {
+                return contador;
+            }
+            
+            if(pNodo.getLevel() == 3){
+                var nodoBif = pNodo.nextNodo(pNodo.retorno());
+                contador++; 
+                return greddyAux(nodoBif,contador,deep,nodoCerradura);
             }    
-            var bestNodo = new Array(3);
-            for(var numBif = 0; numBif < pNodo.getNumberIntersections(); numBif ++ ){
+            var bestNodo = new Array();
+            for(var numBif = 0; numBif < pNodo.getNumberIntersections()+1; numBif ++ ){
                 var nodoTemp = LibraryData.createNodo(pNodo.getNumInt(),pNodo.getLevel());
                 var nodoBif = nodoTemp.nextNodo(numBif);
-                contador++;
-                greddyAux(nodoBif,contador,deep);
+                var cont1 = contador + 1;
+                bestNodo[numBif]=greddyAux(nodoBif,cont1,deep,nodoCerradura);
             }
+            var best = 0;
+            for(var i = 0 ;i < bestNodo.length -1; i++){
+                if(bestNodo[i] <bestNodo[i+1]){
+                    best=i+1;
+                }
+            }
+            var cont1 = contador + 1;
+            var nodoBif = pNodo.nextNodo(best);
+            return greddyAux(nodoBif,cont1,deep,nodoCerradura);
         }
-            
-            
-            
         
         function greedyA(pNodo){
             var nodoTemp = LibraryData.createNodo(pNodo.getNumInt(),pNodo.getLevel());
             var bestNodo = new Array();
-            console.log(nodoTemp.getNumberIntersections());
-            for(var numBif = 0 ; numBif < nodoTemp.getNumberIntersections() ; numBif ++){
+            console.log(nodoTemp.getNumberIntersections()+1);
+            for(var numBif = 0 ; numBif < nodoTemp.getNumberIntersections()+1 ; numBif ++){
                 console.log("numBif: "+ numBif);
                 var nodoTempA = LibraryData.createNodo(nodoTemp.getNumInt(),nodoTemp.getLevel());
                 var nodoBif = nodoTempA.nextNodo(numBif);
                 var num = 1;
-                bestNodo[numBif] =  greddyAux(nodoBif,num,20);
+                bestNodo[numBif] = greddyAux(nodoBif,num,6,pNodo.getNumInt());
             }
             console.log("-----------------------------------------------------------------------");
-            for(var i = 0 ; i< bestNodo.length ; i++){
+            var best = 0;
+            for(var i = 0 ;i < bestNodo.length -1; i++){
                 console.log("Cantidad de Path: " + bestNodo[i]);
+                if(bestNodo[i] <bestNodo[i+1]){
+                    best=i+1;
+                }
             }
+            console.log("Mejor camino: "+best);
+
             console.log("-----------------------------------------------------------------------");
         }
         

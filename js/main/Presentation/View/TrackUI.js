@@ -199,8 +199,14 @@ var Presentation = window.Presentation || {};
                     updateLabel("Name", convertToHex(nodo.getNumInt()));
                     updateLabel("Level",nodo.getLevel());
                     //It could be 3 or 1
-                    billboard.setPoints(billboard.getPoints() + 3);
-                    updateLabel("Points", billboard.getPoints());
+                    var pointAdded = 3;
+                    var c = "#3d594b";
+                    if(nodo.getVisited()){
+                        pointAdded = 1;
+                        c = "#2EE1E7";
+                    }
+                    billboard.setPoints(billboard.getPoints() + pointAdded);
+                    updateLabel("Points", billboard.getPoints(), c);
                     setTimeout(function(){
                         getRandomObjects(images);  
                     }, 300);
@@ -460,11 +466,13 @@ var Presentation = window.Presentation || {};
             return false;
         }
         
-        function updateLabel(pName, pText){
+        function updateLabel(pName, pText, pColor){
             var labelChildren = labelLayer.getChildren();
             for(var i = 0; i < labelChildren.length; i++){
                 if(labelChildren[i].name() == pName){
                     var labelChildrenDepth = labelChildren[i].getChildren();
+                    if(labelChildren[i].name() == "ID")
+                        labelChildrenDepth[1].setFill(pColor);
                     labelChildrenDepth[1].setText(pName + ': \n' + pText);
                     labelLayer.draw();
                     break;
