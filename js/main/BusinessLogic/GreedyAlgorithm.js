@@ -71,6 +71,49 @@
             }
         }
         
+        
+        
+        function greddyAux(pNodo,contador,deep){
+            deep--;
+            if(pNodo.getLevel() == 3 || deep <0){
+                console.log("_________________________");
+                var bestNodo = new Array(3);
+                for(var numBif = 0; numBif < pNodo.getNumberIntersections(); numBif ++ ){
+                    var nodoTemp = LibraryData.createNodo(pNodo.getNumInt(),pNodo.getLevel());
+                    var nodoBif = nodoTemp.nextNodo(numBif);
+                    return contador;
+                }
+            }    
+            var bestNodo = new Array(3);
+            for(var numBif = 0; numBif < pNodo.getNumberIntersections(); numBif ++ ){
+                var nodoTemp = LibraryData.createNodo(pNodo.getNumInt(),pNodo.getLevel());
+                var nodoBif = nodoTemp.nextNodo(numBif);
+                contador++;
+                greddyAux(nodoBif,contador,deep);
+            }
+        }
+            
+            
+            
+        
+        function greedyA(pNodo){
+            var nodoTemp = LibraryData.createNodo(pNodo.getNumInt(),pNodo.getLevel());
+            var bestNodo = new Array();
+            console.log(nodoTemp.getNumberIntersections());
+            for(var numBif = 0 ; numBif < nodoTemp.getNumberIntersections() ; numBif ++){
+                console.log("numBif: "+ numBif);
+                var nodoTempA = LibraryData.createNodo(nodoTemp.getNumInt(),nodoTemp.getLevel());
+                var nodoBif = nodoTempA.nextNodo(numBif);
+                var num = 1;
+                bestNodo[numBif] =  greddyAux(nodoBif,num,20);
+            }
+            console.log("-----------------------------------------------------------------------");
+            for(var i = 0 ; i< bestNodo.length ; i++){
+                console.log("Cantidad de Path: " + bestNodo[i]);
+            }
+            console.log("-----------------------------------------------------------------------");
+        }
+        
         function remove(arr, item) {
             var i;
             var array = new Array();
@@ -94,7 +137,8 @@
 
         //Let's make it public
         return {
-            greedy : greedy
+            greedyA : greedyA,
+            greddyAux : greddyAux
         };  
     })();
 

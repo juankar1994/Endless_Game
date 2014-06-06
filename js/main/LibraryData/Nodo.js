@@ -114,17 +114,25 @@
                 //console.log("return: " +pathReturn);
                 if(pNumberPath == pathReturn){
                     this.reHash();
-                    return; 
+                    return this; 
                 }
                 this.level= -1;
             }
-            var n = 3*this.numInt  -1 + pNumberPath
-            this.setNumInt(n);
-            this.level++;
-            this.setNumBif(this.numInt);
+            var n = 3*this.numInt  -1 + pNumberPath;
+            if(n>BusinessLogic.getRandomSeed().getM()){
+                this.resetNodo(1,0);
+            }else{
+                this.resetNodo(n, this.level + 1);
+            }
+            return this;
+        }, 
+        resetNodo: function(pNumInt, pNumLevel){
+            this.setNumInt(pNumInt);
+            this.setNumBif(pNumInt);
+            this.setLevel(pNumLevel);
             this.hashLevel = this.createHashNodo();
-
-        }/*
+        }
+        /*
         nextNodo : function(pNumberPath){
             console.log(this.level);
             console.log("i: "+this.getNumberIntersections());

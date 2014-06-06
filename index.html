@@ -92,12 +92,12 @@
             /*var b =  "123256787342334246342";
             var a = new BigNumber(b);
             console.log(a.valueOf());*/
-            var c = LibraryData.createNodo("25",3);
+            /*            var c = LibraryData.createNodo("25",3);
             BusinessLogic.getGreedyAlgorithm().greedy(c);
-/*
+
             var a= divideBigNumberBy3(22);
             console.log(a.valueOf());*/
-           /* var nodo = LibraryData.createNodo(); 
+/*            var nodo = LibraryData.createNodo("1",0); 
             var i = 0;
             while(true){
                 if(nodo.getLevel() == 3){
@@ -113,8 +113,9 @@
                 console.log(nodo.getSeedBif().valueOf());
                 i++;
             }*/
+            var nodo = LibraryData.createNodo("1",0);
             console.log("---------------------------------------------------------------------");
-            //BusinessLogic.getGreedyAlgorithm().greedy(nodo);
+            BusinessLogic.getGreedyAlgorithm().greedyA(nodo);
             
         </script>
         

@@ -21,8 +21,7 @@
     
     var RandomSeed = (function(){
         // the initial variables
-        var m = new BigNumber("11529215046068469761214632213124125125211");   // 2 ^ 60
-                             //492385451090245700000
+        var m = new BigNumber("1152921504606846976");   // 2 ^ 60
         //"Magic numbers"
         var a = 9301;
         var c = 49297;
@@ -38,6 +37,10 @@
         
         function resetSeed(pSeed){
             seed=pSeed;
+        }
+        
+        function getM(){
+            return m;
         }
         
         function getNewRandomSeed(pSeed){
@@ -152,7 +155,8 @@
         return {
             getNewRandomSeed : getNewRandomSeed,
             getLastRandomNumbers : getLastRandomNumbers,
-            resetSeed : resetSeed
+            resetSeed : resetSeed,
+            getM : getM
         };  
     })();
 
