@@ -51,8 +51,20 @@ var Presentation = window.Presentation || {};
         });     
 
         $("#imgMedal1").click(function(){
+            $("#audio").attr('src', "audio/song2.mp3").appendTo(this.parent());
+        });   
+
+        $("#imgMedal2").click(function(){
+            $("#audio").attr('src', "audio/song4.mp3").appendTo(this.parent());
+        });   
+
+        $("#imgMedal3").click(function(){
+            $("#audio").attr('src', "audio/song3.mp3").appendTo(this.parent());
+        });   
+
+        $("#imgMedal4").click(function(){
             $("#audio").attr('src', "audio/aceleration.mp3").appendTo(this.parent());
-        });     
+        });   
         
         function loadImages(sources, callback) {
             var images = {};
@@ -184,7 +196,8 @@ var Presentation = window.Presentation || {};
 
                     createIntersection(nodo.getNumberIntersections() + 1);
                     updateLabel("ID", nodo.getNumInt());
-                    updateLabel("Name",nodo.getLevel());
+                    updateLabel("Name", convertToHex(nodo.getNumInt()));
+                    updateLabel("Level",nodo.getLevel());
                     //It could be 3 or 1
                     billboard.setPoints(billboard.getPoints() + 3);
                     updateLabel("Points", billboard.getPoints());
@@ -249,9 +262,9 @@ var Presentation = window.Presentation || {};
             nodo = LibraryData.createNodo("1",0); 
             createLabel("Lifes:\n" + player.getLifes(), 740, 100, 16, 5, "black", "Lifes");
             createLabel("ID:\n" + nodo.getNumInt(), 740, 150, 16, 5, "#9d1826", "ID");
-            createLabel("Name:\n" , 740, 200, 16, 5, "#8fc9c1", "Name");
-            createLabel("Points:\n" + billboard.getPoints(), 740, 250, 16, 5, "#3d594b", "Points");
-            createLabel("Level:\n" + (nodo.getLevel()+1),740,300,16,5,"pink","Level");
+            createLabel("Int Name:\n" + convertToHex(nodo.getNumInt()) , 740, 200, 16, 5, "#8fc9c1", "Name");
+            createLabel("Level:\n" + (nodo.getLevel()),740,250,16,5,"#4aba8d","Level");
+            createLabel("Points:\n" + billboard.getPoints(), 740, 300, 16, 5, "#3d594b", "Points");
             getRandomObjects(images);          
             arrowKeys(images);
             
@@ -726,6 +739,10 @@ var Presentation = window.Presentation || {};
 
         function setConvertedWeapon(pWeapon){
             currentWeapon = pWeapon;
+        }
+        
+        function convertToHex(pNumber){
+            return pNumber.toString(16);   
         }
 
         function init(){            
