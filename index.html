@@ -63,7 +63,8 @@
         <script src="js/vendor/jshashtable-3.0.js"></script>
         
         <script src="js/main/Presentation/View/TrackUI.js"></script>
-        <script src="js/main/Presentation/Controller/WeaponController.js"></script>
+        <script src="js/main/Presentation/Controller/WeaponController.js"></script>>
+        <script src="js/main/Presentation/Controller/GreedyIntersectionsController.js"></script>
         <script src="js/main/Presentation/Controller/controller.js"></script>
         
         <script src="js/main/LibraryData/Graph.js"></script>
@@ -113,9 +114,9 @@
                 console.log(nodo.getSeedBif().valueOf());
                 i++;
             }*/
-            //var nodo = LibraryData.createNodo("3",1);
+            var nodo = LibraryData.createNodo("3",1);
             console.log("---------------------------------------------------------------------");
-            //BusinessLogic.getGreedyAlgorithm().greedyA(nodo);
+            BusinessLogic.getGreedyAlgorithm().greedyA(nodo);
 
         </script>
         

@@ -29,7 +29,7 @@ var Presentation = window.Presentation || {};
             gameOver = false, vehicle, numberOfShots = 2, enemiesCollection = [], player, billboard, actualIntersections,
             suggestionLayer, enemiesPositionX = [175, 275, 375, 475, 575];
         var currentWeapon, currentChromosome, currentEnemies = [];
-        var nodo;
+        var nodo, suggestionCont = 0;
         
         $("#btnPlay").click(function(){
             $("#imgMedal1").hide("explode", { pieces: 64 }, 1000);
@@ -177,7 +177,7 @@ var Presentation = window.Presentation || {};
                 var yCalculation = -speedCar * frame.time * 2 / period;
                 vehicle.setPositionY(yCalculation);
                 car.setY(yCalculation);
-                if(frame.time >= 5000){         // 5 seconds
+                if(frame.time >= 5000){         // 5 seconds                    
                     frame.time = 0;
                     enemyLayer.removeChildren();
                     enemyLayer.draw();
@@ -198,9 +198,19 @@ var Presentation = window.Presentation || {};
                     updateLabel("ID", nodo.getNumInt());
                     updateLabel("Name", convertToHex(nodo.getNumInt()));
                     updateLabel("Level",nodo.getLevel());
+                    suggestionLayer.removeChildren();
+                    suggestionLayer.draw();
+                    suggestionCont++;
+                    if(suggestionCont == 3  ){
+                        BusinessLogic.getGreedyAlgorithm().greedyA(nodo);   
+                        suggestionCont = 0;   
+                        if (actualIntersections == 1)
+                            suggestionCont = 2;
+                    }
+                        
                     //It could be 3 or 1
                     var pointAdded = 3;
-                    var color = "red";//"#9d1826";
+                    var color = "#9d1826";
                     if(nodo.getVisited()){
                         pointAdded = 1;
                         color = "#2EE1E7";
@@ -278,13 +288,6 @@ var Presentation = window.Presentation || {};
             //This is to make the number of bifurcations
             createIntersection(nodo.getNumBif() + 1);    
             checkLaneNumber(); // returns the lane number, 1-2-3
-
-            //This if for creating the suggestion of the path
-            createSuggestion(1);
-            
-            /*updateLabel("ID", 123);
-            updateLabel("Name", "Costa Rica");
-            updateLabel("Points", 10);*/
         }   
         
         function createSuggestion(pSuggestion){
@@ -296,6 +299,7 @@ var Presentation = window.Presentation || {};
             else
                 x = 585;
                 
+            console.log(pSuggestion);
             var star = new Kinetic.Star({
                 x: x,
                 y: 14,
@@ -787,7 +791,8 @@ var Presentation = window.Presentation || {};
             init: init,
             setInitialWeapon : setInitialWeapon,
             setConvertedWeapon : setConvertedWeapon,
-            setEnemieWeapon : setEnemieWeapon
+            setEnemieWeapon : setEnemieWeapon,
+            createSuggestion : createSuggestion
         };            
     })()
 

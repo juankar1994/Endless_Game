@@ -99,32 +99,27 @@
             var arrayLevel = this.hashLevel.get(this.level);
             this.setNumInt(arrayLevel[(this.numInt+1)%arrayLevel.length]);
             this.setNumBif(this.numInt);
-        },      
-        retorno  : function (){
+        },
+        
+        
+        
+        getPathReturn : function (){
             var b  = this.getNumberIntersections()+1; 
             var pathReturn = this.seedBif%b;
             return pathReturn;
         },
         
         getVisited : function() {
-            if(this.reference.valueOf() == 1){
+            //If is the beggining of the game
+            //If is in the same reference row
+            if(this.equalCenterVertex() || this.reference.valueOf() == 1){   
                 return false;
             }
-            /*console.log("First "+getCenterVertex(this.reference));
-            console.log("Second "+this.getNumInt());
-            console.log("Result "+getCenterVertex(this.reference).mod(this.getNumInt()).valueOf());
-            */
-            if(this.equalCenterVertex()){
-                console.log("...."+1);
-                return false;
-            }
-            
-            if(getCenterVertex(this.reference).mod(this.getNumInt()).valueOf()<=1 && this.nextSerial() ){
-                console.log("...."+2);
-                return true;
-            }
-            if(this.getNumInt() == this.reference){
-                console.log("...."+3);
+            //If the actual path is multiple of the reference. 
+            //Also it could not be multiple, but could be inside the serie
+            //Actual path is equal to the reference
+            if((getCenterVertex(this.reference).mod(this.getNumInt()).valueOf()<=1 && this.nextSerial()) 
+               || this.getNumInt() == this.reference){
                 return true;
             }
             return false;
@@ -136,15 +131,14 @@
             return false;
         },
                 
-        
         nextSerial : function(){
-            if(getCenterVertex(this.reference).mod(this.getNumInt()).valueOf()==0)
-                return true;
             for(var i = 0 ; i< this.getNumberIntersections()+1;i++){
-                var a  = 3 * this.getNumInt() - 1 + i;
-                if(a > this.reference || (a+1) == getCenterVertex(this.reference))
+                var nextId  = 3 * this.getNumInt() - 1 + i;
+                if(nextId == this.reference)
+                    return true;
+                if(nextId > this.reference || (nextId+1) == getCenterVertex(this.reference))
                     continue;
-                if(getCenterVertex(this.reference).mod(a).valueOf()<=1)
+                if(getCenterVertex(this.reference).mod(nextId).valueOf()<=1)
                    return true;
             }
             return false;
@@ -152,13 +146,11 @@
 
         nextNodo : function(pNumberPath){
             if(this.level==3){ 
-                var pathReturn = this.retorno();
+                var pathReturn = this.getPathReturn();
                 //console.log("return: " +pathReturn);
                 if(pNumberPath == pathReturn){
                     if(!this.getVisited()){
-                        console.log("*******************************************************************************");
                         this.reference = this.getNumInt();
-                        console.log("reference: "+this.reference);
                     }
                     this.reHash();
                     return this; 
@@ -179,25 +171,6 @@
             this.setNumBif(pNumInt);
             this.hashLevel = this.createHashNodo();
         }
-        /*
-        nextNodo : function(pNumberPath){
-            console.log(this.level);
-            console.log("i: "+this.getNumberIntersections());
-            if(this.level==3){
-                var pathReturn = this.getNumberIntersections();
-                if(pNumberPath == pathReturn && pathReturn != 0){
-                    this.reHash();
-                    return;
-                }
-                this.level= -1;
-            }
-            this.seed = Presentation.getControllerSeed().getNewRandomSeed();
-            this.level++;
-            this.mask = 101 + pNumberPath;
-
-        }*/      
-            
-        
     });
 
 }(LibraryData, jQuery));
