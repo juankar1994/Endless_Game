@@ -119,13 +119,11 @@
                 return false;
             }
             
-            if(getCenterVertex(this.reference).mod(this.getNumInt()).valueOf()<=1 && this.nextSerial()){
+            if(getCenterVertex(this.reference).mod(this.getNumInt()).valueOf()<=1 && this.nextSerial() ){
                 console.log("...."+2);
                 return true;
             }
-            /*if(getCenterVertex(this.reference).mod(this.getNumInt()).valueOf()<=1)
-                return true;
-            */if(this.getNumInt() == this.reference){
+            if(this.getNumInt() == this.reference){
                 console.log("...."+3);
                 return true;
             }
@@ -140,13 +138,14 @@
                 
         
         nextSerial : function(){
+            if(getCenterVertex(this.reference).mod(this.getNumInt()).valueOf()==0)
+                return true;
             for(var i = 0 ; i< this.getNumberIntersections()+1;i++){
-                var nodoTemp = LibraryData.createNodo(this.getNumInt(),this.getLevel());
-                nodoTemp = nodoTemp.nextNodo(i);
-                if(nodoTemp.getNumInt>this.reference || nodoTemp.getNumInt+1 == getCenterVertex(this.reference))
+                var a  = 3 * this.getNumInt() - 1 + i;
+                if(a > this.reference || (a+1) == getCenterVertex(this.reference))
                     continue;
-                if(getCenterVertex(this.reference).mod(nodoTemp.getNumInt()).valueOf()<=1)
-                    return true;
+                if(getCenterVertex(this.reference).mod(a).valueOf()<=1)
+                   return true;
             }
             return false;
         },
