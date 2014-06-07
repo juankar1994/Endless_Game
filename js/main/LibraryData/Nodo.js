@@ -100,7 +100,6 @@
             this.setNumInt(arrayLevel[(this.numInt+1)%arrayLevel.length]);
             this.setNumBif(this.numInt);
         },      
-        
         retorno  : function (){
             var b  = this.getNumberIntersections()+1; 
             var pathReturn = this.seedBif%b;
@@ -111,15 +110,46 @@
             if(this.reference.valueOf() == 1){
                 return false;
             }
-            console.log("First "+getCenterVertex(this.reference));
+            /*console.log("First "+getCenterVertex(this.reference));
             console.log("Second "+this.getNumInt());
             console.log("Result "+getCenterVertex(this.reference).mod(this.getNumInt()).valueOf());
+            */
+            if(this.equalCenterVertex()){
+                console.log("...."+1);
+                return false;
+            }
             
-            if(getCenterVertex(this.reference).mod(this.getNumInt()).valueOf()==0 ||
-               this.getNumInt() <= this.reference)
+            if(getCenterVertex(this.reference).mod(this.getNumInt()).valueOf()<=1 && this.nextSerial()){
+                console.log("...."+2);
+                return true;
+            }
+            /*if(getCenterVertex(this.reference).mod(this.getNumInt()).valueOf()<=1)
+                return true;
+            */if(this.getNumInt() == this.reference){
+                console.log("...."+3);
+                return true;
+            }
+            return false;
+        },
+        
+        equalCenterVertex : function(){
+            if(getCenterVertex(this.reference)==this.getNumInt() && this.reference!=this.getNumInt())
                 return true;
             return false;
-        },  
+        },
+                
+        
+        nextSerial : function(){
+            for(var i = 0 ; i< this.getNumberIntersections()+1;i++){
+                var nodoTemp = LibraryData.createNodo(this.getNumInt(),this.getLevel());
+                nodoTemp = nodoTemp.nextNodo(i);
+                if(nodoTemp.getNumInt>this.reference || nodoTemp.getNumInt+1 == getCenterVertex(this.reference))
+                    continue;
+                if(getCenterVertex(this.reference).mod(nodoTemp.getNumInt()).valueOf()<=1)
+                    return true;
+            }
+            return false;
+        },
 
         nextNodo : function(pNumberPath){
             if(this.level==3){ 
@@ -127,6 +157,7 @@
                 //console.log("return: " +pathReturn);
                 if(pNumberPath == pathReturn){
                     if(!this.getVisited()){
+                        console.log("*******************************************************************************");
                         this.reference = this.getNumInt();
                         console.log("reference: "+this.reference);
                     }
@@ -145,8 +176,8 @@
         }, 
         resetNodo: function(pNumInt, pNumLevel){
             this.setNumInt(pNumInt);
-            this.setNumBif(pNumInt);
             this.setLevel(pNumLevel);
+            this.setNumBif(pNumInt);
             this.hashLevel = this.createHashNodo();
         }
         /*

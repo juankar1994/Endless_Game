@@ -190,7 +190,7 @@ var Presentation = window.Presentation || {};
                     vehicle.setNumberOfShots(numberOfShots);
                     
                     nodo.nextNodo(checkLaneNumber() - 1);
-                    console.log(nodo);
+                    //console.log(nodo);
                     console.log("actualIntersections: "+actualIntersections);
                     console.log("nC: "+ (checkLaneNumber() - 1));
 
@@ -200,7 +200,7 @@ var Presentation = window.Presentation || {};
                     updateLabel("Level",nodo.getLevel());
                     //It could be 3 or 1
                     var pointAdded = 3;
-                    var color = "#9d1826";
+                    var color = "red";//"#9d1826";
                     if(nodo.getVisited()){
                         pointAdded = 1;
                         color = "#2EE1E7";
