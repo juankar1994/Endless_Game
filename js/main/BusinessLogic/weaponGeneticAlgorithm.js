@@ -146,29 +146,6 @@
             return son;
         }
         
-        /*
-        alert("Ejemplo de Algoritmo genetico: ");
-        alert("El arma en este punto solo esta creada a base de bits, una funcion de "+
-               "la clase weapon tomara esta informacion del chromosome y lo covertira en arma. Todavia no esta implementado." );
-        alert("Poblacion segun el alcance del arma es la siguiente: \n"+
-              "1 Carril : 0 ... 84\n 2 Carriles : 85 ... 170\n 2 Carriles : 171 ... 255 ");
-        var population = BusinessLogic.getPopulationManager().generateAllChromosomes(); //Generate 20 chromosomes for the example.
-        var populationString="Poblacion generada por random:\n ";
-        for( var i = 0; i < population.length ; i++){
-            var chromosome = i+":"+population[i].getLaneNumber()+"  ";
-            populationString +=chromosome;
-        }
-        alert(populationString);
-        
-        var newWeapon = BusinessLogic.getPopulationManager().generateChromosomeWeapon(); //Generate a random new weapon for the example.
-        var generateWeapon = geneticAlgorithm(population,newWeapon); // New weapon created for the player by the geneticAlgorithm
-        
-        alert("Arma creada: \n LaneNumber : " + generateWeapon.getLaneNumber() + 
-              "\n Color : " + generateWeapon.getColor() + "\n Thickness : " + generateWeapon.getThickness() + 
-              "\n Shape : " + generateWeapon.getShapeWeapon());
-        */
-        
-        
         //Let's make it public
         return {
             selectChromosome : selectChromosome,

@@ -71,10 +71,7 @@
             }
         }
         
-        
-        
         function greddyAux(pNodo,contador,deep,nodoCerradura){
-            console.log("INTERSECTION: " + pNodo.getNumInt());
             deep--;
             if( pNodo.getNumInt() == nodoCerradura || deep < 0)
                 return contador;
@@ -83,12 +80,13 @@
                 var nodoBif = pNodo.nextNodo(pNodo.getPathReturn());
                 contador++; 
                 return greddyAux(nodoBif,contador,deep,nodoCerradura);
-            }    
+            }   
             var bestNodo = new Array();
             for(var numBif = 0; numBif < pNodo.getNumberIntersections()+1; numBif ++ ){
                 var nodoTemp = LibraryData.createNodo(pNodo.getNumInt(),pNodo.getLevel());
                 var nodoBif = nodoTemp.nextNodo(numBif);
                 var cont1 = contador + 1;
+                //Local Optimus
                 bestNodo[numBif]=greddyAux(nodoBif,cont1,deep,nodoCerradura);
             }
             
@@ -97,41 +95,36 @@
                 if(bestNodo[i] > bestNodo[i+1]){
                     best=i+1;
                 }
-            }
-            
-            var cont1 = contador + 1;
-            var nodoBif = pNodo.nextNodo(best);
-            return greddyAux(nodoBif,cont1,deep,nodoCerradura);
+            }            
+            return bestNodo[best];
         }
         
-        function greedyA(pNodo){
-            /*Presentation.getGreedyIntersectionController().setSuggestion(1);
-            Presentation.getGreedyIntersectionController().setSuggestion(2);
-            Presentation.getGreedyIntersectionController().setSuggestion(3);*/
-            
+        function greedyA(pNodo){            
             var nodoTemp = LibraryData.createNodo(pNodo.getNumInt(),pNodo.getLevel());
             var bestNodo = new Array();
             console.log(nodoTemp.getNumberIntersections()+1);
             for(var numBif = 0 ; numBif < nodoTemp.getNumberIntersections()+1 ; numBif ++){
-                console.log("numBif: "+ numBif);
+                //console.log("numBif: "+ numBif);
                 var nodoTempA = LibraryData.createNodo(nodoTemp.getNumInt(),nodoTemp.getLevel());
                 var nodoBif = nodoTempA.nextNodo(numBif);
                 var num = 1;
-                bestNodo[numBif] = greddyAux(nodoBif,num,6,pNodo.getNumInt());
+                //Local Optimus
+                bestNodo[numBif] = greddyAux(nodoBif,num,12,pNodo.getNumInt());
             }
-            console.log("-----------------------------------------------------------------------");
+            
             var best = 0;
+            //Global Optimus, this for gets the best answer
             for(var i = 0 ;i < bestNodo.length -1; i++){
                 console.log("Cantidad de Path: " + bestNodo[i]);
-                if(bestNodo[i] <bestNodo[i+1]){
+                if(bestNodo[i] < bestNodo[i+1]){
                     best=i+1;
                 }
             }
+            console.log("Cantidad de Path: " + bestNodo[i]);
             
             Presentation.getGreedyIntersectionController().setSuggestion(best);
+            //Global Optimus
             console.log("Mejor camino: "+best);
-
-            console.log("-----------------------------------------------------------------------");
         }
         
         function remove(arr, item) {
@@ -151,9 +144,6 @@
             }
             return false;
         }
-        
-        
-
 
         //Let's make it public
         return {

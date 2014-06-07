@@ -125,31 +125,6 @@
             }                
         }
         
-        //Initial seed of the graph
-        //initialIntersection();
-        
-        //Prueba
-        /*var w ;
-        var z ;
-        for(var i = 0 ; i < 100000 ; i++){
-            if(i==65400){
-                w=getNewRandomSeed();
-                z=getNewRandomSeed();
-            }
-            
-                getNewRandomSeed();
-        }
-        
-        var s = getLastRandomNumbers(z);
-        alert(w+"\n"+z+"\n"+s);
-        getAncestorSeed();
-        processSeed(0); //Second Intersection
-        processSeed(0); //First Intersection
-        processSeed(0); //First Intersection
-        processSeed(0); //First Intersection*/
-        //graph.print();
-
-        
         
         //Let's make it public
         return {
@@ -161,13 +136,3 @@
     })();
 
 }(BusinessLogic, jQuery));
-
-/*
-var graph = LibraryData.createGraph();
-
-for(var i = 0; i < 20; i++){
-    var seed = Math.seededRandom();
-    console.log(seed);
-    graph.addVertex(seed);
-}
-    graph.print();*/

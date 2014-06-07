@@ -99,9 +99,7 @@
             var arrayLevel = this.hashLevel.get(this.level);
             this.setNumInt(arrayLevel[(this.numInt+1)%arrayLevel.length]);
             this.setNumBif(this.numInt);
-        },
-        
-        
+        },        
         
         getPathReturn : function (){
             var b  = this.getNumberIntersections()+1; 

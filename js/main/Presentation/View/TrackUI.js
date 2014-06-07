@@ -190,9 +190,6 @@ var Presentation = window.Presentation || {};
                     vehicle.setNumberOfShots(numberOfShots);
                     
                     nodo.nextNodo(checkLaneNumber() - 1);
-                    //console.log(nodo);
-                    console.log("actualIntersections: "+actualIntersections);
-                    console.log("nC: "+ (checkLaneNumber() - 1));
 
                     createIntersection(nodo.getNumberIntersections() + 1);
                     updateLabel("ID", nodo.getNumInt());
@@ -201,11 +198,9 @@ var Presentation = window.Presentation || {};
                     suggestionLayer.removeChildren();
                     suggestionLayer.draw();
                     suggestionCont++;
-                    if(suggestionCont == 3  ){
+                    if(suggestionCont == 10 && actualIntersections != 1 ){
                         BusinessLogic.getGreedyAlgorithm().greedyA(nodo);   
                         suggestionCont = 0;   
-                        if (actualIntersections == 1)
-                            suggestionCont = 2;
                     }
                         
                     //It could be 3 or 1
@@ -299,7 +294,6 @@ var Presentation = window.Presentation || {};
             else
                 x = 585;
                 
-            console.log(pSuggestion);
             var star = new Kinetic.Star({
                 x: x,
                 y: 14,
@@ -370,7 +364,7 @@ var Presentation = window.Presentation || {};
 
             // use event delegation
             labelLayer.on('mouseover touchstart', function(evt) {      
-                if(evt.target !== undefined){
+                if(evt.target.tween !== undefined){
                     evt.target.tween.play();
                     if(evt.target.name() == "#8fc9c1")
                         evt.target.setFill("#000000");
